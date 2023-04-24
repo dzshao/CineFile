@@ -7,7 +7,7 @@
 
 ## Project Description
 Almost everyone loves movies, so this is a project that appeals to us and most other people as well. This project is a great opportunity to learn new tools and skills like web scraping and practicing algorithm design all while getting more comfortable with the tools introduced in CS100. 
-The project will use C++, Visual Studio Code, Git, GitHub, gdb, valgrind, and web scraping.
+The project will use C++, Visual Studio Code, Git, GitHub, gdb, valgrind, Vim, CMake, GoogleTest, and web scraping.
 User can input the name of a movie, genre, director, actor, or a combination of them. The program will output a list of list of up to ten movie recommendations to watch including their rating, release date and other general information. The movies are sorted based on their rating. The program will scrape information from movie websites such as imdb to obtain this information. 
 The project can be used by anyone to receive quick and convenient recommendations for their movie watching sprees. It makes it much more simple to expand one’s movie interests, consolidating the entire process into one program.
 
