@@ -61,7 +61,8 @@ Press X to return to the main page.
 
 
 ## Class Diagram 
-![UML Class Diagram](https://user-images.githubusercontent.com/102844937/236991829-276c36bc-6b20-4962-9fa4-614ef9695bd2.png)
+![UML Class Diagram](https://user-images.githubusercontent.com/102844937/236995286-32b5e83f-ada2-41eb-a7e3-ecee5180075e.png)
+
 
 
 ### Class Descriptions:
