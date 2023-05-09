@@ -28,7 +28,8 @@ The program will scrape information from movie websites such as imdb to obtain r
 ## User Interface Specification
  
 ### Navigation Diagram
-Here is our [example](https://user-images.githubusercontent.com/102844937/236991243-7770b0d9-0eb1-4c65-bb43-ae40fcda8377.png). This diagram depicts the paths a user can take through our program. Starting at the main menu when they launch the program, they are filled in on what the program does and immediately prompted for which criteria they would like to earch by. 
+![Navigation Diagram](https://user-images.githubusercontent.com/102844937/236991243-7770b0d9-0eb1-4c65-bb43-ae40fcda8377.png) 
+This diagram depicts the paths a user can take through our program. Starting at the main menu when they launch the program, they are filled in on what the program does and immediately prompted for which criteria they would like to earch by. 
 
 After choosing their criteria, the user can choose what tier of ratings they would like to sort by. After choosing the ratings, the user will then enter the keywords they are sorting by and confirm once they are done entering them. They will then receive a list of recommendations, and an option to generate another list of recommendations off of the same criteria or return to the main menu, where they can input another set of criteria to search by. 
 
@@ -70,10 +71,11 @@ Press X to return to the main page.
 >X
 
 
-## Class Diagram
- > Include a **class diagram(s)** for your project and a **description** of the diagram(s). Your class diagram(s) should include all the main classes you plan for the project. This should be in sufficient detail that another group could pick up the project this point and successfully complete it. Use proper UML notation (as discussed in the course slides).
+## Class Diagram 
+![UML Class Diagram](https://user-images.githubusercontent.com/102844937/236991829-276c36bc-6b20-4962-9fa4-614ef9695bd2.png)
 
-Class Descriptions:
+
+### Class Descriptions:
 
 - scrapeWebsite
   - scrapeSite(...) member function which scrapes the input website URL and returns the HTML code of the site as a string.
