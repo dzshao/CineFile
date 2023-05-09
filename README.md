@@ -29,10 +29,51 @@ The program will scrape information from movie websites such as imdb to obtain r
  > Include a navigation diagram for your screens and the layout of each of those screens as desribed below. For all the layouts/diagrams, you can use any tool such as PowerPoint or a drawing program. (Specification requirement is adapted from [this template](https://redirect.cs.umbc.edu/~mgrass2/cmsc345/Template_UI.doc))
 
 ### Navigation Diagram
-> Draw a diagram illustrating how the user can navigate from one screen to another. Here is an [example](https://creately.com/diagram/example/ikfqudv82/user-navigation-diagram-classic?r=v). It can be useful to label each symbol that represents a screen so that you can reference the screens in the next section or the rest of the document if necessary. Give a brief description of what the diagram represents.
+> Here is our [example](nachart2.PNG). It can be useful to label each symbol that represents a screen so that you can reference the screens in the next section or the rest of the document if necessary. This diagram depicts the paths a user can take through our program. Starting at the main menu when they launch the program, they are filled in on what the program does and immediately prompted for which criteria they would like to earch by. After choosing their criteria, the user can choose what tier of ratings they would like to sort by. After choosing the ratings, the user will then enter the keywords they are sorting by and confirm once they are done entering them. They will then receive a list of recommendations, and an option to generate another list of recommendations off of the same criteria or return to the main menu, where they can input another set of criteria to search by. 
+
 
 ### Screen Layouts
-> Include the layout of each of your screens. The layout should describe the screen’s major components such as menus and prompts for user inputs, expected output, and buttons (if applicable). Explain what is on the layout, and the purpose of each menu item, button, etc. If many screens share the same layout, start by describing the general layout and then list the screens that will be using that layout and the differences between each of them.
+> Main page with a prompt that recommends 10 movies based on various criteria. The various criteria is a text box one can add various keywords to, such as director, genre, actors, themes, etc. User will also be prompted on what the average ratings of the movies will be. Keywords will be entered one by one, pressing enter each time to input the next keyword. Finish entering keywords by entering E to confirm. Once all keywords are entered the user is sent to a page with 10 movies. Each movie will have a link to a page with info about it, a short blurb about the movie, and keywords about the movie listed.
+After movies are listed, users can enter x or some other letter to exit and go back to the main page.  (If movies not found that match keywords after being excluded, we can recommend movies at random)
+
+
+Example interface interaction:
+
+Welcome to Cinefile! We will recommend 10 movies based on the keywords that you will enter. We can recommend movies based on multiple categories: titles (T), genres (G), directors (D) ,and actors (A). What criteria would you like to search by? Enter the letter corresponding to your desired category. 
+
+> T
+
+You would like to search by title. Would you like highly rated movies (H) , poorly rated movies (P), or averagely rated movies (A)? Please enter the letter corresponding to the ratings you would like. 
+
+> A
+
+Please enter each keyword individually, hitting “ENTER” between each one. Once you have entered all your keywords, please enter “C” to confirm your keywords.
+
+>fire
+>superhero
+>funny
+>niche
+>the rock
+>C
+
+Confirmed! Generating your custom list of movie recommendations…
+
+1: Mario Movie 
+(link to imdb or wikipedia here) (link to trailer)
+Mario bros go on wacky adventure from new york or whatever 
+Keywords: trending, game, mario, chris pratt, family
+etc.
+
+Press X to return to the main page.
+>X
+Would you like to clear your previous keywords (enter Y/N)
+>N
+Would you like to add more keywords? If you choose to not add more keywords you will receive a brand new set of recommendations based on your previously entered keywords. (enter Y/N)
+>Y
+Please enter your keywords, hitting “ENTER” between each one. Press C to confirm that you are done with entering your keywords. 
+>minecraft
+>C
+.
 
 ## Class Diagram
  > Include a **class diagram(s)** for your project and a **description** of the diagram(s). Your class diagram(s) should include all the main classes you plan for the project. This should be in sufficient detail that another group could pick up the project this point and successfully complete it. Use proper UML notation (as discussed in the course slides).
