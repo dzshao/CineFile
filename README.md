@@ -74,29 +74,29 @@ Press X to return to the main page.
 
 Class Descriptions:
 
-scrapeWebsite
-    - scrapeSite(...) member function which scrapes the input website URL and returns the HTML code of the site as a string.
-imdbScraper
-    - scrapeGenres(...) member function which scrapes the input genre’s or combination of genres for the top associated movies on IMDb. Returns vector of URLs to those movie’s IMDb pages.
-    - scrapeMovie(...) member function which scrapes the input IMDb movie URL and returns the HTML code of the page as a string. 
-moviesDatabase
-    - Aggregation of Genres
-    - storeGenreLists() member function stores the list of genres and all their contained movies within a file.
-    - loadGenreLists() member function loads the list of genres and their contained movies from the saved file
-Genre
-    - Aggregation of movies
-    - Stores name of the genre and an unordered_map of Movie objects as a list of associated movies.
-    - populate(...) member function which adds the given movie object to the 
-Movie (struct)
-    - Aggregation of genres, actors, and directors
-    - Struct with dumb data such as the title, release year, rating, as well as sets of Actors, Director, and Genre objects.
-MovieRecommender
-    - recommend(...) overloaded member function which returns a priority_queue of movie recommendations. 
-Person
-    - Stores a set of movies the Person is associated with.
-    - Subclasses: Actor, Director
-UserInterface
-    - Member functions to facilitate user interaction, such as printMainMenu() and printMovieList().
+- scrapeWebsite
+  - scrapeSite(...) member function which scrapes the input website URL and returns the HTML code of the site as a string.
+- imdbScraper
+  - scrapeGenres(...) member function which scrapes the input genre’s or combination of genres for the top associated movies on IMDb. Returns vector of URLs to those movie’s IMDb pages.
+  - scrapeMovie(...) member function which scrapes the input IMDb movie URL and returns the HTML code of the page as a string. 
+- moviesDatabase
+  - Aggregation of Genres
+  - storeGenreLists() member function stores the list of genres and all their contained movies within a file.
+  - loadGenreLists() member function loads the list of genres and their contained movies from the saved file
+- Genre
+  - Aggregation of movies
+  - Stores name of the genre and an unordered_map of Movie objects as a list of associated movies.
+  - populate(...) member function which adds the given movie object to the 
+- Movie (struct)
+  - Aggregation of genres, actors, and directors
+  - Struct with dumb data such as the title, release year, rating, as well as sets of Actors, Director, and Genre objects.
+- MovieRecommender
+  - recommend(...) overloaded member function which returns a priority_queue of movie recommendations. 
+- Person
+  - Stores a set of movies the Person is associated with.
+  - Subclasses: Actor, Director
+- UserInterface
+  - Member functions to facilitate user interaction, such as printMainMenu() and printMovieList().
  
  > ## Phase III
  > You will need to schedule a check-in for the second scrum meeting with the same reader you had your first scrum meeting with (using Calendly). Your entire team must be present. This meeting will occur on week 8 during lab time.
