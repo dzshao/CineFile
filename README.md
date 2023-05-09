@@ -69,9 +69,15 @@ Press X to return to the main page.
 
 - scrapeWebsite
   - scrapeSite(...) member function which scrapes the input website URL and returns the HTML code of the site as a string.
-- imdbScraper
-  - scrapeGenres(...) member function which scrapes the input genre’s or combination of genres for the top associated movies on IMDb. Returns vector of URLs to those movie’s IMDb pages.
-  - scrapeMovie(...) member function which scrapes the input IMDb movie URL and returns the HTML code of the page as a string. 
+- imdbParser
+  - scrapeGenres(...) member function which calls scrapeSite(...) on the IMDb page which lists the top movies associated with the input genre or combination of genres. Returns a vector of URLs to those movies' IMDb pages.
+  - scrapeMovie(...) member function which finds the corresponding movie's IMDb URL and returns it.
+  - findDirectorList(...) takes in an IMDb movie page URL and returns a set of the Director objects associated with it.
+  - findActorList(...) takes in an IMDb movie page URL and returns a set of Genre objects assocaited wtih it.
+  - findGenreList(...) takes in an IMDb movie page URL and returns a set of Actor objects associated with it.
+  - findTitle(...) takes in an IMDb movie page URL and returns the title.
+  - findRating(...) takes in an IMDb movie page URL and returns the rating.
+  - parseMovie(...) creates and returns a new Movie object with data obtained by calling the preceding 'find' member functions.
 - moviesDatabase
   - Aggregation of Genres
   - storeGenreLists() member function stores the list of genres and all their contained movies within a file.
