@@ -1,0 +1,6 @@
+[submodule "src/libxml2"]
+	path = src/libxml2
+	url = https://github.com/GNOME/libxml2.git
+[submodule "src/libxmlplusplus"]
+	path = src/libxmlplusplus
+	url = https://github.com/libxmlplusplus/libxmlplusplus.git

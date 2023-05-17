@@ -1,0 +1,726 @@
+The system is: Linux - 4.18.0-489.el8.x86_64 - x86_64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /usr/bin/cc 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+
+The C compiler identification is GNU, found in "/home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/3.20.2/CompilerIdC/a.out"
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: /home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_29cab/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_29cab.dir/build.make CMakeFiles/cmTC_29cab.dir/build
+gmake[1]: Entering directory '/data/home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_29cab.dir/CMakeCCompilerABI.c.o
+/usr/bin/cc   -v -o CMakeFiles/cmTC_29cab.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake/Modules/CMakeCCompilerABI.c
+Using built-in specs.
+COLLECT_GCC=/usr/bin/cc
+OFFLOAD_TARGET_NAMES=nvptx-none
+OFFLOAD_TARGET_DEFAULT=1
+Target: x86_64-redhat-linux
+Configured with: ../configure --enable-bootstrap --enable-languages=c,c++,fortran,lto --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-shared --enable-threads=posix --enable-checking=release --enable-multilib --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-gcc-major-version-only --with-linker-hash-style=gnu --enable-plugin --enable-initfini-array --with-isl --disable-libmpx --enable-offload-targets=nvptx-none --without-cuda-driver --enable-gnu-indirect-function --enable-cet --with-tune=generic --with-arch_32=x86-64 --build=x86_64-redhat-linux
+Thread model: posix
+gcc version 8.5.0 20210514 (Red Hat 8.5.0-19) (GCC) 
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_29cab.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
+ /usr/libexec/gcc/x86_64-redhat-linux/8/cc1 -quiet -v /usr/share/cmake/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_29cab.dir/CMakeCCompilerABI.c.o -version -o /tmp/ccymhnuK.s
+GNU C17 (GCC) version 8.5.0 20210514 (Red Hat 8.5.0-19) (x86_64-redhat-linux)
+	compiled by GNU C version 8.5.0 20210514 (Red Hat 8.5.0-19), GMP version 6.1.2, MPFR version 3.1.6-p2, MPC version 1.1.0, isl version isl-0.16.1-GMP
+
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+ignoring nonexistent directory "/usr/lib/gcc/x86_64-redhat-linux/8/include-fixed"
+ignoring nonexistent directory "/usr/lib/gcc/x86_64-redhat-linux/8/../../../../x86_64-redhat-linux/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /usr/lib/gcc/x86_64-redhat-linux/8/include
+ /usr/local/include
+ /usr/include
+End of search list.
+GNU C17 (GCC) version 8.5.0 20210514 (Red Hat 8.5.0-19) (x86_64-redhat-linux)
+	compiled by GNU C version 8.5.0 20210514 (Red Hat 8.5.0-19), GMP version 6.1.2, MPFR version 3.1.6-p2, MPC version 1.1.0, isl version isl-0.16.1-GMP
+
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: fb6ec0138471c39ce035d5abb0da6871
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_29cab.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
+ as -v --64 -o CMakeFiles/cmTC_29cab.dir/CMakeCCompilerABI.c.o /tmp/ccymhnuK.s
+GNU assembler version 2.30 (x86_64-redhat-linux) using BFD version version 2.30-120.el8
+COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/8/:/usr/libexec/gcc/x86_64-redhat-linux/8/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/8/:/usr/lib/gcc/x86_64-redhat-linux/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/8/:/usr/lib/gcc/x86_64-redhat-linux/8/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/8/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_29cab.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
+Linking C executable cmTC_29cab
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_29cab.dir/link.txt --verbose=1
+/usr/bin/cc  -v CMakeFiles/cmTC_29cab.dir/CMakeCCompilerABI.c.o -o cmTC_29cab 
+Using built-in specs.
+COLLECT_GCC=/usr/bin/cc
+COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-redhat-linux/8/lto-wrapper
+OFFLOAD_TARGET_NAMES=nvptx-none
+OFFLOAD_TARGET_DEFAULT=1
+Target: x86_64-redhat-linux
+Configured with: ../configure --enable-bootstrap --enable-languages=c,c++,fortran,lto --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-shared --enable-threads=posix --enable-checking=release --enable-multilib --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-gcc-major-version-only --with-linker-hash-style=gnu --enable-plugin --enable-initfini-array --with-isl --disable-libmpx --enable-offload-targets=nvptx-none --without-cuda-driver --enable-gnu-indirect-function --enable-cet --with-tune=generic --with-arch_32=x86-64 --build=x86_64-redhat-linux
+Thread model: posix
+gcc version 8.5.0 20210514 (Red Hat 8.5.0-19) (GCC) 
+COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/8/:/usr/libexec/gcc/x86_64-redhat-linux/8/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/8/:/usr/lib/gcc/x86_64-redhat-linux/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/8/:/usr/lib/gcc/x86_64-redhat-linux/8/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/8/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_29cab' '-mtune=generic' '-march=x86-64'
+ /usr/libexec/gcc/x86_64-redhat-linux/8/collect2 -plugin /usr/libexec/gcc/x86_64-redhat-linux/8/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/8/lto-wrapper -plugin-opt=-fresolution=/tmp/ccbMztjx.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_29cab /usr/lib/gcc/x86_64-redhat-linux/8/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/8/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/8/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/8 -L/usr/lib/gcc/x86_64-redhat-linux/8/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/8/../../.. CMakeFiles/cmTC_29cab.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-redhat-linux/8/crtend.o /usr/lib/gcc/x86_64-redhat-linux/8/../../../../lib64/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_29cab' '-mtune=generic' '-march=x86-64'
+gmake[1]: Leaving directory '/data/home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp'
+
+
+
+Parsed C implicit include dir info from above output: rv=done
+  found start of include info
+  found start of implicit include info
+    add: [/usr/lib/gcc/x86_64-redhat-linux/8/include]
+    add: [/usr/local/include]
+    add: [/usr/include]
+  end of search list found
+  collapse include dir [/usr/lib/gcc/x86_64-redhat-linux/8/include] ==> [/usr/lib/gcc/x86_64-redhat-linux/8/include]
+  collapse include dir [/usr/local/include] ==> [/usr/local/include]
+  collapse include dir [/usr/include] ==> [/usr/include]
+  implicit include dirs: [/usr/lib/gcc/x86_64-redhat-linux/8/include;/usr/local/include;/usr/include]
+
+
+Parsed C implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_29cab/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_29cab.dir/build.make CMakeFiles/cmTC_29cab.dir/build]
+  ignore line: [gmake[1]: Entering directory '/data/home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp']
+  ignore line: [Building C object CMakeFiles/cmTC_29cab.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/bin/cc   -v -o CMakeFiles/cmTC_29cab.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake/Modules/CMakeCCompilerABI.c]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/usr/bin/cc]
+  ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none]
+  ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+  ignore line: [Target: x86_64-redhat-linux]
+  ignore line: [Configured with: ../configure --enable-bootstrap --enable-languages=c c++ fortran lto --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-shared --enable-threads=posix --enable-checking=release --enable-multilib --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-gcc-major-version-only --with-linker-hash-style=gnu --enable-plugin --enable-initfini-array --with-isl --disable-libmpx --enable-offload-targets=nvptx-none --without-cuda-driver --enable-gnu-indirect-function --enable-cet --with-tune=generic --with-arch_32=x86-64 --build=x86_64-redhat-linux]
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 8.5.0 20210514 (Red Hat 8.5.0-19) (GCC) ]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_29cab.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
+  ignore line: [ /usr/libexec/gcc/x86_64-redhat-linux/8/cc1 -quiet -v /usr/share/cmake/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_29cab.dir/CMakeCCompilerABI.c.o -version -o /tmp/ccymhnuK.s]
+  ignore line: [GNU C17 (GCC) version 8.5.0 20210514 (Red Hat 8.5.0-19) (x86_64-redhat-linux)]
+  ignore line: [	compiled by GNU C version 8.5.0 20210514 (Red Hat 8.5.0-19)  GMP version 6.1.2  MPFR version 3.1.6-p2  MPC version 1.1.0  isl version isl-0.16.1-GMP]
+  ignore line: []
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-redhat-linux/8/include-fixed"]
+  ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-redhat-linux/8/../../../../x86_64-redhat-linux/include"]
+  ignore line: [#include "..." search starts here:]
+  ignore line: [#include <...> search starts here:]
+  ignore line: [ /usr/lib/gcc/x86_64-redhat-linux/8/include]
+  ignore line: [ /usr/local/include]
+  ignore line: [ /usr/include]
+  ignore line: [End of search list.]
+  ignore line: [GNU C17 (GCC) version 8.5.0 20210514 (Red Hat 8.5.0-19) (x86_64-redhat-linux)]
+  ignore line: [	compiled by GNU C version 8.5.0 20210514 (Red Hat 8.5.0-19)  GMP version 6.1.2  MPFR version 3.1.6-p2  MPC version 1.1.0  isl version isl-0.16.1-GMP]
+  ignore line: []
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [Compiler executable checksum: fb6ec0138471c39ce035d5abb0da6871]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_29cab.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
+  ignore line: [ as -v --64 -o CMakeFiles/cmTC_29cab.dir/CMakeCCompilerABI.c.o /tmp/ccymhnuK.s]
+  ignore line: [GNU assembler version 2.30 (x86_64-redhat-linux) using BFD version version 2.30-120.el8]
+  ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/8/:/usr/libexec/gcc/x86_64-redhat-linux/8/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/8/:/usr/lib/gcc/x86_64-redhat-linux/]
+  ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/8/:/usr/lib/gcc/x86_64-redhat-linux/8/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/8/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_29cab.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
+  ignore line: [Linking C executable cmTC_29cab]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_29cab.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/cc  -v CMakeFiles/cmTC_29cab.dir/CMakeCCompilerABI.c.o -o cmTC_29cab ]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/usr/bin/cc]
+  ignore line: [COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-redhat-linux/8/lto-wrapper]
+  ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none]
+  ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+  ignore line: [Target: x86_64-redhat-linux]
+  ignore line: [Configured with: ../configure --enable-bootstrap --enable-languages=c c++ fortran lto --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-shared --enable-threads=posix --enable-checking=release --enable-multilib --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-gcc-major-version-only --with-linker-hash-style=gnu --enable-plugin --enable-initfini-array --with-isl --disable-libmpx --enable-offload-targets=nvptx-none --without-cuda-driver --enable-gnu-indirect-function --enable-cet --with-tune=generic --with-arch_32=x86-64 --build=x86_64-redhat-linux]
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 8.5.0 20210514 (Red Hat 8.5.0-19) (GCC) ]
+  ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/8/:/usr/libexec/gcc/x86_64-redhat-linux/8/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/8/:/usr/lib/gcc/x86_64-redhat-linux/]
+  ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/8/:/usr/lib/gcc/x86_64-redhat-linux/8/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/8/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_29cab' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/libexec/gcc/x86_64-redhat-linux/8/collect2 -plugin /usr/libexec/gcc/x86_64-redhat-linux/8/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/8/lto-wrapper -plugin-opt=-fresolution=/tmp/ccbMztjx.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_29cab /usr/lib/gcc/x86_64-redhat-linux/8/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/8/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/8/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/8 -L/usr/lib/gcc/x86_64-redhat-linux/8/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/8/../../.. CMakeFiles/cmTC_29cab.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-redhat-linux/8/crtend.o /usr/lib/gcc/x86_64-redhat-linux/8/../../../../lib64/crtn.o]
+    arg [/usr/libexec/gcc/x86_64-redhat-linux/8/collect2] ==> ignore
+    arg [-plugin] ==> ignore
+    arg [/usr/libexec/gcc/x86_64-redhat-linux/8/liblto_plugin.so] ==> ignore
+    arg [-plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/8/lto-wrapper] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccbMztjx.res] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [-plugin-opt=-pass-through=-lc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [--build-id] ==> ignore
+    arg [--no-add-needed] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [--hash-style=gnu] ==> ignore
+    arg [-m] ==> ignore
+    arg [elf_x86_64] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_29cab] ==> ignore
+    arg [/usr/lib/gcc/x86_64-redhat-linux/8/../../../../lib64/crt1.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/8/../../../../lib64/crt1.o]
+    arg [/usr/lib/gcc/x86_64-redhat-linux/8/../../../../lib64/crti.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/8/../../../../lib64/crti.o]
+    arg [/usr/lib/gcc/x86_64-redhat-linux/8/crtbegin.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/8/crtbegin.o]
+    arg [-L/usr/lib/gcc/x86_64-redhat-linux/8] ==> dir [/usr/lib/gcc/x86_64-redhat-linux/8]
+    arg [-L/usr/lib/gcc/x86_64-redhat-linux/8/../../../../lib64] ==> dir [/usr/lib/gcc/x86_64-redhat-linux/8/../../../../lib64]
+    arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
+    arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
+    arg [-L/usr/lib/gcc/x86_64-redhat-linux/8/../../..] ==> dir [/usr/lib/gcc/x86_64-redhat-linux/8/../../..]
+    arg [CMakeFiles/cmTC_29cab.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [-lgcc] ==> lib [gcc]
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--no-as-needed] ==> ignore
+    arg [-lc] ==> lib [c]
+    arg [-lgcc] ==> lib [gcc]
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--no-as-needed] ==> ignore
+    arg [/usr/lib/gcc/x86_64-redhat-linux/8/crtend.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/8/crtend.o]
+    arg [/usr/lib/gcc/x86_64-redhat-linux/8/../../../../lib64/crtn.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/8/../../../../lib64/crtn.o]
+  collapse obj [/usr/lib/gcc/x86_64-redhat-linux/8/../../../../lib64/crt1.o] ==> [/usr/lib64/crt1.o]
+  collapse obj [/usr/lib/gcc/x86_64-redhat-linux/8/../../../../lib64/crti.o] ==> [/usr/lib64/crti.o]
+  collapse obj [/usr/lib/gcc/x86_64-redhat-linux/8/../../../../lib64/crtn.o] ==> [/usr/lib64/crtn.o]
+  collapse library dir [/usr/lib/gcc/x86_64-redhat-linux/8] ==> [/usr/lib/gcc/x86_64-redhat-linux/8]
+  collapse library dir [/usr/lib/gcc/x86_64-redhat-linux/8/../../../../lib64] ==> [/usr/lib64]
+  collapse library dir [/lib/../lib64] ==> [/lib64]
+  collapse library dir [/usr/lib/../lib64] ==> [/usr/lib64]
+  collapse library dir [/usr/lib/gcc/x86_64-redhat-linux/8/../../..] ==> [/usr/lib]
+  implicit libs: [gcc;gcc_s;c;gcc;gcc_s]
+  implicit objs: [/usr/lib64/crt1.o;/usr/lib64/crti.o;/usr/lib/gcc/x86_64-redhat-linux/8/crtbegin.o;/usr/lib/gcc/x86_64-redhat-linux/8/crtend.o;/usr/lib64/crtn.o]
+  implicit dirs: [/usr/lib/gcc/x86_64-redhat-linux/8;/usr/lib64;/lib64;/usr/lib]
+  implicit fwks: []
+
+
+Performing C SOURCE FILE Test Iconv_IS_BUILT_IN succeeded with the following output:
+Change Dir: /home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_9aab5/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_9aab5.dir/build.make CMakeFiles/cmTC_9aab5.dir/build
+gmake[1]: Entering directory '/data/home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_9aab5.dir/src.c.o
+/usr/bin/cc -DIconv_IS_BUILT_IN   -o CMakeFiles/cmTC_9aab5.dir/src.c.o -c /home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_9aab5
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9aab5.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_9aab5.dir/src.c.o -o cmTC_9aab5 
+gmake[1]: Leaving directory '/data/home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+
+      #include <stddef.h>
+      #include <iconv.h>
+      int main() {
+        char *a, *b;
+        size_t i, j;
+        iconv_t ic;
+        ic = iconv_open("to", "from");
+        iconv(ic, &a, &i, &b, &j);
+        iconv_close(ic);
+      }
+      
+Determining if files unistd.h exist passed with the following output:
+Change Dir: /home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_c8bea/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_c8bea.dir/build.make CMakeFiles/cmTC_c8bea.dir/build
+gmake[1]: Entering directory '/data/home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_c8bea.dir/HAVE_UNISTD_H.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_c8bea.dir/HAVE_UNISTD_H.c.o -c /home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CheckIncludeFiles/HAVE_UNISTD_H.c
+Linking C executable cmTC_c8bea
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c8bea.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_c8bea.dir/HAVE_UNISTD_H.c.o -o cmTC_c8bea 
+gmake[1]: Leaving directory '/data/home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the F_GETFL exist passed with the following output:
+Change Dir: /home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_3a5c9/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_3a5c9.dir/build.make CMakeFiles/cmTC_3a5c9.dir/build
+gmake[1]: Entering directory '/data/home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_3a5c9.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_3a5c9.dir/CheckSymbolExists.c.o -c /home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_3a5c9
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3a5c9.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_3a5c9.dir/CheckSymbolExists.c.o -o cmTC_3a5c9 
+gmake[1]: Leaving directory '/data/home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp'
+
+
+File /home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <fcntl.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef F_GETFL
+  return ((int*)(&F_GETFL))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the include file pthread.h exists passed with the following output:
+Change Dir: /home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_3a3a9/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_3a3a9.dir/build.make CMakeFiles/cmTC_3a3a9.dir/build
+gmake[1]: Entering directory '/data/home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_3a3a9.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_3a3a9.dir/CheckIncludeFile.c.o -c /home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_3a3a9
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3a3a9.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_3a3a9.dir/CheckIncludeFile.c.o -o cmTC_3a3a9 
+gmake[1]: Leaving directory '/data/home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function pthread_create exists in the pthread passed with the following output:
+Change Dir: /home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_1b45d/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_1b45d.dir/build.make CMakeFiles/cmTC_1b45d.dir/build
+gmake[1]: Entering directory '/data/home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_1b45d.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create -o CMakeFiles/cmTC_1b45d.dir/CheckFunctionExists.c.o -c /usr/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTC_1b45d
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1b45d.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create CMakeFiles/cmTC_1b45d.dir/CheckFunctionExists.c.o -o cmTC_1b45d  -lpthread 
+gmake[1]: Leaving directory '/data/home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp'
+
+
+
+Performing C SOURCE FILE Test HAVE_ATTRIBUTE_DESTRUCTOR succeeded with the following output:
+Change Dir: /home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_b080b/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_b080b.dir/build.make CMakeFiles/cmTC_b080b.dir/build
+gmake[1]: Entering directory '/data/home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_b080b.dir/src.c.o
+/usr/bin/cc -DHAVE_ATTRIBUTE_DESTRUCTOR   -o CMakeFiles/cmTC_b080b.dir/src.c.o -c /home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_b080b
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b080b.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_b080b.dir/src.c.o -o cmTC_b080b  /usr/lib64/libz.so -lpthread 
+gmake[1]: Leaving directory '/data/home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+
+		void __attribute__((destructor))
+		f(void) {}
+		int main(void) { return 0; }
+	
+Determining if files arpa/inet.h exist passed with the following output:
+Change Dir: /home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_3cf1c/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_3cf1c.dir/build.make CMakeFiles/cmTC_3cf1c.dir/build
+gmake[1]: Entering directory '/data/home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_3cf1c.dir/HAVE_ARPA_INET_H.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_3cf1c.dir/HAVE_ARPA_INET_H.c.o -c /home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CheckIncludeFiles/HAVE_ARPA_INET_H.c
+Linking C executable cmTC_3cf1c
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3cf1c.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_3cf1c.dir/HAVE_ARPA_INET_H.c.o -o cmTC_3cf1c  /usr/lib64/libz.so -lpthread 
+gmake[1]: Leaving directory '/data/home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if files dlfcn.h exist passed with the following output:
+Change Dir: /home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_dc3c4/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_dc3c4.dir/build.make CMakeFiles/cmTC_dc3c4.dir/build
+gmake[1]: Entering directory '/data/home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_dc3c4.dir/HAVE_DLFCN_H.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_dc3c4.dir/HAVE_DLFCN_H.c.o -c /home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CheckIncludeFiles/HAVE_DLFCN_H.c
+Linking C executable cmTC_dc3c4
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_dc3c4.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_dc3c4.dir/HAVE_DLFCN_H.c.o -o cmTC_dc3c4  /usr/lib64/libz.so -lpthread 
+gmake[1]: Leaving directory '/data/home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function dlopen exists in the dl passed with the following output:
+Change Dir: /home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_c89ca/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_c89ca.dir/build.make CMakeFiles/cmTC_c89ca.dir/build
+gmake[1]: Entering directory '/data/home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_c89ca.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=dlopen -o CMakeFiles/cmTC_c89ca.dir/CheckFunctionExists.c.o -c /usr/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTC_c89ca
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c89ca.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=dlopen CMakeFiles/cmTC_c89ca.dir/CheckFunctionExists.c.o -o cmTC_c89ca  -ldl /usr/lib64/libz.so -lpthread 
+gmake[1]: Leaving directory '/data/home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if files fcntl.h exist passed with the following output:
+Change Dir: /home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_b2f6f/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_b2f6f.dir/build.make CMakeFiles/cmTC_b2f6f.dir/build
+gmake[1]: Entering directory '/data/home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_b2f6f.dir/HAVE_FCNTL_H.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_b2f6f.dir/HAVE_FCNTL_H.c.o -c /home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CheckIncludeFiles/HAVE_FCNTL_H.c
+Linking C executable cmTC_b2f6f
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b2f6f.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_b2f6f.dir/HAVE_FCNTL_H.c.o -o cmTC_b2f6f  /usr/lib64/libz.so -lpthread 
+gmake[1]: Leaving directory '/data/home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function ftime exists passed with the following output:
+Change Dir: /home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_678ee/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_678ee.dir/build.make CMakeFiles/cmTC_678ee.dir/build
+gmake[1]: Entering directory '/data/home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_678ee.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=ftime -o CMakeFiles/cmTC_678ee.dir/CheckFunctionExists.c.o -c /usr/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTC_678ee
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_678ee.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=ftime CMakeFiles/cmTC_678ee.dir/CheckFunctionExists.c.o -o cmTC_678ee  /usr/lib64/libz.so -lpthread 
+gmake[1]: Leaving directory '/data/home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function gettimeofday exists passed with the following output:
+Change Dir: /home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_29085/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_29085.dir/build.make CMakeFiles/cmTC_29085.dir/build
+gmake[1]: Entering directory '/data/home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_29085.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=gettimeofday -o CMakeFiles/cmTC_29085.dir/CheckFunctionExists.c.o -c /usr/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTC_29085
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_29085.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=gettimeofday CMakeFiles/cmTC_29085.dir/CheckFunctionExists.c.o -o cmTC_29085  /usr/lib64/libz.so -lpthread 
+gmake[1]: Leaving directory '/data/home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if files inttypes.h exist passed with the following output:
+Change Dir: /home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_926e1/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_926e1.dir/build.make CMakeFiles/cmTC_926e1.dir/build
+gmake[1]: Entering directory '/data/home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_926e1.dir/HAVE_INTTYPES_H.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_926e1.dir/HAVE_INTTYPES_H.c.o -c /home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CheckIncludeFiles/HAVE_INTTYPES_H.c
+Linking C executable cmTC_926e1
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_926e1.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_926e1.dir/HAVE_INTTYPES_H.c.o -o cmTC_926e1  /usr/lib64/libz.so -lpthread 
+gmake[1]: Leaving directory '/data/home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function isascii exists passed with the following output:
+Change Dir: /home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_face2/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_face2.dir/build.make CMakeFiles/cmTC_face2.dir/build
+gmake[1]: Entering directory '/data/home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_face2.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=isascii -o CMakeFiles/cmTC_face2.dir/CheckFunctionExists.c.o -c /usr/share/cmake/Modules/CheckFunctionExists.c
+<command-line>: warning: conflicting types for built-in function ‘isascii’ [-Wbuiltin-declaration-mismatch]
+/usr/share/cmake/Modules/CheckFunctionExists.c:7:3: note: in expansion of macro ‘CHECK_FUNCTION_EXISTS’
+   CHECK_FUNCTION_EXISTS(void);
+   ^~~~~~~~~~~~~~~~~~~~~
+Linking C executable cmTC_face2
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_face2.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=isascii CMakeFiles/cmTC_face2.dir/CheckFunctionExists.c.o -o cmTC_face2  /usr/lib64/libz.so -lpthread 
+gmake[1]: Leaving directory '/data/home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function mmap exists passed with the following output:
+Change Dir: /home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_fffca/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_fffca.dir/build.make CMakeFiles/cmTC_fffca.dir/build
+gmake[1]: Entering directory '/data/home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_fffca.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=mmap -o CMakeFiles/cmTC_fffca.dir/CheckFunctionExists.c.o -c /usr/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTC_fffca
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fffca.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=mmap CMakeFiles/cmTC_fffca.dir/CheckFunctionExists.c.o -o cmTC_fffca  /usr/lib64/libz.so -lpthread 
+gmake[1]: Leaving directory '/data/home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function munmap exists passed with the following output:
+Change Dir: /home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_f68c3/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_f68c3.dir/build.make CMakeFiles/cmTC_f68c3.dir/build
+gmake[1]: Entering directory '/data/home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_f68c3.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=munmap -o CMakeFiles/cmTC_f68c3.dir/CheckFunctionExists.c.o -c /usr/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTC_f68c3
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f68c3.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=munmap CMakeFiles/cmTC_f68c3.dir/CheckFunctionExists.c.o -o cmTC_f68c3  /usr/lib64/libz.so -lpthread 
+gmake[1]: Leaving directory '/data/home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if files netdb.h exist passed with the following output:
+Change Dir: /home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_902b7/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_902b7.dir/build.make CMakeFiles/cmTC_902b7.dir/build
+gmake[1]: Entering directory '/data/home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_902b7.dir/HAVE_NETDB_H.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_902b7.dir/HAVE_NETDB_H.c.o -c /home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CheckIncludeFiles/HAVE_NETDB_H.c
+Linking C executable cmTC_902b7
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_902b7.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_902b7.dir/HAVE_NETDB_H.c.o -o cmTC_902b7  /usr/lib64/libz.so -lpthread 
+gmake[1]: Leaving directory '/data/home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if files netinet/in.h exist passed with the following output:
+Change Dir: /home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_8bc9b/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_8bc9b.dir/build.make CMakeFiles/cmTC_8bc9b.dir/build
+gmake[1]: Entering directory '/data/home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_8bc9b.dir/HAVE_NETINET_IN_H.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_8bc9b.dir/HAVE_NETINET_IN_H.c.o -c /home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CheckIncludeFiles/HAVE_NETINET_IN_H.c
+Linking C executable cmTC_8bc9b
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8bc9b.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_8bc9b.dir/HAVE_NETINET_IN_H.c.o -o cmTC_8bc9b  /usr/lib64/libz.so -lpthread 
+gmake[1]: Leaving directory '/data/home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if files poll.h exist passed with the following output:
+Change Dir: /home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_84a2c/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_84a2c.dir/build.make CMakeFiles/cmTC_84a2c.dir/build
+gmake[1]: Entering directory '/data/home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_84a2c.dir/HAVE_POLL_H.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_84a2c.dir/HAVE_POLL_H.c.o -c /home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CheckIncludeFiles/HAVE_POLL_H.c
+Linking C executable cmTC_84a2c
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_84a2c.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_84a2c.dir/HAVE_POLL_H.c.o -o cmTC_84a2c  /usr/lib64/libz.so -lpthread 
+gmake[1]: Leaving directory '/data/home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function putenv exists passed with the following output:
+Change Dir: /home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_ccd8c/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_ccd8c.dir/build.make CMakeFiles/cmTC_ccd8c.dir/build
+gmake[1]: Entering directory '/data/home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_ccd8c.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=putenv -o CMakeFiles/cmTC_ccd8c.dir/CheckFunctionExists.c.o -c /usr/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTC_ccd8c
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ccd8c.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=putenv CMakeFiles/cmTC_ccd8c.dir/CheckFunctionExists.c.o -o cmTC_ccd8c  /usr/lib64/libz.so -lpthread 
+gmake[1]: Leaving directory '/data/home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function rand_r exists passed with the following output:
+Change Dir: /home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_57cdd/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_57cdd.dir/build.make CMakeFiles/cmTC_57cdd.dir/build
+gmake[1]: Entering directory '/data/home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_57cdd.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=rand_r -o CMakeFiles/cmTC_57cdd.dir/CheckFunctionExists.c.o -c /usr/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTC_57cdd
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_57cdd.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=rand_r CMakeFiles/cmTC_57cdd.dir/CheckFunctionExists.c.o -o cmTC_57cdd  /usr/lib64/libz.so -lpthread 
+gmake[1]: Leaving directory '/data/home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the function stat exists passed with the following output:
+Change Dir: /home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_a3c8c/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_a3c8c.dir/build.make CMakeFiles/cmTC_a3c8c.dir/build
+gmake[1]: Entering directory '/data/home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_a3c8c.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=stat -o CMakeFiles/cmTC_a3c8c.dir/CheckFunctionExists.c.o -c /usr/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTC_a3c8c
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a3c8c.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=stat CMakeFiles/cmTC_a3c8c.dir/CheckFunctionExists.c.o -o cmTC_a3c8c  /usr/lib64/libz.so -lpthread 
+gmake[1]: Leaving directory '/data/home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if files stdint.h exist passed with the following output:
+Change Dir: /home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_e6f3e/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_e6f3e.dir/build.make CMakeFiles/cmTC_e6f3e.dir/build
+gmake[1]: Entering directory '/data/home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e6f3e.dir/HAVE_STDINT_H.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_e6f3e.dir/HAVE_STDINT_H.c.o -c /home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CheckIncludeFiles/HAVE_STDINT_H.c
+Linking C executable cmTC_e6f3e
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e6f3e.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_e6f3e.dir/HAVE_STDINT_H.c.o -o cmTC_e6f3e  /usr/lib64/libz.so -lpthread 
+gmake[1]: Leaving directory '/data/home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if files sys/mman.h exist passed with the following output:
+Change Dir: /home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_2c198/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_2c198.dir/build.make CMakeFiles/cmTC_2c198.dir/build
+gmake[1]: Entering directory '/data/home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_2c198.dir/HAVE_SYS_MMAN_H.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_2c198.dir/HAVE_SYS_MMAN_H.c.o -c /home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CheckIncludeFiles/HAVE_SYS_MMAN_H.c
+Linking C executable cmTC_2c198
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2c198.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_2c198.dir/HAVE_SYS_MMAN_H.c.o -o cmTC_2c198  /usr/lib64/libz.so -lpthread 
+gmake[1]: Leaving directory '/data/home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if files sys/select.h exist passed with the following output:
+Change Dir: /home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_24162/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_24162.dir/build.make CMakeFiles/cmTC_24162.dir/build
+gmake[1]: Entering directory '/data/home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_24162.dir/HAVE_SYS_SELECT_H.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_24162.dir/HAVE_SYS_SELECT_H.c.o -c /home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CheckIncludeFiles/HAVE_SYS_SELECT_H.c
+Linking C executable cmTC_24162
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_24162.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_24162.dir/HAVE_SYS_SELECT_H.c.o -o cmTC_24162  /usr/lib64/libz.so -lpthread 
+gmake[1]: Leaving directory '/data/home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if files sys/socket.h exist passed with the following output:
+Change Dir: /home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_75c2f/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_75c2f.dir/build.make CMakeFiles/cmTC_75c2f.dir/build
+gmake[1]: Entering directory '/data/home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_75c2f.dir/HAVE_SYS_SOCKET_H.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_75c2f.dir/HAVE_SYS_SOCKET_H.c.o -c /home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CheckIncludeFiles/HAVE_SYS_SOCKET_H.c
+Linking C executable cmTC_75c2f
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_75c2f.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_75c2f.dir/HAVE_SYS_SOCKET_H.c.o -o cmTC_75c2f  /usr/lib64/libz.so -lpthread 
+gmake[1]: Leaving directory '/data/home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if files sys/stat.h exist passed with the following output:
+Change Dir: /home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_90e0c/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_90e0c.dir/build.make CMakeFiles/cmTC_90e0c.dir/build
+gmake[1]: Entering directory '/data/home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_90e0c.dir/HAVE_SYS_STAT_H.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_90e0c.dir/HAVE_SYS_STAT_H.c.o -c /home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CheckIncludeFiles/HAVE_SYS_STAT_H.c
+Linking C executable cmTC_90e0c
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_90e0c.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_90e0c.dir/HAVE_SYS_STAT_H.c.o -o cmTC_90e0c  /usr/lib64/libz.so -lpthread 
+gmake[1]: Leaving directory '/data/home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if files sys/timeb.h exist passed with the following output:
+Change Dir: /home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_13c7c/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_13c7c.dir/build.make CMakeFiles/cmTC_13c7c.dir/build
+gmake[1]: Entering directory '/data/home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_13c7c.dir/HAVE_SYS_TIMEB_H.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_13c7c.dir/HAVE_SYS_TIMEB_H.c.o -c /home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CheckIncludeFiles/HAVE_SYS_TIMEB_H.c
+Linking C executable cmTC_13c7c
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_13c7c.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_13c7c.dir/HAVE_SYS_TIMEB_H.c.o -o cmTC_13c7c  /usr/lib64/libz.so -lpthread 
+gmake[1]: Leaving directory '/data/home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if files sys/time.h exist passed with the following output:
+Change Dir: /home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_3877a/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_3877a.dir/build.make CMakeFiles/cmTC_3877a.dir/build
+gmake[1]: Entering directory '/data/home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_3877a.dir/HAVE_SYS_TIME_H.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_3877a.dir/HAVE_SYS_TIME_H.c.o -c /home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CheckIncludeFiles/HAVE_SYS_TIME_H.c
+Linking C executable cmTC_3877a
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3877a.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_3877a.dir/HAVE_SYS_TIME_H.c.o -o cmTC_3877a  /usr/lib64/libz.so -lpthread 
+gmake[1]: Leaving directory '/data/home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp'
+
+
+
+Determining if the va_copy exist passed with the following output:
+Change Dir: /home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_c2405/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_c2405.dir/build.make CMakeFiles/cmTC_c2405.dir/build
+gmake[1]: Entering directory '/data/home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_c2405.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_c2405.dir/CheckSymbolExists.c.o -c /home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_c2405
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c2405.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_c2405.dir/CheckSymbolExists.c.o -o cmTC_c2405  /usr/lib64/libz.so -lpthread 
+gmake[1]: Leaving directory '/data/home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp'
+
+
+File /home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <stdarg.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef va_copy
+  return ((int*)(&va_copy))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the __va_copy exist passed with the following output:
+Change Dir: /home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_8fdb6/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_8fdb6.dir/build.make CMakeFiles/cmTC_8fdb6.dir/build
+gmake[1]: Entering directory '/data/home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_8fdb6.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_8fdb6.dir/CheckSymbolExists.c.o -c /home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_8fdb6
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8fdb6.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_8fdb6.dir/CheckSymbolExists.c.o -o cmTC_8fdb6  /usr/lib64/libz.so -lpthread 
+gmake[1]: Leaving directory '/data/home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp'
+
+
+File /home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <stdarg.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef __va_copy
+  return ((int*)(&__va_copy))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Performing C SOURCE FILE Test XML_SOCKLEN_T_SOCKLEN_T succeeded with the following output:
+Change Dir: /home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_89819/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_89819.dir/build.make CMakeFiles/cmTC_89819.dir/build
+gmake[1]: Entering directory '/data/home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_89819.dir/src.c.o
+/usr/bin/cc -DXML_SOCKLEN_T_SOCKLEN_T   -o CMakeFiles/cmTC_89819.dir/src.c.o -c /home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_89819
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_89819.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_89819.dir/src.c.o -o cmTC_89819  /usr/lib64/libz.so -lpthread 
+gmake[1]: Leaving directory '/data/home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp'
+
+
+Source file was:
+
+		#include <stddef.h>
+		#include <sys/socket.h>
+		int main() { (void) getsockopt(1, 1, 1, NULL, (socklen_t*) NULL); return 0; }
+	
+Determining if files pthread.h exist passed with the following output:
+Change Dir: /home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_3a5b6/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_3a5b6.dir/build.make CMakeFiles/cmTC_3a5b6.dir/build
+gmake[1]: Entering directory '/data/home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_3a5b6.dir/HAVE_PTHREAD_H.c.o
+/usr/bin/cc   -pedantic -Wall -Wextra -Wshadow -Wpointer-arith -Wcast-align -Wwrite-strings -Waggregate-return -Wstrict-prototypes -Wmissing-prototypes -Wnested-externs -Winline -Wredundant-decls -Wno-long-long -Wno-format-extra-args  -o CMakeFiles/cmTC_3a5b6.dir/HAVE_PTHREAD_H.c.o -c /home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CheckIncludeFiles/HAVE_PTHREAD_H.c
+Linking C executable cmTC_3a5b6
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3a5b6.dir/link.txt --verbose=1
+/usr/bin/cc  -pedantic -Wall -Wextra -Wshadow -Wpointer-arith -Wcast-align -Wwrite-strings -Waggregate-return -Wstrict-prototypes -Wmissing-prototypes -Wnested-externs -Winline -Wredundant-decls -Wno-long-long -Wno-format-extra-args  CMakeFiles/cmTC_3a5b6.dir/HAVE_PTHREAD_H.c.o -o cmTC_3a5b6  /usr/lib64/libz.so -lpthread 
+gmake[1]: Leaving directory '/data/home/csmajs/ahude001/final-project-ahude001-dshao009-jshen075-jrive141/src/libxml2-build/CMakeFiles/CMakeTmp'
+
+
+
