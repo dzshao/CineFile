@@ -4,7 +4,7 @@
 class UserInterface {
     public:
         void printMainMenu();
-        void printMovieList(std::priority_queue<Movie> &);
-}
+        //void printMovieList(std::priority_queue<Movie> &);
+};
 
 #endif
