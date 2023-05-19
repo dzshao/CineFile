@@ -1,6 +1,9 @@
 /* 
 
-This code is just used as a test. It should NOT be included in any final compilation of the program
+This code is just used as a test. It should NOT be included in any final compilation of the program.
+This program also uses cURL, which will not work on the CS100 server. For this to run, you first need to install cURL
+on your computer by running: "sudo apt-get install curl" in the terminal. 
+When you compile this program, make sure to add the -lcurl flag. Ex. "g++ webscrape.cpp -lcurl"
 
 */
 
