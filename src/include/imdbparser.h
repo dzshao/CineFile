@@ -1,4 +1,5 @@
-#ifndef _IMDBPARSER_H_
+#ifndef IMDBPARSER_H
+#define IMDBPARSER_H
 using std::string;
 
 class imdbParser {
