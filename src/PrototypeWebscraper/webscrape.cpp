@@ -43,7 +43,7 @@ int main()
     */
     string URL = "https://www.imdb.com/search/title/?genres=" + genreName;
     // This is just used for prototyping. If desired, the HTML of the scraped page can be output to a .txt file.
-    string fileName = genreName + ".txt";
+    // string fileName = genreName + ".txt";
     CURL *curl;
     CURLcode res;
     string result;
