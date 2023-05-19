@@ -1,3 +1,9 @@
+/* 
+
+This code is just used as a test. It should NOT be included in any final compilation of the program
+
+*/
+
 #include <iostream>
 #include <curl/curl.h>
 #include <string>
