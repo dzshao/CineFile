@@ -19,10 +19,12 @@ int main() {
         //...
     //Prompt for movies' ratings range
     char ratings = interface.getRatingsType();
-    cout << ratings << endl; //test to just parrot input
-    //Prompt for search type
-    char searchType = interface.getSearchType();
-    cout << searchType << endl; //test to just parrot input
+    interface.printRatingsType(ratings);
+    cout << endl;
+    //Prompt for recommendation keywords
+    vector<string> keywords;
+    interface.getSearchKeywords(keywords);
+    interface.printKeywords(keywords);
     
     return 0;
 }

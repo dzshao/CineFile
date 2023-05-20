@@ -8,9 +8,12 @@ class UserInterface {
     public:
         char getCharInput();
         void printWelcomeMessage();
-        char getSearchType();
+        void getSearchKeywords(std::vector<std::string>&);
+        void getKeyword(std::string&);
+        void printKeywords(std::vector<std::string>& keywords);
         char getRatingsType();
-        void printMovieList(std::priority_queue<Movie> &);
+        void printRatingsType(char);
+        void printMovieList(std::priority_queue<Movie>&);
 };
 
 #endif
