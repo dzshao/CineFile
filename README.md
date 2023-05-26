@@ -8,7 +8,7 @@
 ## Project Description
 Almost everyone loves movies, so this is a project that is appealing for us to make and will be useful for others to use. This project is a great opportunity to learn the new tools and skills introduced in CS100 and beyond, as we also get to practice web scraping and algorithm design.
 
-The project will use C++, Visual Studio Code, Git, GitHub, gdb, valgrind, Vim, CMake, GoogleTest, and web scraping. 
+The project will use C++, Visual Studio Code, Git, GitHub, gdb, valgrind, Vim, CMake, GoogleTest, and cURL. 
 
 User can input the name of a movie, genre, director, actor, as well as a rating range. The program will output a list of list of up to ten movie recommendations to watch including their rating, release date and other general information. The movies are sorted based on their rating. 
 
@@ -61,7 +61,7 @@ Press X to return to the main page.
 
 
 ## Class Diagram 
-![UML Class Diagram](https://user-images.githubusercontent.com/102844937/236995286-32b5e83f-ada2-41eb-a7e3-ecee5180075e.png)
+![UML Class Diagram](https://github.com/cs100/final-project-ahude001-dshao009-jshen075-jrive141/blob/master/Design%20Documents/UML%20Class%20Diagram%20(SOLID%20Update).png)
 
 
 
@@ -97,25 +97,7 @@ Upon initialization, the program will create a MovieDatabase object. This object
 - UserInterface
   - Member functions to facilitate user interaction, such as printMainMenu() and printMovieList().
  
- > ## Phase III
- > You will need to schedule a check-in for the second scrum meeting with the same reader you had your first scrum meeting with (using Calendly). Your entire team must be present. This meeting will occur on week 8 during lab time.
- 
- > BEFORE the meeting you should do the following:
- > * Update your class diagram from Phase II to include any feedback you received from your TA/grader.
- > * Considering the SOLID design principles, reflect back on your class diagram and think about how you can use the SOLID principles to improve your design. You should then update the README.md file by adding the following:
- >   * A new class diagram incorporating your changes after considering the SOLID principles.
- >   * For each update in your class diagram, you must explain in 3-4 sentences:
- >     * What SOLID principle(s) did you apply?
- >     * How did you apply it? i.e. describe the change.
- >     * How did this change help you write better code?
- > * Perform a new sprint plan like you did in Phase II.
- > * You should also make sure that your README file (and Project board) are up-to-date reflecting the current status of your project and the most recent class diagram. Previous versions of the README file should still be visible through your commit history.
- 
-> During the meeting with your reader you will discuss: 
- > * How effective your last sprint was (each member should talk about what they did)
- > * Any tasks that did not get completed last sprint, and how you took them into consideration for this sprint
- > * Any bugs you've identified and created issues for during the sprint. Do you plan on fixing them in the next sprint or are they lower priority?
- > * What tasks you are planning for this next sprint.
+We added a new, abstract "MovieWebsiteParser" class to adhere to the dependency inversion principle. Instead of using the imdbParser class, our program will instead use the abstract MovieWebsiteParser class. Having the imdbParser class inherit from the MovieWebsiteParser class makes expanding functionality to movie websites other than IMDb much easier in the future. Rather than restricting us to just using IMDb, we can now easily create new classes for other movie websites that won't break the functionality of the program. This change makes our code much more flexible, maintainable, and open for future improvements.
 
  
  > ## Final deliverable
