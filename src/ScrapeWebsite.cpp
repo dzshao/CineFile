@@ -5,6 +5,7 @@
 on your computer by running: "sudo apt-get install curl" in the terminal. 
 When you compile this program, make sure to add the -lcurl flag. Ex. "g++ ... -lcurl"
 */
+
 size_t write_callback(char *ptr, size_t size, size_t nmemb, void *userdata)
 {
     // This function is called by libcurl when data is received from the website
