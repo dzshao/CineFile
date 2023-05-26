@@ -58,7 +58,15 @@ TEST(ScrapingWebsiteTest, testSuccessfulURL2) {
     string htmlResult = ScrapeWebsite::scrapeSite("https://www.imdb.com");
     string output = testing::internal::GetCapturedStdout();
     EXPECT_EQ(output, "");
-    EXPECT_EQ(htmlResult.substr(0, 15), "<!doctype html>");
+    EXPECT_EQ(htmlResult.substr(0, 15), "<!DOCTYPE html>");
+}
+
+TEST(ScrapingWebsiteTest, testSuccessfulURL3) {
+    testing::internal::CaptureStdout();
+    string htmlResult = ScrapeWebsite::scrapeSite("https://github.com");
+    string output = testing::internal::GetCapturedStdout();
+    EXPECT_EQ(output, "");
+    EXPECT_EQ(htmlResult.substr(0, 15), "\n\n\n\n\n\n<!DOCTYPE");
 }
 
 #endif
