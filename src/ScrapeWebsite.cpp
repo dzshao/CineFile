@@ -6,13 +6,11 @@ on your computer by running: "sudo apt-get install curl" in the terminal.
 When you compile this program, make sure to add the -lcurl flag. Ex. "g++ ... -lcurl"
 */
 
-size_t write_callback(char *ptr, size_t size, size_t nmemb, void *userdata)
-{
+size_t ScrapeWebsite::write_callback(char *startPtr, size_t size, size_t nmemb, void *userdata) {
     // This function is called by libcurl when data is received from the website
-    // You can process the received data here
     string& text = *static_cast<string*>(userdata);
     size_t totalsize = size * nmemb;
-    text.append(static_cast<char*>(ptr), totalsize);
+    text.append(static_cast<char*>(startPtr), totalsize);
 
     return totalsize;
 }
@@ -28,7 +26,7 @@ string ScrapeWebsite::scrapeSite(const string &websiteURL) {
         // Set the URL to be scraped
         curl_easy_setopt(websiteConnection, CURLOPT_URL, websiteURL.c_str());
         // Set the callback function to be called by libcurl when data is received (write_callback function defined above)
-        curl_easy_setopt(websiteConnection, CURLOPT_WRITEFUNCTION, write_callback);
+        curl_easy_setopt(websiteConnection, CURLOPT_WRITEFUNCTION, ScrapeWebsite::write_callback);
         curl_easy_setopt(websiteConnection, CURLOPT_WRITEDATA, &siteHTML);
         // Scraping the website
         res = curl_easy_perform(websiteConnection);
