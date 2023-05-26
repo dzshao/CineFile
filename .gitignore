@@ -4,5 +4,6 @@ Makefile
 cmake_install.cmake
 lib/
 libmovie_recommend.a
+test
 
 .vscode/
