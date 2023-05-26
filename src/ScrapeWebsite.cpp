@@ -17,7 +17,7 @@ size_t write_callback(char *ptr, size_t size, size_t nmemb, void *userdata)
     return totalsize;
 }
 
-static string & ScrapeWebsite::scrapeSite(const string &websiteURL) {
+string ScrapeWebsite::scrapeSite(const string &websiteURL) {
     CURL *websiteConnection = nullptr;
     CURLcode res;
     string siteHTML;
@@ -27,19 +27,17 @@ static string & ScrapeWebsite::scrapeSite(const string &websiteURL) {
     {   
         // Set the URL to be scraped
         curl_easy_setopt(websiteConnection, CURLOPT_URL, websiteURL.c_str());
-
         // Set the callback function to be called by libcurl when data is received (write_callback function defined above)
         curl_easy_setopt(websiteConnection, CURLOPT_WRITEFUNCTION, write_callback);
         curl_easy_setopt(websiteConnection, CURLOPT_WRITEDATA, &siteHTML);
-
         // Scraping the website
         res = curl_easy_perform(websiteConnection);
         if(res != CURLE_OK) {
-            cout << "Error: " << curl_easy_strerror(res) << endl;
+            cout << "Error: " << curl_easy_strerror(res) << std::endl;
         }
 
         // Clean up
-        curl_easy_cleanup(curl);
+        curl_easy_cleanup(websiteConnection);
     }
     return siteHTML;
 }

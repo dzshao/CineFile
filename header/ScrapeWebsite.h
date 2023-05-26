@@ -9,7 +9,7 @@ using std::string;
 
 class ScrapeWebsite {
     public:
-        static string & scrapeSite(const string &) 
+        static string scrapeSite(const string &);
 };
 
 #endif
