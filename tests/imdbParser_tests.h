@@ -15,7 +15,7 @@ TEST(imdbParserTest, testHorror) {
 }
 
 TEST(imdbParserTest, testRomance) {
-    imdbParser romance
+    imdbParser romance;
     vector<string> listOfRomanceMovies = romance.scrapeGenres({"romance"});
     EXPECT_EQ(listOfRomanceMovies.at(0), "Queen Charlotte: A Bridgerton Story");
     EXPECT_EQ(listOfRomanceMovies.at(1), "The Little Mermaid");
