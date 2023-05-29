@@ -4,36 +4,38 @@
 using namespace std;
 
 char UserInterface::getCharInput() {
-    char input;
-    cin >> input;
-    return toupper(input);
+    string input;
+    getline(cin, input);
+
+    char output = input[0];
+    return toupper(output);
 }
 
 void UserInterface::printWelcomeMessage() {
-    cout << "Welcome to Cinefile! We will recommend up to 10 movies based on up to 10 keywords you enter." << endl; 
+    cout << "Welcome to Cinefile! We will recommend up to 10 movies based on keywords you enter." << endl; 
+}
+
+void UserInterface::printKeywordInstructions() {
+    cout << "We're going to ask you for the names of genres, actors, and directors to act as keywords." << endl;
+    cout << "We'll then take those keywords and find movies related to them." << endl;
+    cout << "If you do not want to input all 5 keywords for a group, input 'finished' as a keyword when you are done." << endl;
+    cout << "If you do not put in any keywords, we will just show you random movies within your rating range." << endl;
 }
 
 //Returns a vector of keywords which will be passed into the MovieRecommender class.
 void UserInterface::getSearchKeywords(vector<string>& keywords) { 
-    cout << "We can recommend movies based on up to 10 keywords." << endl;
-    cout << "Try entering keywords such as the names of genres, actors, or directors." << endl;
-    cout << "We'll take those keywords and find movies related to them." << endl;
-    cout << "If you do not want to input 10 keywords, input 'finished' as a keyword when you are done." << endl;
-    cout << endl;
 
     //Initialization
     keywords.clear();
     string keyword;
-    cin.ignore();
 
-    //Get 10 or fewer keywords, do while is better here than a for loop becuase of the way continue works.
-    unsigned i = 0;
+    //Get 5 or fewer keywords.
+    unsigned counter = 0;
     do {
         keyword.clear();
         getKeyword(keyword);
 
-        if (keyword == "finished" && keywords.empty() == true) {
-            cout << "You need at least one keyword." << endl;
+        if (keyword.empty()) {
             continue;
         }
         else if (keyword == "finished") {
@@ -41,18 +43,18 @@ void UserInterface::getSearchKeywords(vector<string>& keywords) {
         }
         else {
             keywords.push_back(keyword);
-            i++;
+            counter++;
         }
-    } while (i < 10);
+    } while (counter < 5);
 
     return;
 }
 
 //Returns an input string converted to all lowercase as a 'keyword' for UserInterface::getSearchKeywords()
 void UserInterface::getKeyword(string& keyword) {
-    cout << "Input your keyword and press enter: " << endl;
+    cout << "Input your keyword and press enter: ";
     getline(cin, keyword);
-
+    cout << endl;
     for (unsigned i = 0; i < keyword.length(); ++i) {
         keyword[i] = tolower(keyword[i]);
     }
@@ -61,14 +63,19 @@ void UserInterface::getKeyword(string& keyword) {
 }
 
 void UserInterface::printKeywords(vector<string>& keywords) {
-    cout << "You input keyword(s): ";
+    if (keywords.empty()) {
+        cout << "you didn't input any keywords." << endl;
+    }
+    else {
+        cout << "you input keyword(s): ";
 
-    for (unsigned i = 0; i < keywords.size(); ++i) {
-        if (i == keywords.size() - 1) {
-            cout << keywords.at(i) << endl;
-        }
-        else {
-            cout << keywords.at(i) << ", ";
+        for (unsigned i = 0; i < keywords.size(); ++i) {
+            if (i == keywords.size() - 1) {
+                cout << keywords.at(i) << endl;
+            }
+            else {
+                cout << keywords.at(i) << ", ";
+            }
         }
     }
 }
@@ -86,6 +93,26 @@ char UserInterface::getRatingsType() {
         output = getCharInput();
         
         if (output == 'H' || output == 'A' || output == 'P') {
+            validInput = true;
+        }
+    } while (!validInput);
+
+    return output;
+}
+
+//loops until a valid input character is entered (H, A, or P). Returns the valid input char.
+char UserInterface::getLoopExitInput() {
+
+    //init variables for valid input loop
+    char output = 'Z';
+    bool validInput = false;
+
+    do {
+        cout << "If you wish to exit, enter Y. If you want to get another set of movie recommendations, enter N." << endl;
+        
+        output = getCharInput();
+        
+        if (output == 'Y' || output == 'N') {
             validInput = true;
         }
     } while (!validInput);
