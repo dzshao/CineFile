@@ -2,7 +2,7 @@
 #define USERINTERFACE_H
 
 #include <queue>
-#include "movie.h"
+#include "../database/movie.h"
 
 class UserInterface {
     public:
