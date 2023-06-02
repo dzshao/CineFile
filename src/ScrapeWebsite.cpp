@@ -1,4 +1,4 @@
-#include "../header/ScrapeWebsite.h"
+#include "../header/webscraping/ScrapeWebsite.h"
 #include <curl/curl.h>
 
 /* This program uses cURL, which will not work on the CS100 server. For this to run, you first need to install cURL

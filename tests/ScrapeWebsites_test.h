@@ -3,7 +3,7 @@
 
 #include <gtest/gtest.h>
 
-#include "../header/ScrapeWebsite.h"
+#include "../header/webscraping/ScrapeWebsite.h"
 
 TEST(ScrapingWebsiteTest, testBlankWebsite) {
     testing::internal::CaptureStdout();
