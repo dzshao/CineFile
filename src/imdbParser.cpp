@@ -1,8 +1,10 @@
 #include "../header/imdbParser.h"
 #include "../header/ScrapeWebsite.h"
+#include <limits>
 
-vector<string>& imdbParser::scrapeGenres(const vector<string>&genreList) {
+vector<string> imdbParser::scrapeGenres(const vector<string>&genreList) {
     const string imdbGenreLink = "https://www.imdb.com/search/title/?genres=";
+    vector<string> listOfMovieTitles;
     for (unsigned i = 0; i < genreList.size(); ++i) {
         stringstream htmlParser(ScrapeWebsite::scrapeSite(imdbGenreLink + genreList.at(i)));
 
@@ -22,7 +24,6 @@ vector<string>& imdbParser::scrapeGenres(const vector<string>&genreList) {
         skipLines(htmlParser, 948);
 
         const int numMovies = 10;
-
         for (unsigned i = 0; i < numMovies; ++i) {
             /* Prior to any movie name, this specific line will always appear and only appears before a movie title listing.
             This while loop iterates through and finds this specific line.
