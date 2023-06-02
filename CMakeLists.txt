@@ -7,6 +7,7 @@ ADD_SUBDIRECTORY(googletest)
 
 add_library(movie_recommend
     src/ScrapeWebsite.cpp
+    src/imdbParser.cpp
 )
 
 ADD_EXECUTABLE(test

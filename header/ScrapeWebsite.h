@@ -6,6 +6,7 @@
 
 using std::cout;
 using std::string;
+using std::endl;
 
 class ScrapeWebsite {
     public:
