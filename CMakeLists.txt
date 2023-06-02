@@ -14,9 +14,4 @@ ADD_EXECUTABLE(test
     tests/_unit_tests.cpp
 )
 
-target_link_libraries(test gmock)
-target_link_libraries(test gtest)
-target_link_libraries(test movie_recommend)
-target_link_libraries(test curl)
-
-target_link_options(test PRIVATE -lcurl)
+target_link_libraries(test gmock gtest movie_recommend curl)

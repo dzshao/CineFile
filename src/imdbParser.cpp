@@ -21,7 +21,7 @@ vector<string> imdbParser::scrapeGenres(const vector<string>&genreList) {
             continue;
         }
         // Skipping the first 940 lines of the HTML, since the first movie will always show up on line 955
-        skipLines(htmlParser, 940);
+        skipLines(htmlParser, 930);
 
         const int numMovies = 10;
         scrapeMovies(htmlParser, listOfMovieTitles, numMovies);

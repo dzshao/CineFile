@@ -22,7 +22,7 @@ TEST(imdbParserTest, testRomance) {
 }
 
 TEST(imdbParserTest, testTwoGenres) {
-    vector<string> listOfHorrorRomanceMovies =imdbParser::scrapeGenres({"romance", "horror"});
+    vector<string> listOfHorrorRomanceMovies = imdbParser::scrapeGenres({"romance", "horror"});
     EXPECT_EQ(listOfHorrorRomanceMovies.at(0), "The Little Mermaid");
     EXPECT_EQ(listOfHorrorRomanceMovies.at(1), "XO, Kitty");
     EXPECT_EQ(listOfHorrorRomanceMovies.at(2), "Queen Charlotte: A Bridgerton Story");
