@@ -12,11 +12,9 @@ using std::endl;
 
 class imdbParser {
     public:
-        vector<string>& scrapeGenres(const vector<string>&);
+        vector<string> static scrapeGenres(const vector<string>&);
         // string& scrapeMovie(const string&);
     private:
-        vector<string> listOfMovieTitles;
-
 
         // set<Director> findDirectorList(const string&);
         // set<Actor> findActorList(const string&);
@@ -24,7 +22,7 @@ class imdbParser {
         // unsigned findRating(const string&);
         // string findTitle(const string&);
 
-        void skipLines(stringstream &, int i);
+        void static skipLines(stringstream &, int i);
 };
 
 #endif

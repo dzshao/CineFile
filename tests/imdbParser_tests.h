@@ -6,8 +6,7 @@
 #include "../header/imdbParser.h"
 
 TEST(imdbParserTest, testHorror) {
-    imdbParser horror;
-    vector<string> listOfHorrorMovies = horror.scrapeGenres({"horror"});
+    vector<string> listOfHorrorMovies = imdbParser::scrapeGenres({"horror"});
     EXPECT_EQ(listOfHorrorMovies.at(0), "Evil Dead Rise");
     EXPECT_EQ(listOfHorrorMovies.at(1), "Five Nights at Freddy's");
     EXPECT_EQ(listOfHorrorMovies.at(2), "From");
@@ -15,8 +14,7 @@ TEST(imdbParserTest, testHorror) {
 }
 
 TEST(imdbParserTest, testRomance) {
-    imdbParser romance;
-    vector<string> listOfRomanceMovies = romance.scrapeGenres({"romance"});
+    vector<string> listOfRomanceMovies = imdbParser::scrapeGenres({"romance"});
     EXPECT_EQ(listOfRomanceMovies.at(0), "Queen Charlotte: A Bridgerton Story");
     EXPECT_EQ(listOfRomanceMovies.at(1), "The Little Mermaid");
     EXPECT_EQ(listOfRomanceMovies.at(2), "Poor Things");
@@ -24,8 +22,7 @@ TEST(imdbParserTest, testRomance) {
 }
 
 TEST(imdbParserTest, testTwoGenres) {
-    imdbParser horrorRomance;
-    vector<string> listOfHorrorRomanceMovies = horrorRomance.scrapeGenres({"romance", "horror"});
+    vector<string> listOfHorrorRomanceMovies =imdbParser::scrapeGenres({"romance", "horror"});
     EXPECT_EQ(listOfHorrorRomanceMovies.at(0), "Queen Charlotte: A Bridgerton Story");
     EXPECT_EQ(listOfHorrorRomanceMovies.at(1), "The Little Mermaid");
     EXPECT_EQ(listOfHorrorRomanceMovies.at(2), "Poor Things");
@@ -38,24 +35,21 @@ TEST(imdbParserTest, testTwoGenres) {
 
 TEST(imdbParserTest, testInvalidGenre) {
     testing::internal::CaptureStdout();
-    imdbParser bogus;
-    vector<string> listOfBogusMovies = bogus.scrapeGenres({"bogusGenre"});
+    vector<string> listOfBogusMovies = imdbParser::scrapeGenres({"bogusGenre"});
     string output = testing::internal::GetCapturedStdout();
     EXPECT_EQ(output, "Please enter a valid genre. (bogusGenre is not a valid genre)\n");
 }
 
 TEST(imdbParserTest, testTwoInvalidGenre) {
     testing::internal::CaptureStdout();
-    imdbParser boguses;
-    vector<string> listOfBogusMovies = boguses.scrapeGenres({"bogusGenre", "bogusGenre2"});
+    vector<string> listOfBogusMovies = imdbParser::scrapeGenres({"bogusGenre", "bogusGenre2"});
     string output = testing::internal::GetCapturedStdout();
     EXPECT_EQ(output, "Please enter a valid genre. (bogusGenre is not a valid genre)\nPlease enter a valid genre. (bogusGenre2 is not a valid genre)\n");
 }
 
 TEST(imdbParserTest, testOneInvalidGenreOneValid) {
     testing::internal::CaptureStdout();
-    imdbParser horrorBogus;
-    vector<string> listOfHorrorBogusMovies = horrorBogus.scrapeGenres({"bogusGenre", "horror"});
+    vector<string> listOfHorrorBogusMovies = imdbParser::scrapeGenres({"bogusGenre", "horror"});
     string output = testing::internal::GetCapturedStdout();
     EXPECT_EQ(output, "Please enter a valid genre. (bogusGenre is not a valid genre)\n");
     EXPECT_EQ(listOfHorrorBogusMovies.at(0), "Evil Dead Rise");
