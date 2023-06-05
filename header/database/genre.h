@@ -3,6 +3,8 @@
 
 #include <string>
 #include <unordered_map>
+
+struct Movie;
 #include "movie.h"
 
 class Genre {
