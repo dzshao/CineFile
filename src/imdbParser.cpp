@@ -1,5 +1,5 @@
-#include "../header/imdbParser.h"
-#include "../header/ScrapeWebsite.h"
+#include "../header/webscraping/imdbParser.h"
+#include "../header/webscraping/ScrapeWebsite.h"
 #include <limits>
 
 vector<string> imdbParser::scrapeGenres(const vector<string>&genreList) {
