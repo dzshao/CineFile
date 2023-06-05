@@ -2,9 +2,9 @@
 #include "../header/webscraping/ScrapeWebsite.h"
 #include <limits>
 
-vector<string> imdbParser::scrapeGenres(const vector<string>&genreList) {
+vector<Movie> imdbParser::scrapeGenres(const vector<string>&genreList) {
     const string imdbGenreLink = "https://www.imdb.com/search/title/?genres=";
-    vector<string> listOfMovieTitles;
+    vector<Movie> listOfMovies;
     for (unsigned i = 0; i < genreList.size(); ++i) {
         stringstream htmlParser(ScrapeWebsite::scrapeSite(imdbGenreLink + genreList.at(i)));
 
@@ -24,9 +24,9 @@ vector<string> imdbParser::scrapeGenres(const vector<string>&genreList) {
         skipLines(htmlParser, 930);
 
         const int numMovies = 10;
-        scrapeMovies(htmlParser, listOfMovieTitles, numMovies);
+        scrapeMovies(htmlParser, listOfMovies, numMovies);
     }
-    return listOfMovieTitles;
+    return listOfMovies;
 }
 
 void imdbParser::skipLines(stringstream &parser, int i) {
@@ -35,25 +35,35 @@ void imdbParser::skipLines(stringstream &parser, int i) {
     }
 }
 
-void imdbParser::scrapeMovies(stringstream& parser, vector<string>& movieList, int numMovies) {
+void imdbParser::scrapeMovies(stringstream& parser, vector<Movie>& movieList, int numMovies) {
     for (unsigned i = 0; i < numMovies; ++i) {
-        /* Prior to any movie name, this specific line will always appear and only appears before a movie title listing.
-        This while loop iterates through and finds this specific line.
-        */
-        string filter;
-        while(filter != "        <div class=\"lister-item-image float-left\">" && getline(parser, filter)) 
-        {}
-        
-        if (!parser) {
-            break;
-        }
-        filter = "";
-        // The next four lines after will be empty and can be skipped
-        skipLines(parser, 3);
+        string movieTitle = findTitle(parser);
+        double movieRating = findRating(parser);
 
-        string movieName;
-        getline(parser, movieName);
-        movieName = movieName.substr(12, movieName.length() - 13);
-        movieList.push_back(movieName);
+        movieList.push_back({movieTitle, movieRating});
     }
+}
+
+unsigned imdbParser::findRating(stringstream &parser) {
+    return 0.0;
+}
+
+ string imdbParser::findTitle(stringstream &parser) {
+    /* Prior to any movie name, this specific line will always appear and only appears before a movie title listing.
+    This while loop iterates through and finds this specific line.
+    */
+    string filter;
+    while(filter != "        <div class=\"lister-item-image float-left\">" && getline(parser, filter)) 
+    {}
+    if (!parser) {
+        return "Error retrieving title";
+    }
+    filter = "";
+
+    // The next four lines after will be empty and can be skipped
+    skipLines(parser, 3);
+
+    string movieName;
+    getline(parser, movieName);
+    return movieName.substr(12, movieName.length() - 13);
 }
