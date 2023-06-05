@@ -11,7 +11,7 @@ struct Movie {
     std::string name;
     double rating;
     unsigned releaseYear;
-    //Missing std::set<Genres> genreList; because of circular includes
+    //Missing std::set<Genre> genreList; because of circular includes
     std::set<Director> directorList;
     std::set<Actor> castList;
 };
