@@ -45,7 +45,7 @@ void imdbParser::scrapeMovies(stringstream& parser, vector<Movie>& movieList, in
 }
 
 unsigned imdbParser::findRating(stringstream &parser) {
-    return 0.0;
+    return 0.0; // Stub function for now
 }
 
  string imdbParser::findTitle(stringstream &parser) {
