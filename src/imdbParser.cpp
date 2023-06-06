@@ -1,7 +1,6 @@
 #include "../header/webscraping/imdbParser.h"
 #include "../header/webscraping/ScrapeWebsite.h"
 
-
 vector<Movie> imdbParser::scrapeGenres(const vector<string>&genreList) {
     const string imdbGenreLink = "https://www.imdb.com/search/title/?genres=";
     vector<Movie> listOfMovies;
@@ -39,16 +38,15 @@ void imdbParser::scrapeMovies(stringstream& parser, vector<Movie>& movieList, in
     for (unsigned i = 0; i < numMovies; ++i) {
         string movieTitle = findTitle(parser);
         double movieRating = findRating(parser);
+        // set<Genre> movieGenres = findGenreList(parser);
+        // set<Director> directorList = findDirectorList(parser);
+        // set<Actor> actorList = findActorList(parser);
 
         movieList.push_back({movieTitle, movieRating});
     }
 }
 
-unsigned imdbParser::findRating(stringstream &parser) {
-    return 0.0; // Stub function for now
-}
-
- string imdbParser::findTitle(stringstream &parser) {
+string imdbParser::findTitle(stringstream &parser) {
     /* Prior to any movie name, this specific line will always appear and only appears before a movie title listing.
     This while loop iterates through and finds this specific line.
     */
@@ -58,7 +56,6 @@ unsigned imdbParser::findRating(stringstream &parser) {
     if (!parser) {
         return "Error retrieving title";
     }
-    filter = "";
 
     // The next four lines after will be empty and can be skipped
     skipLines(parser, 3);
@@ -66,4 +63,22 @@ unsigned imdbParser::findRating(stringstream &parser) {
     string movieName;
     getline(parser, movieName);
     return movieName.substr(12, movieName.length() - 13);
+}
+
+unsigned imdbParser::findRating(stringstream &parser) {
+    return 0.0; // Stub function for now
+}
+
+
+// These functions are stubs for now.
+set<Genre> imdbParser::findGenreList(stringstream &) {
+    return {};
+}
+
+set<Director> imdbParser::findDirectorList(stringstream &) {
+    return {};
+}
+
+set<Actor> imdbParser::findActorList(stringstream &) {
+    return {};
 }

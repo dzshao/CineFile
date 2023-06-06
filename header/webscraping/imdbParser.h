@@ -11,18 +11,18 @@ using std::string;
 using std::stringstream;
 using std::vector;
 using std::endl;
+using std::set;
 
 class imdbParser {
     public:
         vector<Movie> static scrapeGenres(const vector<string>&);
         // string& scrapeMovie(const string&);
     private:
-
-        // set<Director> findDirectorList(stringstream &);
-        // set<Actor> findActorList(stringstream &);
-        // set<Genre> findGenreList(stringstream &);
-        unsigned static findRating(stringstream &);
         string static findTitle(stringstream &);
+        unsigned static findRating(stringstream &);
+        set<Genre> static findGenreList(stringstream &);
+        set<Director> static findDirectorList(stringstream &);
+        set<Actor> static findActorList(stringstream &);
 
         void static skipLines(stringstream &, int i);
         void static scrapeMovies(stringstream &, vector<Movie>&, int i);
