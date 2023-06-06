@@ -15,7 +15,7 @@ TEST(ScrapingWebsiteTest, testBlankWebsite) {
 
 TEST(ScrapingWebsiteTest, testIllegalURL) {
     testing::internal::CaptureStdout();
-    string htmlResult = ScrapeWebsite::scrapeSite("&&&&");
+    string htmlResult = ScrapeWebsite::scrapeSite("@ &&&&");
     string output = testing::internal::GetCapturedStdout();
     EXPECT_EQ(output, "Error: URL using bad/illegal format or missing URL\n");
     EXPECT_EQ(htmlResult, "");
@@ -23,7 +23,7 @@ TEST(ScrapingWebsiteTest, testIllegalURL) {
 
 TEST(ScrapingWebsiteTest, testIllegalURL2) {
     testing::internal::CaptureStdout();
-    string htmlResult = ScrapeWebsite::scrapeSite("@$");
+    string htmlResult = ScrapeWebsite::scrapeSite("@ $");
     string output = testing::internal::GetCapturedStdout();
     EXPECT_EQ(output, "Error: URL using bad/illegal format or missing URL\n");
     EXPECT_EQ(htmlResult, "");
