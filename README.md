@@ -1,6 +1,7 @@
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-718a45dd9cf7e7f842a935f5ebbe5719a5e09af4491e668f4dbf3b35d5cca122.svg)](https://classroom.github.com/online_ide?assignment_repo_id=10931401&assignment_repo_type=AssignmentRepo)
 
 # Movie Recommender
+ [![CI](https://github.com/cs100/final-project-ahude001-dshao009-jshen075-jrive141/actions/workflows/main.yml/badge.svg)](https://github.com/cs100/final-project-ahude001-dshao009-jshen075-jrive141/actions/workflows/main.yml)
  
  Authors: [Daniel Shao](https://github.com/dzshao), [Aaron Hudec](https://github.com/aaronhudec), [Jalen Shen](https://github.com/jleans), [Johann Rivera](https://github.com/Johann-R)
 
