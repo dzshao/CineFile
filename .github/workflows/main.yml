@@ -13,7 +13,7 @@ jobs:
     # Runs a set of commands using the runners shell
     - name: Run tests
       run: |
-        sudo apt-get install curl
+        sudo apt install libcurl4-gnutls-dev
         git submodule update --init
         cmake .
         make
