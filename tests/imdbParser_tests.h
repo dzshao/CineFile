@@ -7,15 +7,15 @@
 #include "../header/database/genre.h"
 
 // Current top movies of each genre
-static const vector<Movie> imdbHorrorList = {{"Yellowjackets", "(2021– )", {{"Drama"}, {"Horror"}, {"Mystery"}}, "7.8"},
-                                             {"From", "(2022– )", {{"Drama"}, {"Horror"}, {"Mystery"}}, "7.7"}, 
-                                             {"The Boogeyman", "(2023)", {{"Horror"}, {"Mystery"}, {"Thriller"}}, "6.2"}, 
-                                             {"The Walking Dead", "(2010–2022)", {{"Drama"}, {"Horror"}, {"Thriller"}}, "8.1"}};
+static const vector<Movie> imdbHorrorList = {{"Yellowjackets", "(2021– )", {{"Drama"}, {"Horror"}, {"Mystery"}}, "7.8", {{"N/A"}}},
+                                             {"From", "(2022– )", {{"Drama"}, {"Horror"}, {"Mystery"}}, "7.7", {{"N/A"}}}, 
+                                             {"The Boogeyman", "(2023)", {{"Horror"}, {"Mystery"}, {"Thriller"}}, "6.2", {{"Rob Savage"}}}, 
+                                             {"The Walking Dead", "(2010–2022)", {{"Drama"}, {"Horror"}, {"Thriller"}}, "8.1", {{"N/A"}}}};
 
-static const vector<Movie> imdbRomanceList {{"The Little Mermaid", "(2023)", {{"Adventure"}, {"Family"}, {"Fantasy"}}, "7.2"},
-                                            {"Barbie", "(2023)", {{"Adventure"}, {"Comedy"}, {"Fantasy"}}, "N/A"}, 
-                                            {"Asteroid City", "(2023)", {{"Comedy"}, {"Drama"}, {"Romance"}}, "6.8"}, 
-                                            {"Queen Charlotte: A Bridgerton Story", "(2023)", {{"Drama"}, {"History"}, {"Romance"}}, "7.3"}};
+static const vector<Movie> imdbRomanceList {{"The Little Mermaid", "(2023)", {{"Adventure"}, {"Family"}, {"Fantasy"}}, "7.2", {{"Rob Marshall"}}},
+                                            {"Barbie", "(2023)", {{"Adventure"}, {"Comedy"}, {"Fantasy"}}, "N/A", {{"Greta Gerwig"}}}, 
+                                            {"Asteroid City", "(2023)", {{"Comedy"}, {"Drama"}, {"Romance"}}, "6.8", {{"Wes Anderson"}}}, 
+                                            {"Queen Charlotte: A Bridgerton Story", "(2023)", {{"Drama"}, {"History"}, {"Romance"}}, "7.3", {{"N/A"}}}};
 
 TEST(imdbParserTest, testHorror) {
     vector<Movie> listOfHorrorMovies = imdbParser::scrapeGenres({"horror"});
@@ -33,12 +33,10 @@ TEST(imdbParserTest, testHorror) {
     EXPECT_EQ(listOfHorrorMovies.at(3).releaseDates, imdbHorrorList.at(3).releaseDates);
 
     // Check genre names
-    for (int i = 0; i < imdbHorrorList.at(0).genreList.size(); ++i) {
-        EXPECT_EQ(listOfHorrorMovies.at(0).genreList.at(i).getName(), imdbHorrorList.at(0).genreList.at(i).getName());
-    }
-
-    for (int i = 0; i < imdbHorrorList.at(1).genreList.size(); ++i) {
-        EXPECT_EQ(listOfHorrorMovies.at(1).genreList.at(i).getName(), imdbHorrorList.at(1).genreList.at(i).getName());
+    for (int i = 0; i < 4; ++i) {
+        for (int j = 0; j < imdbHorrorList.at(i).genreList.size(); ++j) {
+            EXPECT_EQ(listOfHorrorMovies.at(i).genreList.at(j).getName(), imdbHorrorList.at(i).genreList.at(j).getName());
+        }
     }
 
     // Check ratings
@@ -46,6 +44,13 @@ TEST(imdbParserTest, testHorror) {
     EXPECT_EQ(listOfHorrorMovies.at(1).rating, imdbHorrorList.at(1).rating);
     EXPECT_EQ(listOfHorrorMovies.at(2).rating, imdbHorrorList.at(2).rating);
     EXPECT_EQ(listOfHorrorMovies.at(3).rating, imdbHorrorList.at(3).rating);
+
+    // Check Director names
+    for (int i = 0; i < 4; ++i) {
+        for (int j = 0; j < imdbHorrorList.at(i).directorList.size(); ++j) {
+            EXPECT_EQ(listOfHorrorMovies.at(i).directorList.at(j).getName(), imdbHorrorList.at(i).directorList.at(j).getName());
+        }
+    }
 }
 
 TEST(imdbParserTest, testRomance) {
@@ -64,12 +69,10 @@ TEST(imdbParserTest, testRomance) {
     EXPECT_EQ(listOfRomanceMovies.at(3).releaseDates, imdbRomanceList.at(3).releaseDates);
 
     // Check genre names
-    for (int i = 0; i < imdbRomanceList.at(0).genreList.size(); ++i) {
-        EXPECT_EQ(listOfRomanceMovies.at(0).genreList.at(i).getName(), imdbRomanceList.at(0).genreList.at(i).getName());
-    }
-
-    for (int i = 0; i < imdbHorrorList.at(1).genreList.size(); ++i) {
-        EXPECT_EQ(listOfRomanceMovies.at(1).genreList.at(i).getName(), imdbRomanceList.at(1).genreList.at(i).getName());
+    for (int i = 0; i < 4; ++i) {
+        for (int j = 0; j < imdbRomanceList.at(i).genreList.size(); ++j) {
+            EXPECT_EQ(listOfRomanceMovies.at(i).genreList.at(j).getName(), imdbRomanceList.at(i).genreList.at(j).getName());
+        }
     }
 
     // Check ratings
@@ -77,6 +80,13 @@ TEST(imdbParserTest, testRomance) {
     EXPECT_EQ(listOfRomanceMovies.at(1).rating, imdbRomanceList.at(1).rating);
     EXPECT_EQ(listOfRomanceMovies.at(2).rating, imdbRomanceList.at(2).rating);
     EXPECT_EQ(listOfRomanceMovies.at(3).rating, imdbRomanceList.at(3).rating);
+
+    // Check Director names
+    for (int i = 0; i < 4; ++i) {
+        for (int j = 0; j < imdbRomanceList.at(i).directorList.size(); ++j) {
+            EXPECT_EQ(listOfRomanceMovies.at(i).directorList.at(j).getName(), imdbRomanceList.at(i).directorList.at(j).getName());
+        }
+    }
 }
 
 TEST(imdbParserTest, testTwoGenres) {

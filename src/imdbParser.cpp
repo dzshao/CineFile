@@ -26,12 +26,6 @@ vector<Movie> imdbParser::scrapeGenres(const vector<string>&genreList) {
     return listOfMovies;
 }
 
-void imdbParser::skipLines(stringstream &parser, int i) {
-    for (unsigned j = 0; j < i; ++j) {
-        parser.ignore(std::numeric_limits<std::streamsize>::max(), parser.widen('\n'));
-    }
-}
-
 void imdbParser::scrapeMovies(stringstream& parser, vector<Movie>& movieList, int numMovies) {
     for (unsigned i = 0; i < numMovies; ++i) {
         string movieTitle = findTitle(parser);
@@ -47,7 +41,7 @@ void imdbParser::scrapeMovies(stringstream& parser, vector<Movie>& movieList, in
 
 string imdbParser::findTitle(stringstream &parser) {
     /* Prior to any movie name, this specific line will always appear and only appears before a movie title listing.
-    This while loop iterates through and finds this specific line.
+    This function iterates through and finds this specific line.
     */
     findHTML(parser, "        <div class=\"lister-item-image float-left\">");
     if (!parser) {
@@ -111,6 +105,8 @@ vector<Genre> imdbParser::findGenreList(stringstream &parser) {
 string imdbParser::findRating(stringstream &parser) {
     string filter;
     getline(parser, filter);
+    // Some movies aren't released yet and thus won't have a rating. 
+    // This statement checks for that and returns a rating of N/A if there's no rating yet.
     if (filter == "                     <span class=\"ghost\">|</span> ") {
         return "N/A";
     }
@@ -126,7 +122,25 @@ string imdbParser::findRating(stringstream &parser) {
 }
 
 vector<Director> imdbParser::findDirectorList(stringstream &parser) {
-    return {};
+    findHTML(parser, "    <p class=\"\">");
+    string directorCheck;
+    getline(parser, directorCheck);
+    if (directorCheck == "            ") return {{"N/A"}};
+    
+    vector<Director> directorList;
+    string directorFinder;
+    getline(parser, directorFinder);
+    while (directorFinder != "                 <span class=\"ghost\">|</span> ") {
+        getline(parser, directorFinder);
+        if(directorFinder.at(directorFinder.length() - 2) == ',') {
+            directorFinder = directorFinder.substr(0, directorFinder.length() - 2);
+        }
+        string directorName = directorFinder.substr(1, directorFinder.length() - 5);
+        directorList.push_back({directorName});
+        getline(parser, directorFinder);
+    }
+
+    return directorList;
 }
 
 vector<Actor> imdbParser::findActorList(stringstream &parser) {
@@ -137,4 +151,10 @@ void imdbParser::findHTML(stringstream &parser, const string &textToFind) {
     string filter;
     while(filter != textToFind && getline(parser, filter)) 
     {}
+}
+
+void imdbParser::skipLines(stringstream &parser, int i) {
+    for (unsigned j = 0; j < i; ++j) {
+        parser.ignore(std::numeric_limits<std::streamsize>::max(), parser.widen('\n'));
+    }
 }

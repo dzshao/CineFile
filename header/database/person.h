@@ -18,7 +18,7 @@ class Person {
         {};
 
         std::vector<std::string>& getMovieList() const;
-        std::string getName() const;
+        std::string getName() const { return name; };
 
     protected:
         std::vector<std::string> movies;
