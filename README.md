@@ -71,6 +71,7 @@ Director(s): Ari Aster<br>
 Starring: Toni Collette, Alex Wolff, Milly Shapiro<br>
 
 Pan's Labyrinth (2006):<br>
+Rating: 8.2/10<br>
 Genre(s): Drama, Fantasy, War<br>
 Director(s): Guillermo Del Toro<br>
 Starring: Ivana Baquero, Ariadna Gil, Sergi López<br>
