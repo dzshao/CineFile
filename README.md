@@ -119,7 +119,16 @@ Upon initialization, the program will create a MovieDatabase object. This object
   - Stores a set of movies the Person is associated with.
   - Subclasses: Actor, Director
 - UserInterface
-  - Member functions to facilitate user interaction, such as printMainMenu() and printMovieList().
+  - printWelcomeMessage() prints the welcome screen upon starting the program
+  - printMovieList(...) takes in a list of movies returned from the MovieRecommender class to print.
+  - printKeywordInstructions() prints instructions for the user regarding genre/director/actor keyword prompts.
+  - printKeywords(...) prints back the list of all keywords the user entered during keyword prompts.
+  - printRatingsType(...) prints a specific message related to the rating tier a user chose in getRatingsType()
+  - getCharInput() prompts the user to enter a single character with input validation.
+  - getSearchKeywords(...) loop to enter a certain number of keywords for a keyword prompt.
+  - getKeyword(...) gets a single keyword from user input with input validation.
+  - getRatingsType() prompts the user to pick a rating tier for movie recommendations.
+  - getLoopExitInput() prompts the user to exit the program or return to the main menu at the end of execution.
  
 We added a new, abstract "MovieWebsiteParser" class to adhere to the dependency inversion principle. Instead of using the imdbParser class, our program will instead use the abstract MovieWebsiteParser class. Having the imdbParser class inherit from the MovieWebsiteParser class makes expanding functionality to movie websites other than IMDb much easier in the future. Rather than restricting us to just using IMDb, we can now easily create new classes for other movie websites that won't break the functionality of the program. This change makes our code much more flexible, maintainable, and open for future improvements.
 
