@@ -12,9 +12,9 @@ class Genre;
 
 struct Movie {
     std::string name;
-    double rating;
     std::string releaseDates;
     std::vector<Genre> genreList;
+    std::string rating;
     std::vector<Director> directorList;
     std::vector<Actor> castList;
 };

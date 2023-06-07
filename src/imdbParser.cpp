@@ -37,11 +37,11 @@ void imdbParser::scrapeMovies(stringstream& parser, vector<Movie>& movieList, in
         string movieTitle = findTitle(parser);
         string releaseDate = findReleaseDate(parser);
         vector<Genre> movieGenres = findGenreList(parser);
-        double movieRating = findRating(parser);
+        string movieRating = findRating(parser);
         vector<Director> directorList = findDirectorList(parser);
         vector<Actor> actorList = findActorList(parser);
 
-        movieList.push_back({movieTitle, movieRating, releaseDate, movieGenres, directorList, actorList});
+        movieList.push_back({movieTitle, releaseDate, movieGenres, movieRating, directorList, actorList});
     }
 }
 
@@ -108,8 +108,21 @@ vector<Genre> imdbParser::findGenreList(stringstream &parser) {
     return genreList;
 }
 
-double imdbParser::findRating(stringstream &parser) {
-    return 0.0; // Stub function for now
+string imdbParser::findRating(stringstream &parser) {
+    string filter;
+    getline(parser, filter);
+    if (filter == "                     <span class=\"ghost\">|</span> ") {
+        return "N/A";
+    }
+    findHTML(parser, "        <span class=\"global-sprite rating-star imdb-rating\"></span>");
+
+    string rating;
+    getline(parser, rating);
+
+    // Extracting the rating value out of the line of HTML
+    rating = rating.substr(16, 3);
+
+    return rating;
 }
 
 vector<Director> imdbParser::findDirectorList(stringstream &parser) {

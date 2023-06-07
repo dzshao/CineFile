@@ -16,12 +16,11 @@ using std::set;
 class imdbParser {
     public:
         vector<Movie> static scrapeGenres(const vector<string>&);
-        // string& scrapeMovie(const string&);
     private:
         string static findTitle(stringstream &);
         string static findReleaseDate(stringstream &);
         vector<Genre> static findGenreList(stringstream &);
-        double static findRating(stringstream &);
+        string static findRating(stringstream &);
         vector<Director> static findDirectorList(stringstream &);
         vector<Actor> static findActorList(stringstream &);
 
