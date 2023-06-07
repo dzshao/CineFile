@@ -19,8 +19,6 @@ vector<Movie> imdbParser::scrapeGenres(const vector<string>&genreList) {
             cout << "Please enter a valid genre. (" << genreList.at(i) << " is not a valid genre)" << endl;
             continue;
         }
-        // Skipping the first 930 lines of the HTML, since the first movie will always show up on line 955
-        skipLines(htmlParser, 930);
 
         const int numMovies = 10;
         scrapeMovies(htmlParser, listOfMovies, numMovies);
@@ -82,7 +80,7 @@ string imdbParser::findReleaseDate(stringstream &parser) {
             break;
         }
     }
-    
+
     return releaseDate;
 }
 
