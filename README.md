@@ -18,47 +18,69 @@ The program will scrape information from movie websites such as imdb to obtain r
 ## User Interface Specification
  
 ### Navigation Diagram
-![Navigation Diagram](https://user-images.githubusercontent.com/102844937/236991243-7770b0d9-0eb1-4c65-bb43-ae40fcda8377.png) 
-This diagram depicts the paths a user can take through our program. Starting at the main menu when they launch the program, they are filled in on what the program does and immediately prompted for which criteria they would like to earch by. 
+![Navigation Diagram](https://github.com/cs100/final-project-ahude001-dshao009-jshen075-jrive141/blob/master/Design%20Documents/navigation_chart_final.png?raw=true) 
+This diagram depicts the path a user takes throughout the execution of the program. Starting at the main menu when they launch the program, they are filled in on what the program does and immediately taken to prompts which determine the list of movie recommendations they will receive. 
 
-After choosing their criteria, the user can choose what tier of ratings they would like to sort by. After choosing the ratings, the user will then enter the keywords they are sorting by and confirm once they are done entering them. They will then receive a list of recommendations, and an option to generate another list of recommendations off of the same criteria or return to the main menu, where they can input another set of criteria to search by. 
+The user must choose what tier of ratings they would like to search for (this acts as the sole determiner of results if the user chooses to not enter any search keywords later). After choosing the rating range, the user will then then enter three more prompts to gather search keywords: one for genres, another for directors, and finally for actors. The user will enter their keywords and "finish" when they are done; the user may enter finish to skip the search for that specific keyword type. They will then receive a list of movie recommendations, and an option to exit the program or return to the main menu to begin a new search.
 
 
 ### Screen Layouts
 Main page with a prompt that recommends 10 movies based on various criteria. The various criteria is a text box one can add various keywords to, such as director, genre, actors, themes, etc. User will also be prompted on what the average ratings of the movies will be. Keywords will be entered one by one, pressing enter each time to input the next keyword. Finish entering keywords by entering E to confirm. Once all keywords are entered the user is sent to a page with 10 movies. Each movie will have a link to a page with info about it, a short blurb about the movie, and keywords about the movie listed.
 After movies are listed, users can enter x or some other letter to exit and go back to the main page.  (If movies not found that match keywords after being excluded, we can recommend movies at random)
 
-
 ### Example interface interaction:
 
-Welcome to Cinefile! We will recommend 10 movies based on the keywords that you will enter. We can recommend movies based on multiple categories: titles (T), genres (G), directors (D) ,and actors (A). What criteria would you like to search by? Enter the letter corresponding to your desired category. 
+Welcome to Cinefile! We will recommend up to 10 movies based on keywords you enter.<br>
+First, are you looking for movies which are highly rated (H), average rated (A), or poorly rated (P)? Please enter the corresponding letter.<br>
 
-> T
+> H
 
-You would like to search by title. Would you like highly rated movies (H) , poorly rated movies (P), or averagely rated movies (A)? Please enter the letter corresponding to the ratings you would like. 
+Great! We'll only recommend movies that are highly rated.<br>
 
-> A
+We're going to ask you for the names of genres, directors, and actors to act as keywords.<br>
+We'll then take those keywords and find movies related to them.<br>
+If you do not want to input all 5 keywords for a group, input 'finished' as a keyword when you are done.<br>
+If you do not put in any keywords, we will just show you random movies within your rating range.<br>
 
-Please enter each keyword individually, hitting “ENTER” between each one. Once you have entered all your keywords, please enter “C” to confirm your keywords.
+Let's start with genres. Enter up to 5, or enter 'finished' when you are done if you have less than 5.<br>
 
->fire
->superhero
->funny
->niche
->the rock
->C
+>Horror<br>
+>Drama<br>
+>finished
 
-Confirmed! Generating your custom list of movie recommendations…
+Now, how about directors? Enter up to 5, or enter 'finished' when you are done if you have less than 5.
 
-1: Mario Movie 
-(link to imdb or wikipedia here) (link to trailer)
-Mario bros go on wacky adventure from new york or whatever 
-Keywords: trending, game, mario, chris pratt, family
-etc.
+>Guillermo Del Toro<br>
+>Ari Aster<br>
+>finished
 
-Press X to return to the main page.
+Finally, what about actors? Enter up to 5, or enter 'finished' when you are done if you have less than 5.
 
->X
+>finished
+
+Okay, for genres you input keyword(s): horror, drama<br>
+For directors, you input keyword(s): guillermo del toro, ari aster<br>
+For actors, you didn't input any keywords.<br>
+
+Here's your list of movie recommendations:<br>
+
+Hereditary (2018):<br>
+Rating: 7.3/10<br>
+Genre(s): Horror, Mystery, Thriller, Drama<br>
+Director(s): Ari Aster<br>
+Starring: Toni Collette, Alex Wolff, Milly Shapiro<br>
+
+Pan's Labyrinth (2006):<br>
+Genre(s): Drama, Fantasy, War<br>
+Director(s): Guillermo Del Toro<br>
+Starring: Ivana Baquero, Ariadna Gil, Sergi López<br>
+...<br>
+
+If you wish to exit, enter Y. If you want to get another set of movie recommendations, enter N.
+
+>Y
+
+Thank you for using Cinefile!
 
 
 ## Class Diagram 
