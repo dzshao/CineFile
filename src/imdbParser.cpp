@@ -49,9 +49,7 @@ string imdbParser::findTitle(stringstream &parser) {
     /* Prior to any movie name, this specific line will always appear and only appears before a movie title listing.
     This while loop iterates through and finds this specific line.
     */
-    string filter;
-    while(filter != "        <div class=\"lister-item-image float-left\">" && getline(parser, filter)) 
-    {}
+    findHTML(parser, "        <div class=\"lister-item-image float-left\">");
     if (!parser) {
         return "Error retrieving title";
     }
@@ -66,14 +64,17 @@ string imdbParser::findTitle(stringstream &parser) {
 
 // These functions are stubs for now.
 string imdbParser::findReleaseDate(stringstream &parser) {
-    string filter;
-    while(filter.substr(0, 53) != "    <span class=\"lister-item-year text-muted unbold\">" && getline(parser, filter)) 
-    {}
+    findHTML(parser, "<h3 class=\"lister-item-header\">");
     if (!parser) {
-        return "Error retrieving release date";
+        return "Error getting release date";
     }
-    
-    string releaseDate = filter.substr(53, filter.length() - 60);
+    skipLines(parser, 4);
+
+    string releaseDate;
+    getline(parser, releaseDate);
+
+    releaseDate = releaseDate.substr(53, releaseDate.length() - 60);
+
     for (int i = releaseDate.length() - 1; i >=0; --i) {
         if (releaseDate.at(i) == '(') {
             releaseDate = releaseDate.substr(i, releaseDate.length() - i);
@@ -84,12 +85,31 @@ string imdbParser::findReleaseDate(stringstream &parser) {
     return releaseDate;
 }
 
-double imdbParser::findRating(stringstream &parser) {
-    return 0.0; // Stub function for now
+vector<Genre> imdbParser::findGenreList(stringstream &parser) {
+    findHTML(parser, "            <span class=\"genre\">");
+
+    if (!parser) {
+        return {{"Error getting genres"}};
+    }
+    string genres;
+    getline(parser, genres);
+    genres = genres.substr(0, genres.length() - 19);
+
+    vector<Genre> genreList;
+    stringstream genreParse(genres);
+    while (genreParse >> genres) {
+        if (genres.at(genres.length() - 1) == ',') {
+            genreList.push_back({genres.substr(0, genres.length() - 1)});
+        } else {
+            genreList.push_back({genres});
+        }
+    }
+
+    return genreList;
 }
 
-vector<Genre> imdbParser::findGenreList(stringstream &parser) {
-    return {};
+double imdbParser::findRating(stringstream &parser) {
+    return 0.0; // Stub function for now
 }
 
 vector<Director> imdbParser::findDirectorList(stringstream &parser) {
@@ -98,4 +118,10 @@ vector<Director> imdbParser::findDirectorList(stringstream &parser) {
 
 vector<Actor> imdbParser::findActorList(stringstream &parser) {
     return {};
+}
+
+void imdbParser::findHTML(stringstream &parser, const string &textToFind) {
+    string filter;
+    while(filter != textToFind && getline(parser, filter)) 
+    {}
 }

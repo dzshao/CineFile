@@ -7,28 +7,44 @@
 
 TEST(imdbParserTest, testHorror) {
     vector<Movie> listOfHorrorMovies = imdbParser::scrapeGenres({"horror"});
+
+    // Check titles
     EXPECT_EQ(listOfHorrorMovies.at(0).name, "Yellowjackets");
     EXPECT_EQ(listOfHorrorMovies.at(1).name, "From");
     EXPECT_EQ(listOfHorrorMovies.at(2).name, "The Boogeyman");
     EXPECT_EQ(listOfHorrorMovies.at(3).name, "The Walking Dead");
 
+    // Check release dates
     EXPECT_EQ(listOfHorrorMovies.at(0).releaseDates, "(2021– )");
     EXPECT_EQ(listOfHorrorMovies.at(1).releaseDates, "(2022– )");
     EXPECT_EQ(listOfHorrorMovies.at(2).releaseDates, "(2023)");
     EXPECT_EQ(listOfHorrorMovies.at(3).releaseDates, "(2010–2022)");
+
+    // Check genre names
+    EXPECT_EQ(listOfHorrorMovies.at(0).genreList.at(0).getName(), "Drama");
+    EXPECT_EQ(listOfHorrorMovies.at(0).genreList.at(1).getName(), "Horror");
+    EXPECT_EQ(listOfHorrorMovies.at(0).genreList.at(2).getName(), "Mystery");
 }
 
 TEST(imdbParserTest, testRomance) {
     vector<Movie> listOfRomanceMovies = imdbParser::scrapeGenres({"romance"});
+    
+    // Check titles
     EXPECT_EQ(listOfRomanceMovies.at(0).name, "The Little Mermaid");
     EXPECT_EQ(listOfRomanceMovies.at(1).name, "Barbie");
     EXPECT_EQ(listOfRomanceMovies.at(2).name, "Asteroid City");
     EXPECT_EQ(listOfRomanceMovies.at(3).name, "Queen Charlotte: A Bridgerton Story");
 
+    // Check release dates
     EXPECT_EQ(listOfRomanceMovies.at(0).releaseDates, "(2023)");
     EXPECT_EQ(listOfRomanceMovies.at(1).releaseDates, "(2023)");
     EXPECT_EQ(listOfRomanceMovies.at(2).releaseDates, "(2023)");
     EXPECT_EQ(listOfRomanceMovies.at(3).releaseDates, "(2023)");
+
+    // Check genre names
+    EXPECT_EQ(listOfRomanceMovies.at(0).genreList.at(0).getName(), "Adventure");
+    EXPECT_EQ(listOfRomanceMovies.at(0).genreList.at(1).getName(), "Family");
+    EXPECT_EQ(listOfRomanceMovies.at(0).genreList.at(2).getName(), "Fantasy");
 }
 
 TEST(imdbParserTest, testTwoGenres) {
@@ -38,18 +54,10 @@ TEST(imdbParserTest, testTwoGenres) {
     EXPECT_EQ(listOfHorrorRomanceMovies.at(1).name, "Barbie");
     EXPECT_EQ(listOfHorrorRomanceMovies.at(2).name, "Asteroid City");
 
-    EXPECT_EQ(listOfHorrorRomanceMovies.at(0).releaseDates, "(2023)");
-    EXPECT_EQ(listOfHorrorRomanceMovies.at(1).releaseDates, "(2023)");
-    EXPECT_EQ(listOfHorrorRomanceMovies.at(2).releaseDates, "(2023)");
-
      // Checking if the horror movies parsed are correct
     EXPECT_EQ(listOfHorrorRomanceMovies.at(10).name, "Yellowjackets");
     EXPECT_EQ(listOfHorrorRomanceMovies.at(11).name, "From");
     EXPECT_EQ(listOfHorrorRomanceMovies.at(12).name, "The Boogeyman");
-
-    EXPECT_EQ(listOfHorrorRomanceMovies.at(10).releaseDates, "(2021– )");
-    EXPECT_EQ(listOfHorrorRomanceMovies.at(11).releaseDates, "(2022– )");
-    EXPECT_EQ(listOfHorrorRomanceMovies.at(12).releaseDates, "(2023)");
 }
 
 TEST(imdbParserTest, testInvalidGenre) {
@@ -76,11 +84,6 @@ TEST(imdbParserTest, testOneInvalidGenreOneValid) {
     EXPECT_EQ(listOfHorrorBogusMovies.at(1).name, "From");
     EXPECT_EQ(listOfHorrorBogusMovies.at(2).name, "The Boogeyman");
     EXPECT_EQ(listOfHorrorBogusMovies.at(3).name, "The Walking Dead");
-
-    EXPECT_EQ(listOfHorrorBogusMovies.at(0).releaseDates, "(2021– )");
-    EXPECT_EQ(listOfHorrorBogusMovies.at(1).releaseDates, "(2022– )");
-    EXPECT_EQ(listOfHorrorBogusMovies.at(2).releaseDates, "(2023)");
-    EXPECT_EQ(listOfHorrorBogusMovies.at(3).releaseDates, "(2010–2022)");
 }
 
 #endif

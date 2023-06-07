@@ -27,6 +27,7 @@ class imdbParser {
 
         void static skipLines(stringstream &, int i);
         void static scrapeMovies(stringstream &, vector<Movie>&, int i);
+        void static findHTML(stringstream &, const string &);
 };
 
 #endif
