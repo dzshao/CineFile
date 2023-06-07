@@ -7,15 +7,15 @@
 #include "../header/database/genre.h"
 
 // Current top movies of each genre
-static const vector<Movie> imdbHorrorList = {{"Yellowjackets", "(2021– )", {{"Drama"}, {"Horror"}, {"Mystery"}}, "7.8", {{"N/A"}}},
-                                             {"From", "(2022– )", {{"Drama"}, {"Horror"}, {"Mystery"}}, "7.7", {{"N/A"}}}, 
-                                             {"The Boogeyman", "(2023)", {{"Horror"}, {"Mystery"}, {"Thriller"}}, "6.2", {{"Rob Savage"}}}, 
-                                             {"The Walking Dead", "(2010–2022)", {{"Drama"}, {"Horror"}, {"Thriller"}}, "8.1", {{"N/A"}}}};
+static const vector<Movie> imdbHorrorList = {{"Yellowjackets", "(2021– )", {{"Drama"}, {"Horror"}, {"Mystery"}}, "7.8", {{"N/A"}}, {{"Melanie Lynskey"}, {"Tawny Cypress"}, {"Sophie Nélisse"}, {"Jasmin Savoy Brown"}}},
+                                             {"From", "(2022– )", {{"Drama"}, {"Horror"}, {"Mystery"}}, "7.7", {{"N/A"}}, {{"Scott McCord"}, {"Harold Perrineau"}, {"Catalina Sandino Moreno"}, {"Eion Bailey"}}}, 
+                                             {"The Boogeyman", "(2023)", {{"Horror"}, {"Mystery"}, {"Thriller"}}, "6.2", {{"Rob Savage"}}, {{"Sophie Thatcher"}, {"Chris Messina"}, {"Vivien Lyra Blair"}, {"David Dastmalchian"}}}, 
+                                             {"The Walking Dead", "(2010–2022)", {{"Drama"}, {"Horror"}, {"Thriller"}}, "8.1", {{"N/A"}}, {{"Andrew Lincoln"}, {"Norman Reedus"}, {"Melissa McBride"}, {"Lauren Cohan"}}}};
 
-static const vector<Movie> imdbRomanceList {{"The Little Mermaid", "(2023)", {{"Adventure"}, {"Family"}, {"Fantasy"}}, "7.2", {{"Rob Marshall"}}},
-                                            {"Barbie", "(2023)", {{"Adventure"}, {"Comedy"}, {"Fantasy"}}, "N/A", {{"Greta Gerwig"}}}, 
-                                            {"Asteroid City", "(2023)", {{"Comedy"}, {"Drama"}, {"Romance"}}, "6.8", {{"Wes Anderson"}}}, 
-                                            {"Queen Charlotte: A Bridgerton Story", "(2023)", {{"Drama"}, {"History"}, {"Romance"}}, "7.3", {{"N/A"}}}};
+static const vector<Movie> imdbRomanceList {{"The Little Mermaid", "(2023)", {{"Adventure"}, {"Family"}, {"Fantasy"}}, "7.2", {{"Rob Marshall"}}, {{"Halle Bailey"}, {"Jonah Hauer-King"}, {"Melissa McCarthy"}, {"Javier Bardem"}}},
+                                            {"Barbie", "(2023)", {{"Adventure"}, {"Comedy"}, {"Fantasy"}}, "N/A", {{"Greta Gerwig"}}, {{"Margot Robbie"}, {"Ryan Gosling"}, {"Dua Lipa"}, {"Ariana Greenblatt"}}}, 
+                                            {"Asteroid City", "(2023)", {{"Comedy"}, {"Drama"}, {"Romance"}}, "6.8", {{"Wes Anderson"}}, {{"Jason Schwartzman"}, {"Scarlett Johansson"}, {"Tom Hanks"}, {"Jeffrey Wright"}}}, 
+                                            {"Queen Charlotte: A Bridgerton Story", "(2023)", {{"Drama"}, {"History"}, {"Romance"}}, "7.3", {{"N/A"}}, {{"India Amarteifio"}, {"Adjoa Andoh"}, {"Michelle Fairley"}, {"Ruth Gemmell"}}}};
 
 TEST(imdbParserTest, testHorror) {
     vector<Movie> listOfHorrorMovies = imdbParser::scrapeGenres({"horror"});
@@ -49,6 +49,13 @@ TEST(imdbParserTest, testHorror) {
     for (int i = 0; i < 4; ++i) {
         for (int j = 0; j < imdbHorrorList.at(i).directorList.size(); ++j) {
             EXPECT_EQ(listOfHorrorMovies.at(i).directorList.at(j).getName(), imdbHorrorList.at(i).directorList.at(j).getName());
+        }
+    }
+
+    // Check Director names
+    for (int i = 0; i < 4; ++i) {
+        for (int j = 0; j < imdbHorrorList.at(i).castList.size(); ++j) {
+            EXPECT_EQ(listOfHorrorMovies.at(i).castList.at(j).getName(), imdbHorrorList.at(i).castList.at(j).getName());
         }
     }
 }
@@ -85,6 +92,13 @@ TEST(imdbParserTest, testRomance) {
     for (int i = 0; i < 4; ++i) {
         for (int j = 0; j < imdbRomanceList.at(i).directorList.size(); ++j) {
             EXPECT_EQ(listOfRomanceMovies.at(i).directorList.at(j).getName(), imdbRomanceList.at(i).directorList.at(j).getName());
+        }
+    }
+
+    // Check Cast names
+    for (int i = 0; i < 4; ++i) {
+        for (int j = 0; j < imdbRomanceList.at(i).castList.size(); ++j) {
+            EXPECT_EQ(listOfRomanceMovies.at(i).castList.at(j).getName(), imdbRomanceList.at(i).castList.at(j).getName());
         }
     }
 }

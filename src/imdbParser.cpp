@@ -144,7 +144,23 @@ vector<Director> imdbParser::findDirectorList(stringstream &parser) {
 }
 
 vector<Actor> imdbParser::findActorList(stringstream &parser) {
-    return {};
+    skipLines(parser, 1);
+
+    string actorFinder;
+    getline(parser, actorFinder);
+
+    vector<Actor> actorList;
+    while(actorFinder != "    </p>" ) {
+        getline(parser, actorFinder);
+        if(actorFinder.at(actorFinder.length() - 2) == ',') {
+            actorFinder = actorFinder.substr(0, actorFinder.length() - 2);
+        }
+        string actorName = actorFinder.substr(1, actorFinder.length() - 5);
+        actorList.push_back({actorName});
+        getline(parser, actorFinder);
+    }
+
+    return actorList;
 }
 
 void imdbParser::findHTML(stringstream &parser, const string &textToFind) {
