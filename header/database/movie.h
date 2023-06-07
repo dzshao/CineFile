@@ -3,9 +3,11 @@
 
 #include <set>
 #include <vector>
+#include <string>
 
 #include "actor.h"
 #include "director.h"
+class Genre;
 #include "genre.h"
 
 struct Movie {

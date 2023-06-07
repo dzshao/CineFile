@@ -5,7 +5,7 @@
 #include <string>
 #include <sstream>
 #include <limits>
-#include "../database/movie.h"
+#include "../database/genre.h"
 
 using std::string;
 using std::stringstream;
