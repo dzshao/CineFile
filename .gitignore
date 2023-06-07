@@ -7,5 +7,6 @@ libmovie_recommend.a
 test
 src/PrototypeWebscraper/horror.txt
 src/PrototypeWebscraper/webscrape
+movieRecommender
 
 .vscode/

@@ -2,7 +2,7 @@
 #define MOVIE_H
 
 #include <set>
-#include <string>
+#include <vector>
 
 #include "actor.h"
 #include "director.h"
@@ -11,10 +11,10 @@
 struct Movie {
     std::string name;
     double rating;
-    unsigned releaseYear;
-    std::set<Genre> genreList;
-    std::set<Director> directorList;
-    std::set<Actor> castList;
+    std::string releaseDates;
+    std::vector<Genre> genreList;
+    std::vector<Director> directorList;
+    std::vector<Actor> castList;
 };
 
 #endif

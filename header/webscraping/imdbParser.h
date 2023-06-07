@@ -19,10 +19,11 @@ class imdbParser {
         // string& scrapeMovie(const string&);
     private:
         string static findTitle(stringstream &);
-        unsigned static findRating(stringstream &);
-        set<Genre> static findGenreList(stringstream &);
-        set<Director> static findDirectorList(stringstream &);
-        set<Actor> static findActorList(stringstream &);
+        string static findReleaseDate(stringstream &);
+        vector<Genre> static findGenreList(stringstream &);
+        double static findRating(stringstream &);
+        vector<Director> static findDirectorList(stringstream &);
+        vector<Actor> static findActorList(stringstream &);
 
         void static skipLines(stringstream &, int i);
         void static scrapeMovies(stringstream &, vector<Movie>&, int i);

@@ -19,7 +19,7 @@ vector<Movie> imdbParser::scrapeGenres(const vector<string>&genreList) {
             cout << "Please enter a valid genre. (" << genreList.at(i) << " is not a valid genre)" << endl;
             continue;
         }
-        // Skipping the first 940 lines of the HTML, since the first movie will always show up on line 955
+        // Skipping the first 930 lines of the HTML, since the first movie will always show up on line 955
         skipLines(htmlParser, 930);
 
         const int numMovies = 10;
@@ -37,12 +37,13 @@ void imdbParser::skipLines(stringstream &parser, int i) {
 void imdbParser::scrapeMovies(stringstream& parser, vector<Movie>& movieList, int numMovies) {
     for (unsigned i = 0; i < numMovies; ++i) {
         string movieTitle = findTitle(parser);
+        string releaseDate = findReleaseDate(parser);
+        vector<Genre> movieGenres = findGenreList(parser);
         double movieRating = findRating(parser);
-        // set<Genre> movieGenres = findGenreList(parser);
-        // set<Director> directorList = findDirectorList(parser);
-        // set<Actor> actorList = findActorList(parser);
+        vector<Director> directorList = findDirectorList(parser);
+        vector<Actor> actorList = findActorList(parser);
 
-        movieList.push_back({movieTitle, movieRating});
+        movieList.push_back({movieTitle, movieRating, releaseDate, movieGenres, directorList, actorList});
     }
 }
 
@@ -65,20 +66,38 @@ string imdbParser::findTitle(stringstream &parser) {
     return movieName.substr(12, movieName.length() - 13);
 }
 
-unsigned imdbParser::findRating(stringstream &parser) {
+// These functions are stubs for now.
+string imdbParser::findReleaseDate(stringstream &parser) {
+    string filter;
+    while(filter.substr(0, 53) != "    <span class=\"lister-item-year text-muted unbold\">" && getline(parser, filter)) 
+    {}
+    if (!parser) {
+        return "Error retrieving release date";
+    }
+    
+    string releaseDate = filter.substr(53, filter.length() - 60);
+    for (int i = releaseDate.length() - 1; i >=0; --i) {
+        if (releaseDate.at(i) == '(') {
+            releaseDate = releaseDate.substr(i, releaseDate.length() - i);
+            break;
+        }
+    }
+    
+    return releaseDate;
+}
+
+double imdbParser::findRating(stringstream &parser) {
     return 0.0; // Stub function for now
 }
 
-
-// These functions are stubs for now.
-set<Genre> imdbParser::findGenreList(stringstream &) {
+vector<Genre> imdbParser::findGenreList(stringstream &parser) {
     return {};
 }
 
-set<Director> imdbParser::findDirectorList(stringstream &) {
+vector<Director> imdbParser::findDirectorList(stringstream &parser) {
     return {};
 }
 
-set<Actor> imdbParser::findActorList(stringstream &) {
+vector<Actor> imdbParser::findActorList(stringstream &parser) {
     return {};
 }
