@@ -8,7 +8,10 @@ struct Movie;
 
 class Genre {
     public: 
-        Genre();
+        Genre() :
+            name(),
+            listOfMovies()
+        {};
 
         Genre(std::string _name) : 
             name(_name)

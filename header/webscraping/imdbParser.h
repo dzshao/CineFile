@@ -16,16 +16,17 @@ using std::set;
 class imdbParser {
     public:
         vector<Movie> static scrapeGenres(const vector<string>&);
+        void static scrapeMovies(stringstream &, vector<Movie>&, int i);
+
     private:
         string static findTitle(stringstream &);
         string static findReleaseDate(stringstream &);
         vector<Genre> static findGenreList(stringstream &);
-        string static findRating(stringstream &);
+        double static findRating(stringstream &);
         vector<Director> static findDirectorList(stringstream &);
         vector<Actor> static findActorList(stringstream &);
 
         void static skipLines(stringstream &, int i);
-        void static scrapeMovies(stringstream &, vector<Movie>&, int i);
         void static findHTML(stringstream &, const string &);
 };
 

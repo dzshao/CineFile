@@ -4,6 +4,7 @@
 #include <set>
 #include <vector>
 #include <string>
+#include <iostream>
 
 #include "actor.h"
 #include "director.h"
@@ -14,9 +15,11 @@ struct Movie {
     std::string name;
     std::string releaseDates;
     std::vector<Genre> genreList;
-    std::string rating;
+    double rating;
     std::vector<Director> directorList;
     std::vector<Actor> castList;
+
+    friend std::ostream& operator<<(std::ostream& out, const Movie& outputMovie);
 };
 
 #endif

@@ -31,7 +31,7 @@ void imdbParser::scrapeMovies(stringstream& parser, vector<Movie>& movieList, in
         string movieTitle = findTitle(parser);
         string releaseDate = findReleaseDate(parser);
         vector<Genre> movieGenres = findGenreList(parser);
-        string movieRating = findRating(parser);
+        double movieRating = findRating(parser);
         vector<Director> directorList = findDirectorList(parser);
         vector<Actor> actorList = findActorList(parser);
 
@@ -56,7 +56,6 @@ string imdbParser::findTitle(stringstream &parser) {
     return movieName.substr(12, movieName.length() - 13);
 }
 
-// These functions are stubs for now.
 string imdbParser::findReleaseDate(stringstream &parser) {
     findHTML(parser, "<h3 class=\"lister-item-header\">");
     if (!parser) {
@@ -102,23 +101,23 @@ vector<Genre> imdbParser::findGenreList(stringstream &parser) {
     return genreList;
 }
 
-string imdbParser::findRating(stringstream &parser) {
+double imdbParser::findRating(stringstream &parser) {
     string filter;
     getline(parser, filter);
     // Some movies aren't released yet and thus won't have a rating. 
     // This statement checks for that and returns a rating of N/A if there's no rating yet.
     if (filter == "                     <span class=\"ghost\">|</span> ") {
-        return "N/A";
+        return 0.0;
     }
     findHTML(parser, "        <span class=\"global-sprite rating-star imdb-rating\"></span>");
 
-    string rating;
-    getline(parser, rating);
+    string ratingString;
+    getline(parser, ratingString);
 
     // Extracting the rating value out of the line of HTML
-    rating = rating.substr(16, 3);
-
-    return rating;
+    ratingString = ratingString.substr(16, 3);
+    
+    return std::stod(ratingString);
 }
 
 vector<Director> imdbParser::findDirectorList(stringstream &parser) {

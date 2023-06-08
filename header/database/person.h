@@ -6,7 +6,10 @@
 
 class Person {
     public:
-        Person();
+        Person() : 
+                name(),
+                movies()
+        {};
 
         Person(std::string _name) : 
                 name(_name)
