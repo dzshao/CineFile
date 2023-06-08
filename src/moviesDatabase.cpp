@@ -6,20 +6,32 @@
 using namespace std;
 
 
-void MoviesDatabase::loadMovies(const string&){
+// void MoviesDatabase::loadMovies(const string&){
 
-}
+// }
         
         
         
 void MoviesDatabase::addGenre(const genre&){
-    allGenres[genre.name] = genre{genre.name, genre.listOfMovies};
+    allGenres[genre.getName()] = genre
 }
 
 void MoviesDatabase::addActor(const actor&){
-    allActors[actor.name] = actor{actor.name, actor.listOfActors};
+    allActors[actor.getName()] = actor
 }
 
 void MoviesDatabase::addDirector(const director&){
-    allDirectors[director.name] = director{director.name, director.listOfActors};
+    allDirectors[director.getName()] = director;
+}
+
+genre MoviesDatabase::getGenre(string gName){
+    return allGenres[gName];
+}
+
+actor MoviesDatabase::getActor(string aName){
+    return allActors[aName];
+}
+
+director MoviesDatabase::getDirector(string dName){
+    return allDirectors[dName];
 }

@@ -15,10 +15,13 @@ using std::string;
 
 class MoviesDatabase {
     public:
-        void loadMovies(const string&);
+        // void loadMovies(const string&);
         void addGenre(const genre&);
         void addActor(const actor&);
-        void addDirector(const director&)
+        void addDirector(const director&);
+        void getGenre(string);
+        void getActor(string);
+        void getDirector(string);
     private:
        unordered_map<string, Genre> allGenres;
        unordered_map<string, Actors> allActors;
