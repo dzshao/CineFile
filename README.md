@@ -28,7 +28,7 @@ The user must choose what tier of ratings they would like to search for (this ac
 Main page with a prompt that recommends 10 movies based on various criteria. The various criteria is a text box one can add various keywords to, such as director, genre, actors, themes, etc. User will also be prompted on what the average ratings of the movies will be. Keywords will be entered one by one, pressing enter each time to input the next keyword. Finish entering keywords by entering E to confirm. Once all keywords are entered the user is sent to a page with 10 movies. Each movie will have a link to a page with info about it, a short blurb about the movie, and keywords about the movie listed.
 After movies are listed, users can enter x or some other letter to exit and go back to the main page.  (If movies not found that match keywords after being excluded, we can recommend movies at random)
 
-### Example interface interaction:
+### Example interface interaction
 
 Welcome to Cinefile! We will recommend up to 10 movies based on keywords you enter.<br>
 First, are you looking for movies which are highly rated (H), average rated (A), or poorly rated (P)? Please enter the corresponding letter.<br>
@@ -146,7 +146,28 @@ We added a new, abstract "MovieWebsiteParser" class to adhere to the dependency 
  ## Screenshots
  > Screenshots of the input/output after running your application
  ## Installation/Usage
- > Instructions on installing and running your application
+ Use git to clone the repository and change into the created directory.
+```
+git clone https://github.com/cs100/final-project-ahude001-dshao009-jshen075-jrive141.git
+cd final-project-ahude001-dshao009-jshen075-jrive141
+```
+The project uses the libraries CMake and cURL, which you must install before continuing. Please refer to the [installation instructions on the CMake website](https://cmake.org/install/)
+and the [installation instructions on the cURL website.](https://curl.se/docs/install.html)
+Next, run commands to build the project using CMake:
+```
+cmake .
+make
+```
+Two executables will be created:
+```
+cinefile
+test
+```
+You can run the main executable by executing the following command:
+```
+./cinefile
+```
+Follow the instructional prompts to operate the program. For additional help, refer to the [example interaction](#example-interface-interaction) section above.
  ## Testing
  > How was your project tested/validated? If you used CI, you should have a "build passing" badge in this README.
  
