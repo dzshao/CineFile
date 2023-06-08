@@ -5,6 +5,7 @@ cmake_install.cmake
 lib/
 libmovie_recommend.a
 test
-src/PrototypeWebscraper/horror.txt
+src/PrototypeWebscraper/
+movieRecommender
 
 .vscode/

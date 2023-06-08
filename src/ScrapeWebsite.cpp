@@ -1,5 +1,5 @@
 #include "../header/webscraping/ScrapeWebsite.h"
-#include <curl/curl.h>
+
 
 /* This program uses cURL, which will not work on the CS100 server. For this to run, you first need to install cURL
 on your computer by running: "sudo apt-get install curl" in the terminal or "brew install curl" for Macs. 

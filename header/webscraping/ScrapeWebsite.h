@@ -3,6 +3,7 @@
 
 #include <string>
 #include <iostream>
+#include <curl/curl.h>
 
 using std::cout;
 using std::string;
