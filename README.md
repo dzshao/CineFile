@@ -90,18 +90,21 @@ Thank you for using Cinefile!
 
 
 ### Class Descriptions:
-Upon initialization, the program will create a MovieDatabase object. This object will store all the movies and genres that have already been parsed. The program functions by then using the UserInterface class to print out a menu prompting the user for how they would like to be recommended movies, whether it be based on actors or genres. Once the user has decided, the main function will call the appropriate recommend function. The recommend function will call the scrapeGenre or scrapeMovie function from the imdbParser class which uses web scraping to find movies that match the criteria desired by the user. These two functions will use scrapeSite in order to scrape the HTML of desired website. If a movie found is already stored in MovieDatabase, it will not create a new movie object. Otherwise, a new movie object will be created using the parseMovie() function, which calls the findActorList, findDirectorList, findGenreList, findName, and findRating functions. This new movie object will be added to the MovieDatabase and to the movie set of its respective Genre objects. The top ten movies scraped with the most similarities to what the user wants will be returned. Once the recommend function has found these ten movies, it will return them in a priority_queue. The function printMovieList will print out the ten movies to the user. 
+Upon initialization, the program will create a MovieDatabase object. This object will store all the movies and genres that have already been parsed. The program functions by then using the UserInterface class to print out a menu prompting the user for how they would like to be recommended movies, based on a rating range and/or based on genres, directors, actors. Once the user has decided, the main function will call the appropriate recommend function. The recommend function will call the scrapeGenre or scrapeMovie function from the imdbParser class which uses web scraping to find movies that match the criteria desired by the user. These two functions will use scrapeSite in order to scrape the HTML of desired website. If a movie found is already stored in MovieDatabase, it will not create a new movie object. Otherwise, a new movie object will be created using the parseMovie() function, which calls the findActorList, findDirectorList, findGenreList, findName, and findRating functions. This new movie object will be added to the MovieDatabase and to the movie set of its respective Genre objects. The top ten movies scraped with the most similarities to what the user wants will be returned. Once the recommend function has found these ten movies, it will return them in a priority_queue. The function printMovieList will print out the ten movies to the user. 
 - scrapeWebsite
-  - scrapeSite(...) member function which scrapes the input website URL and returns the HTML code of the site as a string.
+  - scrapeSite(...) scrapes the input website URL and returns the HTML code of the site as a string.
+  - write_callback(...) 
 - imdbParser
-  - scrapeGenres(...) member function which calls scrapeSite(...) on the IMDb page which lists the top movies associated with the input genre or combination of genres. Returns a vector of URLs to those movies' IMDb pages.
-  - scrapeMovie(...) member function which finds the corresponding movie's IMDb URL and returns it.
-  - findDirectorList(...) takes in an IMDb movie page URL and returns a set of the Director objects associated with it.
-  - findActorList(...) takes in an IMDb movie page URL and returns a set of Genre objects assocaited wtih it.
-  - findGenreList(...) takes in an IMDb movie page URL and returns a set of Actor objects associated with it.
-  - findTitle(...) takes in an IMDb movie page URL and returns the title.
-  - findRating(...) takes in an IMDb movie page URL and returns the rating.
-  - parseMovie(...) creates and returns a new Movie object with data obtained by calling the preceding 'find' member functions.
+  - scrapeGenres(...) calls scrapeWebsite::scrapeSite(...) on the IMDb page which lists the top movies associated with the input genre or combination of genres. Calls scrapeMovies(...) to fill a vector of Movie objects with the scraped data which will then be returned.
+  - scrapeMovies(...) creates Movie objects with the corresponding 'find' member functions and fills an input vector of Movie objects with them.
+  - findDirectorList(...) takes in a stringstream obtained from scrapeWebsite::scrapeSite(...) and returns a vector of the Director objects associated with a movie.
+  - findActorList(...) takes in a stringstream obtained from scrapeWebsite::scrapeSite(...) and returns a vector of the Actor objects associated with a movie.
+  - findGenreList(...) takes in a stringstream obtained from scrapeWebsite::scrapeSite(...) and returns a vector of the Genre objects associated with a movie.
+  - findTitle(...) takes in a stringstream obtained from scrapeWebsite::scrapeSite(...) returns the title.
+  - findRating(...) takes in a stringstream obtained from scrapeWebsite::scrapeSite(...) and returns the rating.
+  - findReleaseDate(...) takes in a stringstream obtained from scrapeWebsite::scrapeSite(...) and returns the release date.
+  - findHTML(...) helper function which finds a certan input string within the input stringstream.
+  - skipLines(...) helper function which skips a certain number of input lines in the input stringstream.
 - moviesDatabase
   - Aggregation of Genres
   - storeGenreLists() member function stores the list of genres and all their contained movies within a file.
