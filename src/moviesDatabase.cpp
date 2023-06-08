@@ -2,13 +2,42 @@
 #include <iostream>
 #include <unordered_map>
 #include <string>
+#include <fstream>
 
 using namespace std;
 
+//reads in file
+//Still working on
+void MoviesDatabase::loadMovies(){
+    ifstream inFS;     
+   
+   cout << "Opening file" << endl;
 
-// void MoviesDatabase::loadMovies(const string&){
+   inFS.open("movies.txt");//or whatever the file name will be
+   if (!inFS.is_open()) {
+      cout << "Could not open file movies.txt." << endl;
+      return 1; 
+   }
 
-// }
+   /
+   cout << "Reading movies" << endl;
+   inFS >> movieInfo
+   while(!inFS.fail()){
+
+
+   }
+   cout << "Closing file movie.txt." << endl;
+   inFS.close(); // Done with file, so close it
+
+   
+
+
+}
+
+//puts info on a file
+void MoviesDatabase::storeMovies(){
+
+}
         
         
         

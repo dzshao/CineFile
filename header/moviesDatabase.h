@@ -15,7 +15,8 @@ using std::string;
 
 class MoviesDatabase {
     public:
-        // void loadMovies(const string&);
+        void loadMovies();
+        void storeMovies();
         void addGenre(const genre&);
         void addActor(const actor&);
         void addDirector(const director&);
