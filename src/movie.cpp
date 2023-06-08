@@ -1,3 +1,4 @@
+#include "../header/database/genre.h"
 #include "../header/database/movie.h"
 
 using std::endl;
