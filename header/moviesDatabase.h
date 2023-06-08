@@ -4,6 +4,11 @@
 #include <string>
 #include <unordered_map>
 #include <iostream>
+#include "actor.h"
+#include "director.h"
+#include "genre.h"
+#include "movie.h"
+#include "person.h"
 
 using std::cout;
 using std::string;
@@ -11,6 +16,9 @@ using std::string;
 class MoviesDatabase {
     public:
         void loadMovies(const string&);
+        void addGenre(const genre&);
+        void addActor(const actor&);
+        void addDirector(const director&)
     private:
        unordered_map<string, Genre> allGenres;
        unordered_map<string, Actors> allActors;
