@@ -169,5 +169,8 @@ You can run the main executable by executing the following command:
 ```
 Follow the instructional prompts to operate the program. For additional help, refer to the [example interaction](#example-interface-interaction) section above.
  ## Testing
- > How was your project tested/validated? If you used CI, you should have a "build passing" badge in this README.
+ The program executes tests created with the [GoogleTest](https://github.com/google/googletest) framework utilizing continuous integration through GitHub Actions workflows on push and pull requests. To manually run these tests after [building](#installationusage), simply run the test executable with the following command:
+```
+./test
+```
  
