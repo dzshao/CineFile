@@ -11,7 +11,6 @@ using std::string;
 using std::stringstream;
 using std::vector;
 using std::endl;
-using std::set;
 
 class imdbParser {
     public:
