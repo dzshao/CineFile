@@ -134,18 +134,13 @@ Upon initialization, the program will create a MovieDatabase object. This object
   - getLoopExitInput() prompts the user to exit the program or return to the main menu at the end of execution.
  
 We added a new, abstract "MovieWebsiteParser" class to adhere to the dependency inversion principle. Instead of using the imdbParser class, our program will instead use the abstract MovieWebsiteParser class. Having the imdbParser class inherit from the MovieWebsiteParser class makes expanding functionality to movie websites other than IMDb much easier in the future. Rather than restricting us to just using IMDb, we can now easily create new classes for other movie websites that won't break the functionality of the program. This change makes our code much more flexible, maintainable, and open for future improvements.
-
- 
- > ## Final deliverable
- > All group members will give a demo to the reader during lab time. ou should schedule your demo on Calendly with the same reader who took your second scrum meeting. The reader will check the demo and the project GitHub repository and ask a few questions to all the team members. 
- > Before the demo, you should do the following:
- > * Complete the sections below (i.e. Screenshots, Installation/Usage, Testing)
- > * Plan one more sprint (that you will not necessarily complete before the end of the quarter). Your In-progress and In-testing columns should be empty (you are not doing more work currently) but your TODO column should have a full sprint plan in it as you have done before. This should include any known bugs (there should be some) or new features you would like to add. These should appear as issues/cards on your Project board.
- > * Make sure your README file and Project board are up-to-date reflecting the current status of your project (e.g. any changes that you have made during the project such as changes to your class diagram). Previous versions should still be visible through your commit history. 
  
  ## Screenshots
+Entering in genres, directors, and actors to be recommended movies based on:
 <img width="1022" alt="Screenshot 2023-06-09 at 4 29 53 AM" src="https://github.com/cs100/final-project-ahude001-dshao009-jshen075-jrive141/assets/102844937/1c67a169-778b-4553-b629-02e2bfd5e1ce">
 <img width="620" alt="Screenshot 2023-06-09 at 4 30 22 AM" src="https://github.com/cs100/final-project-ahude001-dshao009-jshen075-jrive141/assets/102844937/737df5dc-81d9-417b-8015-bd0f974229aa">
+
+Users can choose to continue to be recommended movies with new parameters after each recommendation:
 <img width="1063" alt="Screenshot 2023-06-09 at 4 34 10 AM" src="https://github.com/cs100/final-project-ahude001-dshao009-jshen075-jrive141/assets/102844937/0727af13-8205-4d43-a8d9-f7de477ea3bc">
 <img width="816" alt="Screenshot 2023-06-09 at 4 34 15 AM" src="https://github.com/cs100/final-project-ahude001-dshao009-jshen075-jrive141/assets/102844937/6577dffe-c10f-4eae-8cdf-3247c0d87dfc">
 
