@@ -144,7 +144,12 @@ We added a new, abstract "MovieWebsiteParser" class to adhere to the dependency 
  > * Make sure your README file and Project board are up-to-date reflecting the current status of your project (e.g. any changes that you have made during the project such as changes to your class diagram). Previous versions should still be visible through your commit history. 
  
  ## Screenshots
- > Screenshots of the input/output after running your application
+<img width="1022" alt="Screenshot 2023-06-09 at 4 29 53 AM" src="https://github.com/cs100/final-project-ahude001-dshao009-jshen075-jrive141/assets/102844937/1c67a169-778b-4553-b629-02e2bfd5e1ce">
+<img width="620" alt="Screenshot 2023-06-09 at 4 30 22 AM" src="https://github.com/cs100/final-project-ahude001-dshao009-jshen075-jrive141/assets/102844937/737df5dc-81d9-417b-8015-bd0f974229aa">
+<img width="1063" alt="Screenshot 2023-06-09 at 4 34 10 AM" src="https://github.com/cs100/final-project-ahude001-dshao009-jshen075-jrive141/assets/102844937/0727af13-8205-4d43-a8d9-f7de477ea3bc">
+<img width="816" alt="Screenshot 2023-06-09 at 4 34 15 AM" src="https://github.com/cs100/final-project-ahude001-dshao009-jshen075-jrive141/assets/102844937/6577dffe-c10f-4eae-8cdf-3247c0d87dfc">
+
+
  ## Installation/Usage
  Use git to clone the repository and change into the created directory.
 ```
