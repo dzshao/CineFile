@@ -2,7 +2,7 @@
 #define MOVIEREC_H
 
 #include "../header/recommender/MovieScore.h"
-// #include "../header/MoviesDatabase.h"
+#include "../header/database/moviesDatabase.h"
 
 struct comparescore {
     bool operator()(MovieScore const & p1, MovieScore const & p2) {
@@ -14,7 +14,7 @@ struct comparescore {
 class MovieRec{
     public:
 
-    vector<Movie>& recommend(char, vector<string>, vector<string>, vector<string>);
+    vector<Movie>& recommend(char h, vector<string> genr, vector<string> directr, vector<string> actr);
     //way to interact w/
 
 
