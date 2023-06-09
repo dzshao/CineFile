@@ -135,6 +135,7 @@ vector<Director> imdbParser::findDirectorList(stringstream &parser) {
             directorFinder = directorFinder.substr(0, directorFinder.length() - 2);
         }
         string directorName = directorFinder.substr(1, directorFinder.length() - 5);
+
         directorList.push_back({directorName});
         getline(parser, directorFinder);
     }
@@ -155,6 +156,7 @@ vector<Actor> imdbParser::findActorList(stringstream &parser) {
             actorFinder = actorFinder.substr(0, actorFinder.length() - 2);
         }
         string actorName = actorFinder.substr(1, actorFinder.length() - 5);
+
         actorList.push_back({actorName});
         getline(parser, actorFinder);
     }

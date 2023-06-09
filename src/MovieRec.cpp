@@ -74,7 +74,7 @@ using namespace std;
 //constructor
 vector<Movie>& MovieRec::recommend(char ratin, vector<string> genr, vector<string> directr, vector<string> actr){
 
-    movieDatabase movieDB;
+    moviesDatabase movieDB;
 
     vector<Movie> movieStore;
 
@@ -171,7 +171,7 @@ vector<Movie>& MovieRec::recommend(char ratin, vector<string> genr, vector<strin
     //after the list has been assigned score to, use getters to get the top 10 movies with getTitle() or whatever and then return a priority queue wit them
     //output top then pop 10 times
 
-    //so all movies that qualify have been stored in movieq
+    //so all movies that qualify have been stored in movieqs
 
     
 
