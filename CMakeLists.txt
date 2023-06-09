@@ -20,12 +20,12 @@ ADD_EXECUTABLE(test
     tests/_unit_tests.cpp
 )
 
-ADD_EXECUTABLE(movieRecommender
+ADD_EXECUTABLE(cinefile
     src/main.cpp
 )
 
 set_target_properties(movie_recommend PROPERTIES
         ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/lib)
 
-target_link_libraries(movieRecommender movie_recommend)
+target_link_libraries(cinefile movie_recommend)
 target_link_libraries(test gmock gtest movie_recommend curl)

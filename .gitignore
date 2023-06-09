@@ -6,6 +6,6 @@ lib/
 libmovie_recommend.a
 test
 src/PrototypeWebscraper/
-movieRecommender
+cinefile
 
 .vscode/

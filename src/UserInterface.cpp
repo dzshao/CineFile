@@ -137,7 +137,7 @@ void UserInterface::printRatingsType(char ratings) {
 void UserInterface::printMovieList(std::vector<Movie> &movieList) {
     cout << "Here's your list of movie recommendations: " << endl << endl;
 
-    for (unsigned i = 0; i < movieList.end(); ++i) {
+    for (unsigned i = 0; i < movieList.size(); ++i) {
         cout << movieList[i] << endl;
     }
 }

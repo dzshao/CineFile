@@ -54,7 +54,7 @@ int main() {
         cout << endl;
 
         //Get movie recommendations
-        vector<Movie> recommendations = MovieRecommender::recommend(ratingsInput, genresList, directorsList, actorsList);
+        vector<Movie> recommendations; //= MovieRecommender::recommend(ratingsInput, genresList, directorsList, actorsList);
 
         //Print movie recommendations        
         interface.printMovieList(recommendations);
