@@ -137,14 +137,17 @@ We added a new, abstract "MovieWebsiteParser" class to adhere to the dependency 
  
  ## Screenshots
 Entering in genres, directors, and actors to be recommended movies based on:
+
 <img width="1022" alt="Screenshot 2023-06-09 at 4 29 53 AM" src="https://github.com/cs100/final-project-ahude001-dshao009-jshen075-jrive141/assets/102844937/1c67a169-778b-4553-b629-02e2bfd5e1ce">
 <img width="620" alt="Screenshot 2023-06-09 at 4 30 22 AM" src="https://github.com/cs100/final-project-ahude001-dshao009-jshen075-jrive141/assets/102844937/737df5dc-81d9-417b-8015-bd0f974229aa">
 
 Users can choose to continue to be recommended movies with new parameters after each recommendation:
+
 <img width="1063" alt="Screenshot 2023-06-09 at 4 34 10 AM" src="https://github.com/cs100/final-project-ahude001-dshao009-jshen075-jrive141/assets/102844937/0727af13-8205-4d43-a8d9-f7de477ea3bc">
 <img width="816" alt="Screenshot 2023-06-09 at 4 34 15 AM" src="https://github.com/cs100/final-project-ahude001-dshao009-jshen075-jrive141/assets/102844937/6577dffe-c10f-4eae-8cdf-3247c0d87dfc">
 
 Another sample output:
+
 <img width="791" alt="Screenshot 2023-06-09 at 6 20 02 AM" src="https://github.com/cs100/final-project-ahude001-dshao009-jshen075-jrive141/assets/102844937/87179fd2-b9e6-4751-92d9-f8da693c55c5">
 
 
