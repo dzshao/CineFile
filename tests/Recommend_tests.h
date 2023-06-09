@@ -32,6 +32,7 @@ TEST(Recommendtests, doesitrun){
     std::vector<string> tactors = {"Bob", "Fred"};
     std::vector<string> tdirect = {"John", "Alex"};
     std::vector<string> tgenre = {"Horror", "Drama"};
+    char tc = 'A';
     vector<Movie> testvec = MovieRec::recommend(tc, tgenre, tdirect, tactors);
     EXPECT_EQ(testvec[0].name, "Yellowjackets");
 }
