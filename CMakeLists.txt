@@ -30,3 +30,6 @@ set_target_properties(movie_recommend PROPERTIES
 
 target_link_libraries(cinefile movie_recommend curl)
 target_link_libraries(test gmock gtest movie_recommend curl)
+
+target_compile_options(cinefile PRIVATE -g)
+target_compile_options(test PRIVATE -g)
