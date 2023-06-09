@@ -78,7 +78,9 @@ vector<Movie>& MovieRec::recommend(char ratin, vector<string> genr, vector<strin
 
     vector<Movie> movieStore;
 
-    priority_queue<MovieScore, vector<MovieScore>, compScore> pq;
+    // priority_queue<MovieScore, vector<MovieScore>, compScore> pq;
+
+    vector<MovieScore> movieq;
     
     //movieDB.getRating(ratin); assuming this will populate movieDB with movies of that rating
 
@@ -92,13 +94,22 @@ vector<Movie>& MovieRec::recommend(char ratin, vector<string> genr, vector<strin
             // if pq does not contain any movies with same title as current movie, create new
             // if one does match, increase its score by like 22 or whatever
             bool doesContain = false; //bool to check if movie already in priority q
+            for(MovieScore lp : movieq){
+                if(lp.getTitle() == tempTitle){
+                    doesContain = true;
+                    lp.changeScore(22);
+                }
+            } if (doesContain == false){ //if same title not found
+                movieq.push_back(MovieScore(tempTitle)); //creates new moviescore object of that title and scores it
+            }
+
             for(MovieScore sloop : pq){ //for every moviescore object in pq
                 if(sloop.getTitle() == tempTitle){ //if the moviescore object have same title as movieobject
                     doesContain = true;
                     sloop.changeScore(22); //increases score and makes sure it wont create new object
                 }
             } if (doesContain == false){ //if same title not found
-                pq.push_back(MovieScore(tempTitle)); //creates new moviescore object of that title and scores it
+                pq.push(MovieScore(tempTitle)); //creates new moviescore object of that title and scores it
             }
         }
         //compare by setting tolower(), might need to set all of movie objects info to lower
@@ -116,13 +127,13 @@ vector<Movie>& MovieRec::recommend(char ratin, vector<string> genr, vector<strin
             // if pq does not contain any movies with same title as current movie, create new
             // if one does match, increase its score by like 22
             bool doesContain = false;
-            for(MovieScore sloop : pq){ //for every moviescore object in pq
+            for(MovieScore sloop : movieq){ //for every moviescore object in pq
                 if(sloop.getTitle() == tempTitle){ //if the moviescore object have same title as movieobject
                     doesContain = true;
                     sloop.changeScore(22); //increases score and makes sure it wont create new object
                 }
             } if (doesContain == false){ //if same title not found
-                pq.push_back(MovieScore(tempTitle)); //creates new moviescore object of that title and scores it
+                movieq.push_back(MovieScore(tempTitle)); //creates new moviescore object of that title and scores it
             }
         }
         //compare by setting tolower(), might need to set all of movie objects info to lower
@@ -142,13 +153,13 @@ vector<Movie>& MovieRec::recommend(char ratin, vector<string> genr, vector<strin
             // if pq does not contain any movies with same title as current movie, create new
             // if one does match, increase its score by like 22
             bool doesContain = false;
-            for(MovieScore sloop : pq){ //for every moviescore object in pq
+            for(MovieScore sloop : movieq){ //for every moviescore object in pq
                 if(sloop.getTitle() == tempTitle){ //if the moviescore object have same title as movieobject
                     doesContain = true;
                     sloop.changeScore(22); //increases score and makes sure it wont create new object
                 }
             } if (doesContain == false){ //if same title not found
-                pq.push_back(MovieScore(tempTitle)); //creates new moviescore object of that title and scores it
+                movieq.push_back(MovieScore(tempTitle)); //creates new moviescore object of that title and scores it
             }
         }
         //compare by setting tolower(), might need to set all of movie objects info to lower
@@ -160,46 +171,80 @@ vector<Movie>& MovieRec::recommend(char ratin, vector<string> genr, vector<strin
     //after the list has been assigned score to, use getters to get the top 10 movies with getTitle() or whatever and then return a priority queue wit them
     //output top then pop 10 times
 
+    //so all movies that qualify have been stored in movieq
+
+    struct comparescore {
+    bool operator()(MovieScore const & p1, MovieScore const & p2) {
+        // return "true" if "p1" is ordered before "p2", for example:
+        return p1.score < p2.score;
+    }
+    };
+
+    priority_queue<MovieScore, vector<MovieScore>, comparescore> pq;
+    // priority_queue<int> km; 
+
    
     vector<Movie> fq;
+    
+    for(unsigned int i = 0; i < movieq.size(); i++){
+        
+        MovieScore tm = movieq[i];
+        pq.push(tm);
 
-
-    if(ratin == 'h'|| ratin == 'H'){
-        while(fq.size() < 10){
-            string tTitle = pq.top().getTitle();
-            Movie nMovie = movieDB.getMovie(tTitle);
-            if (nMovie.rating >= 8.0 || nMovie.rating == 0.0){
-                fq.push_back(nMovie);
-            }
-            pq.pop();
-        }
+        
     }
 
-    else if(ratin == 'a'|| ratin == 'A'){
-        while(fq.size() < 10){
-            string tTitle = pq.top().getTitle();
-            Movie nMovie = movieDB.getMovie(tTitle);
-            if (nMovie.rating < 8.0 && nMovie.rating > 5.0 || nMovie.rating == 0.0){
-                fq.push_back(nMovie);
-            }
-            pq.pop();
-        }
-    }
+    // if(ratin == 'h'|| ratin == 'H'){
+    //     for(unsigned int i = 0; i < movieq.size(); i++){
+    //         string tt = movieq[i].getTitle();
+    //         Movie nm = movieDB.getMovie(tt);
+    //         int rt = nm.rating;
+    //         if(rt >= 8.0 || rt == 0.0){
+    //             pq.push()
+    //         }
 
-    else if(ratin == 'p'|| ratin == 'P'){
-        while(fq.size() < 10){
-            string tTitle = pq.top().getTitle();
-            Movie nMovie = movieDB.getMovie(tTitle);
-            if (nMovie.rating <= 5.0 || nMovie.rating == 0.0){
-                fq.push_back(nMovie);
-            }
-            pq.pop();
-        }
-    }
+    //     }
+    // }
+
+
+    // if(ratin == 'h'|| ratin == 'H'){
+    //     while(fq.size() < 10){
+    //         string tTitle = pq.top().getTitle();
+    //         Movie nMovie = movieDB.getMovie(tTitle);
+    //         if (nMovie.rating >= 8.0 || nMovie.rating == 0.0){
+    //             fq.push_back(nMovie);
+    //         }
+    //         pq.pop();
+    //     }
+    // }
+
+    // else if(ratin == 'a'|| ratin == 'A'){
+    //     while(fq.size() < 10){
+    //         string tTitle = pq.top().getTitle();
+    //         Movie nMovie = movieDB.getMovie(tTitle);
+    //         if (nMovie.rating < 8.0 && nMovie.rating > 5.0 || nMovie.rating == 0.0){
+    //             pq.push(nMovie);
+    //             movieq.pop_front()
+    //         }
+    //         movieq.pop();
+    //     }
+    // }
+
+    // else if(ratin == 'p'|| ratin == 'P'){
+    //     while(fq.size() < 10){
+    //         string tTitle = pq.top().getTitle();
+    //         Movie nMovie = movieDB.getMovie(tTitle);
+    //         if (nMovie.rating <= 5.0 || nMovie.rating == 0.0){
+    //             fq.push_back(nMovie);
+    //         }
+    //         pq.pop();
+    //     }
+    // }
     
 
     for(int i = 0; i < 10; i++){
-        string tTitle = pq.top().getTitle();
+        MovieScore tem = pq.top();
+        string tTitle = tem.getTitle();
         Movie nMovie = movieDB.getMovie(tTitle);
         fq.push_back(nMovie);
         pq.pop();

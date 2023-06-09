@@ -13,7 +13,7 @@ struct compScore{
 class MovieRec{
     public:
 
-    vector<Movie> recommend(char ratin, vector<string> genr, vector<string> directr, vector<string> actor);
+    vector<Movie>& recommend(char, vector<string>, vector<string>, vector<string>);
     //way to interact w/
 
 
