@@ -24,7 +24,7 @@ void MoviesDatabase::addDirector(const Director& director){
     MoviesDatabase::allDirectors[director.getName()] = director;
 }
 
-void MoviesDatabase::addMovie(Movie movie){
+void MoviesDatabase::addMovie(const Movie& movie){
     MoviesDatabase::allMovies[movie.name] = movie;
 }
 

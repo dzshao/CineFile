@@ -15,12 +15,10 @@ using std::string;
 
 class MoviesDatabase {
     public:
-        void static loadMovies();
-        void static storeMovies();
         void static addGenre(const Genre&);
         void static addActor(const Actor&);
         void static addDirector(const Director&);
-        void static addMovie(Movie);
+        void static addMovie(const Movie&);
         static Genre& getGenre(const string&);
         static Actor& getActor(const string&);
         static Director& getDirector(const string&);
