@@ -67,13 +67,13 @@ Here's your list of movie recommendations:<br>
 Hereditary (2018):<br>
 Rating: 7.3/10<br>
 Genre(s): Horror, Mystery, Thriller, Drama<br>
-Director(s): Ari Aster<br>
+Directed by: Ari Aster<br>
 Starring: Toni Collette, Alex Wolff, Milly Shapiro<br>
 
 Pan's Labyrinth (2006):<br>
 Rating: 8.2/10<br>
 Genre(s): Drama, Fantasy, War<br>
-Director(s): Guillermo Del Toro<br>
+Directed by: Guillermo Del Toro<br>
 Starring: Ivana Baquero, Ariadna Gil, Sergi López<br>
 ...<br>
 
@@ -111,15 +111,16 @@ Upon initialization, the program will create a MovieDatabase object. This object
 - Genre
   - Aggregation of movies
   - Stores name of the genre and an unordered_map of Movie objects as a list of associated movies.
-  - populate(...) member function which adds the given movie object to the 
+  - addMovie(...) member function which adds the given Movie object to the list of associated movies.
 - Movie (struct)
   - Aggregation of genres, actors, and directors
-  - Struct with dumb data such as the title, release year, rating, as well as sets of Actors, Director, and Genre objects.
+  - Struct with dumb data such as the title, release year, rating, as well as vectors of Actors, Director, and Genre objects associated with the Movie.
 - MovieRecommender
   - recommend(...) overloaded member function which returns a priority_queue of movie recommendations. 
 - Person
-  - Stores a set of movies the Person is associated with.
+  - Stores a vector of strings containing the movie names the Person is associated with.
   - Subclasses: Actor, Director
+  - addMovie(...) member function adds a movie title to the list of movies
 - UserInterface
   - printWelcomeMessage() prints the welcome screen upon starting the program
   - printMovieList(...) takes in a list of movies returned from the MovieRecommender class to print.
