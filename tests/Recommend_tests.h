@@ -11,7 +11,7 @@ TEST(Recommendtests, noerrors){
     vector<string> tdirect = {"John"};
     vector<string> tgenre = {"Horror", "Comedy"};
     char tc = 'A';
-    EXPECT_NO_THROW(recommend(tc, tgenre, tdirect, tactors));
+    EXPECT_NO_THROW(MovieRec::recommend(tc, tgenre, tdirect, tactors));
 }
 
 // TEST(Recommendtests, emptyActors){
