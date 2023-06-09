@@ -16,6 +16,8 @@ add_library(movie_recommend
     src/database/director.cpp
     src/database/genre.cpp
     src/database/person.cpp
+    src/MovieRec.cpp
+    src/MovieScore.cpp
 )
 
 ADD_EXECUTABLE(test

@@ -5,6 +5,7 @@
 #include "./imdbParser_tests.h"
 #include "./genre_tests.h"
 #include "./movie_tests.h"
+#include "./Recommend_tests.h"
 #include "./person_tests.h"
 #include "./actor_tests.h"
 #include "./director_tests.h"
