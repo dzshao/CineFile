@@ -151,7 +151,7 @@ Another sample output:
  ## Installation/Usage
  Use git to clone the repository and change into the created directory.
 ```
-git clone https://github.com/cs100/final-project-ahude001-dshao009-jshen075-jrive141.git
+git clone --recursive https://github.com/cs100/final-project-ahude001-dshao009-jshen075-jrive141.git
 cd final-project-ahude001-dshao009-jshen075-jrive141
 ```
 The project uses the libraries CMake and cURL, which you must install before continuing. Please refer to the [installation instructions on the CMake website](https://cmake.org/install/)
