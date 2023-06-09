@@ -1,7 +1,8 @@
 #ifndef MOVIEREC_H
 #define MOVIEREC_H
 
-//#include <Movie.h>
+#include "../header/recommender/MovieScore.h"
+// #include "../header/MoviesDatabase.h"
 
 struct compScore{
     bool operator()(MovieScore const & lmov, MovieScore const & rmov){

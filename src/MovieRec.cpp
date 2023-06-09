@@ -27,14 +27,15 @@
 //remember to include moviescore
 
 #include <string>
-#include <sstream>
-#include <fstream>
 #include <iostream>
 #include <vector>
 #include <queue>
 #include <algorithm>
 #include <set>
-#include <#include "../header/recommender/MovieScore.h">
+#include <unordered_map>
+
+#include "../header/recommender/MovieRec.h"
+
 //include movie.h wherever that is
 
 using namespace std;
