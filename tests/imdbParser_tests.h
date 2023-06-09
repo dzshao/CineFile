@@ -49,8 +49,8 @@ TEST(imdbParserTest, testScrapingHorror) {
     EXPECT_EQ(listOfHorrorMovies.at(3).releaseDates, imdbHorrorList.at(3).releaseDates);
 
     // Check genre names
-    for (int i = 0; i < 4; ++i) {
-        for (int j = 0; j < imdbHorrorList.at(i).genreList.size(); ++j) {
+    for (unsigned i = 0; i < 4; ++i) {
+        for (unsigned j = 0; j < imdbHorrorList.at(i).genreList.size(); ++j) {
             EXPECT_EQ(listOfHorrorMovies.at(i).genreList.at(j).getName(), imdbHorrorList.at(i).genreList.at(j).getName());
         }
     }
@@ -62,15 +62,15 @@ TEST(imdbParserTest, testScrapingHorror) {
     EXPECT_DOUBLE_EQ(listOfHorrorMovies.at(3).rating, imdbHorrorList.at(3).rating);
 
     // Check Director names
-    for (int i = 0; i < 4; ++i) {
-        for (int j = 0; j < imdbHorrorList.at(i).directorList.size(); ++j) {
+    for (unsigned i = 0; i < 4; ++i) {
+        for (unsigned j = 0; j < imdbHorrorList.at(i).directorList.size(); ++j) {
             EXPECT_EQ(listOfHorrorMovies.at(i).directorList.at(j).getName(), imdbHorrorList.at(i).directorList.at(j).getName());
         }
     }
 
     // Check Director names
-    for (int i = 0; i < 4; ++i) {
-        for (int j = 0; j < imdbHorrorList.at(i).castList.size(); ++j) {
+    for (unsigned i = 0; i < 4; ++i) {
+        for (unsigned j = 0; j < imdbHorrorList.at(i).castList.size(); ++j) {
             EXPECT_EQ(listOfHorrorMovies.at(i).castList.at(j).getName(), imdbHorrorList.at(i).castList.at(j).getName());
         }
     }
@@ -102,8 +102,8 @@ TEST(imdbParserTest, testScrapingRomance) {
     EXPECT_EQ(listOfRomanceMovies.at(3).releaseDates, imdbRomanceList.at(3).releaseDates);
 
     // Check genre names
-    for (int i = 0; i < 4; ++i) {
-        for (int j = 0; j < imdbRomanceList.at(i).genreList.size(); ++j) {
+    for (unsigned i = 0; i < 4; ++i) {
+        for (unsigned j = 0; j < imdbRomanceList.at(i).genreList.size(); ++j) {
             EXPECT_EQ(listOfRomanceMovies.at(i).genreList.at(j).getName(), imdbRomanceList.at(i).genreList.at(j).getName());
         }
     }
@@ -115,15 +115,15 @@ TEST(imdbParserTest, testScrapingRomance) {
     EXPECT_DOUBLE_EQ(listOfRomanceMovies.at(3).rating, imdbRomanceList.at(3).rating);
 
     // Check Director names
-    for (int i = 0; i < 4; ++i) {
-        for (int j = 0; j < imdbRomanceList.at(i).directorList.size(); ++j) {
+    for (unsigned i = 0; i < 4; ++i) {
+        for (unsigned j = 0; j < imdbRomanceList.at(i).directorList.size(); ++j) {
             EXPECT_EQ(listOfRomanceMovies.at(i).directorList.at(j).getName(), imdbRomanceList.at(i).directorList.at(j).getName());
         }
     }
 
     // Check Cast names
-    for (int i = 0; i < 4; ++i) {
-        for (int j = 0; j < imdbRomanceList.at(i).castList.size(); ++j) {
+    for (unsigned i = 0; i < 4; ++i) {
+        for (unsigned j = 0; j < imdbRomanceList.at(i).castList.size(); ++j) {
             EXPECT_EQ(listOfRomanceMovies.at(i).castList.at(j).getName(), imdbRomanceList.at(i).castList.at(j).getName());
         }
     }
@@ -155,8 +155,8 @@ TEST(imdbParserTest, testScrapingAction) {
     EXPECT_TRUE(listOfActionMovies.at(3).releaseDates == imdbActionList.at(3).releaseDates);
 
     // Check genre names
-    for (int i = 0; i < 4; ++i) {
-        for (int j = 0; j < imdbActionList.at(i).genreList.size(); ++j) {
+    for (unsigned i = 0; i < 4; ++i) {
+        for (unsigned j = 0; j < imdbActionList.at(i).genreList.size(); ++j) {
             EXPECT_EQ(listOfActionMovies.at(i).genreList.at(j).getName(), imdbActionList.at(i).genreList.at(j).getName());
         }
     }
@@ -168,15 +168,15 @@ TEST(imdbParserTest, testScrapingAction) {
     EXPECT_DOUBLE_EQ(listOfActionMovies.at(3).rating, imdbActionList.at(3).rating);
 
     // Check Director names
-    for (int i = 0; i < 4; ++i) {
-        for (int j = 0; j < imdbActionList.at(i).directorList.size(); ++j) {
+    for (unsigned i = 0; i < 4; ++i) {
+        for (unsigned j = 0; j < imdbActionList.at(i).directorList.size(); ++j) {
             EXPECT_EQ(listOfActionMovies.at(i).directorList.at(j).getName(), imdbActionList.at(i).directorList.at(j).getName());
         }
     }
 
     // Check Director names
-    for (int i = 0; i < 4; ++i) {
-        for (int j = 0; j < imdbActionList.at(i).castList.size(); ++j) {
+    for (unsigned i = 0; i < 4; ++i) {
+        for (unsigned j = 0; j < imdbActionList.at(i).castList.size(); ++j) {
             EXPECT_EQ(listOfActionMovies.at(i).castList.at(j).getName(), imdbActionList.at(i).castList.at(j).getName());
         }
     }
