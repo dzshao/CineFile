@@ -3,12 +3,13 @@
 #include <string>
 #include <vector>
 #include <queue>
-#include <curl/curl.h>
+#include <cassert>
 
 //Project headers
 #include "../header/database/moviesDatabase.h"
 #include "../header/webscraping/imdbParser.h"
 #include "../header/interface/userinterface.h"
+#include "../header/database/MovieRec.h"
 
 using namespace std;
 
@@ -34,8 +35,15 @@ int main() {
 
         //Get genre keyword(s) from user input.
         cout << "Let's start with genres. Enter up to 5, or enter 'finished' when you are done if you have less than 5." << endl;
+        cout << "You must enter at least 1 genre." << endl;
         vector<string> genresList;
         interface.getSearchKeywords(genresList);
+
+        while(genresList.size() < 1){
+            cout << "Please enter at least 1 genre." << endl;
+            interface.getSearchKeywords(genresList);
+        }
+
 
         //Get director keyword(s) from user input.
         cout << "Now, how about directors? Enter up to 5, or enter 'finished' when you are done if you have less than 5." << endl;
@@ -60,7 +68,7 @@ int main() {
         imdbParser::scrapeGenres(genresList);
 
         //Get movie recommendations
-        vector<Movie> recommendations; //= MovieRecommender::recommend(ratingsInput, genresList, directorsList, actorsList);
+        vector<Movie> recommendations = MovieRec::recommend(ratingsInput, genresList, directorsList, actorsList);
 
         //Print movie recommendations        
         interface.printMovieList(recommendations);

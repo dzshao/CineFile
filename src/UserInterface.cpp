@@ -38,7 +38,7 @@ void UserInterface::getSearchKeywords(vector<string>& keywords) {
         if (keyword.empty()) {
             continue;
         }
-        else if (keyword == "finished") {
+        else if (keyword == "Finished") {
             break;
         }
         else {
@@ -50,17 +50,26 @@ void UserInterface::getSearchKeywords(vector<string>& keywords) {
     return;
 }
 
+
+
 //Returns an input string converted to all lowercase as a 'keyword' for UserInterface::getSearchKeywords()
+
 void UserInterface::getKeyword(string& keyword) {
     cout << "Input your keyword and press enter: ";
     getline(cin, keyword);
     cout << endl;
-    for (unsigned i = 0; i < keyword.length(); ++i) {
-        keyword[i] = tolower(keyword[i]);
+    keyword[0] = toupper(keyword[0]);
+    for (unsigned i = 1; i < keyword.length(); ++i) {
+        if(keyword[i-1] == '-' || keyword[i-1] == ' '){
+            keyword[i] = toupper(keyword[i]);
+        } else {
+            keyword[i] = tolower(keyword[i]);
+        }
     }
 
     return;
 }
+
 
 void UserInterface::printKeywords(vector<string>& keywords) {
     if (keywords.empty()) {
