@@ -55,7 +55,7 @@ std::vector<Movie> MovieRec::recommend(char ratin, const std::vector<std::string
     
     if (directr.size() != 0){
     for(auto&& item : directr){ //for every string in directr
-        for(movieScore lp : movieq){ //for every movieScore object
+        for(movieScore& lp : movieq){ //for every movieScore object
             string tTitle = lp.getTitle(); //set string as temp title
             Movie tmov = MoviesDatabase::getMovie(tTitle); //fetches movie based on title
             
@@ -73,7 +73,7 @@ std::vector<Movie> MovieRec::recommend(char ratin, const std::vector<std::string
 
     if(actr.size() != 0){
     for(auto&& item : actr){ //works same way as directors but with actors instead
-        for(movieScore lp : movieq){
+        for(movieScore& lp : movieq){
             string tTitle = lp.getTitle();
             Movie tmov = MoviesDatabase::getMovie(tTitle);
             
