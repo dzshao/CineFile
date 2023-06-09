@@ -1,11 +1,26 @@
 #ifndef PERSON_H
 #define PERSON_H
 
+#include <vector>
+#include <string>
+
+using std::string;
+
 class Person {
-    protected:
-        std::set<std::string> movies;
     public:
-        std::set<std::string>& getMovieList();
+        Person() : 
+                name()
+        {};
+
+        Person(std::string _name) : 
+                name(_name)
+        {};
+
+        std::string getName() const;
+        void setName(const std::string&);
+
+    protected:
+        std::string name;
 };
 
 #endif

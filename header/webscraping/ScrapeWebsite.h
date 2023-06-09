@@ -3,15 +3,17 @@
 
 #include <string>
 #include <iostream>
+#include <curl/curl.h>
 
 using std::cout;
 using std::string;
+using std::endl;
 
 class ScrapeWebsite {
     public:
         static string scrapeSite(const string &);
     private:
-       static size_t write_callback(char *, size_t, size_t, void *);
+        static size_t write_callback(char *, size_t, size_t, void *);
 };
 
 #endif
