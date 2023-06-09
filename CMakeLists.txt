@@ -1,7 +1,8 @@
 cmake_minimum_required(VERSION 3.2)
 project(movieRecommender)
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++1y")
+SET(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_FLAGS --coverage)
 
 ADD_SUBDIRECTORY(googletest)
 
@@ -31,5 +32,5 @@ set_target_properties(movie_recommend PROPERTIES
 target_link_libraries(cinefile movie_recommend curl)
 target_link_libraries(test gmock gtest movie_recommend curl)
 
-target_compile_options(cinefile PRIVATE -g)
-target_compile_options(test PRIVATE -g)
+target_compile_options(cinefile PRIVATE -g -Wall -fprofile-arcs -ftest-coverage)
+target_compile_options(test PRIVATE -g -g -Wall -fprofile-arcs -ftest-coverage)
