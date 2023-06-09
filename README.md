@@ -93,7 +93,7 @@ Thank you for using Cinefile!
 Upon initialization, the program will create a MovieDatabase object. This object will store all the movies and genres that have already been parsed. The program functions by then using the UserInterface class to print out a menu prompting the user for how they would like to be recommended movies, based on a rating range and/or based on genres, directors, actors. Once the user has decided, the main function will call the appropriate recommend function. The recommend function will call the scrapeGenre or scrapeMovie function from the imdbParser class which uses web scraping to find movies that match the criteria desired by the user. These two functions will use scrapeSite in order to scrape the HTML of desired website. If a movie found is already stored in MovieDatabase, it will not create a new movie object. Otherwise, a new movie object will be created using the parseMovie() function, which calls the findActorList, findDirectorList, findGenreList, findName, and findRating functions. This new movie object will be added to the MovieDatabase and to the movie set of its respective Genre objects. The top ten movies scraped with the most similarities to what the user wants will be returned. Once the recommend function has found these ten movies, it will return them in a priority_queue. The function printMovieList will print out the ten movies to the user. 
 - scrapeWebsite
   - scrapeSite(...) scrapes the input website URL and returns the HTML code of the site as a string.
-  - write_callback(...) 
+  - write_callback(...) Helper function used by the external library libcurl to write scraped data to string.
 - imdbParser
   - scrapeGenres(...) calls scrapeWebsite::scrapeSite(...) on the IMDb page which lists the top movies associated with the input genre or combination of genres. Calls scrapeMovies(...) to fill a vector of Movie objects with the scraped data which will then be returned.
   - scrapeMovies(...) creates Movie objects with the corresponding 'find' member functions and fills an input vector of Movie objects with them.
@@ -106,9 +106,8 @@ Upon initialization, the program will create a MovieDatabase object. This object
   - findHTML(...) helper function which finds a certan input string within the input stringstream.
   - skipLines(...) helper function which skips a certain number of input lines in the input stringstream.
 - moviesDatabase
-  - Aggregation of Genres
-  - storeGenreLists() member function stores the list of genres and all their contained movies within a file.
-  - loadGenreLists() member function loads the list of genres and their contained movies from the saved file
+  - Aggregation of Genres, Movies, Directors, and Actors
+  - Has four maps, allGenres, allMovies, allDirectors, and allActors that stores the data for all information scraped from IMDb. Serves as a centralized area to store movie information. The class has accessor and mutator functions for each map, allowing new movies to be added and information about old movies to be retrieved. 
 - Genre
   - Aggregation of movies
   - Stores name of the genre and an unordered_map of Movie objects as a list of associated movies.
@@ -152,7 +151,7 @@ git clone https://github.com/cs100/final-project-ahude001-dshao009-jshen075-jriv
 cd final-project-ahude001-dshao009-jshen075-jrive141
 ```
 The project uses the libraries CMake and cURL, which you must install before continuing. Please refer to the [installation instructions on the CMake website](https://cmake.org/install/)
-and the [installation instructions on the cURL website.](https://curl.se/docs/install.html)
+and the [installation instructions on the cURL website.](https://curl.se/docs/install.html) cURL also requires libcurl to be installed to run. These can also be installed using a package manager such as homebrew or apt-get depending on what is installed on your device. 
 Next, run commands to build the project using CMake:
 ```
 cmake .
@@ -173,4 +172,4 @@ Follow the instructional prompts to operate the program. For additional help, re
 ```
 ./test
 ```
- 
+We created unit tests for every public function in each class we created, ensuring that the program behaves as expected even in edge case scenarios. We also used valgrind to verify that no memory leaks are caused by the program. 
