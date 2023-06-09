@@ -33,6 +33,9 @@
 #include <vector>
 #include <queue>
 #include <algorithm>
+#include <set>
+#include <#include "../header/recommender/MovieScore.h">
+//include movie.h wherever that is
 
 using namespace std;
 
@@ -68,20 +71,15 @@ using namespace std;
 //Movierecommend has 2 variables: movie object and score
 //
 //constructor
-vector<Movie> recommend(vector<string> ratin, vector<string> genr, vector<string> directr, vector<string> actr){
+vector<Movie>& MovieRec::recommend(vector<string> ratin, vector<string> genr, vector<string> directr, vector<string> actr){
 
-    
     movieDatabase movieDB;
-    vector<Movie> finalten;
 
     vector<Movie> movieStore;
 
     priority_queue<MovieScore, vector<MovieScore>, compScore> pq;
-    vector<Movie> fq;
     
-    movieDB.getRating(ratin); //assuming this will populate movieDB with movies of that rating
-
-
+    //movieDB.getRating(ratin); assuming this will populate movieDB with movies of that rating
 
     for(auto&& item : genr){ //for every string in vector genres
         Genre newgenre = movieDB.getGenre(item); //gets the genre object which stores every movie with x genre
@@ -108,12 +106,12 @@ vector<Movie> recommend(vector<string> ratin, vector<string> genr, vector<string
 
     }
     for(auto&& item : directr){ //for every director typed
-        Director newdirect = movieDB.getDirector(item); //gets the genre object which stores every movie with x genre
-        unordered_map<string, Movie>& directMap = newdirect.listOfMovies(); //creates a Genremap which contains this list of movies
+        Director newdirect = movieDB.getDirector(item); //gets the director object which stores every movie with x director
+        set<string> dMov = newdirect.getMovieList(); // gets the set of movie titles
         
-        for(const auto& mapp : genreMap){ //for every movie in Genremap
-            const Movie& movi = mapp.second; //sets temp movie object to what is mapped
-            string tempTitle = movi.name; //sets temp title to the movie's name
+        for(auto e : dMov){ //for every movie in dmov
+
+            string tempTitle = e; //sets temp title to the movie's name
             // if pq does not contain any movies with same title as current movie, create new
             // if one does match, increase its score by like 22
             bool doesContain = false;
@@ -134,12 +132,12 @@ vector<Movie> recommend(vector<string> ratin, vector<string> genr, vector<string
         
     }
     for(auto&& item : actr){
-        unordered_map<string, Genre>& directMap = movieDB.getDirectorList();
+        Actor newact = movieDB.getActor(item); //gets the actor object which stores every movie with x actor
+        set<string> aMov = newact.getMovieList(); // gets the set of movie titles
         
-        //movieStore = movieDB.allGenres(item); //i assume this will return a vector of movies that match the genre(s), stores it in movieStore
+        for(auto e : aMov){ //for every movie in dmov
 
-        for(auto mov : directMap){ //for every movie in Genrestore
-            string tempTitle = mov.second.name; // assuming getTitle is a function
+            string tempTitle = e; //sets temp title to the movie's name
             // if pq does not contain any movies with same title as current movie, create new
             // if one does match, increase its score by like 22
             bool doesContain = false;
@@ -158,11 +156,14 @@ vector<Movie> recommend(vector<string> ratin, vector<string> genr, vector<string
 
     }
 
-    //after the list has been assigned score to, use getters to get the top 5 movies with getTitle() or whatever and then return a priority queue wit them
+    //after the list has been assigned score to, use getters to get the top 10 movies with getTitle() or whatever and then return a priority queue wit them
     //output top then pop 10 times
+    vector<Movie> fq;
+
     for(int i = 0; i < 10; i++){
         string tTitle = pq.top().getTitle();
-        fq.push_back(movieDB.getMovie(tTitle));
+        Movie nMovie = movieDB.getMovie(tTitle);
+        fq.push_back(nMovie);
         pq.pop();
     }
 
@@ -179,81 +180,4 @@ vector<Movie> recommend(vector<string> ratin, vector<string> genr, vector<string
 //if no keywords match increases score by smaller random amount
 
 //how to convert numbers to high/low ratings?
-
-int main() {
-    ifstream inputFile("MovieDB.txt"); 
-    string line;
-    if (!inputFile) {
-        cout << "Failed to open the file." << endl;
-        return 1;
-    }
-    vector<string> words;
-    vector<MovieRecommend*> movies;
-    MovieRecommend* currentMovie = nullptr;
-
-    while (getline(inputFile, line)) {
-        istringstream iss(line);
-        string word;
-        while (iss >> word) {
-            if (word == "Movie:"){
-                if (inputFile >> word) {
-                MovieRecommend* newMovie = new MovieRecommend(word);
-                movies.push_back(newMovie);
-
-                delete currentMovie; // Delete the previous movie, if any
-                currentMovie = newMovie;
-                // string movieTitle;
-                // if (iss >> movieTitle){
-                //     //create new recommendation for MovieTitle
-                //     //set movie as the one to be compared to and functions to be applied to
-                // }
-            } else if (word == "Actor:" && currentMovie != nullptr) {
-                string currentActor;
-                if (iss >> currentActor) {
-                    currentMovie->actorCompare(currentActor); // Call actorCompare function
-                    // if actorcompare true add recommendation to current movierecommend
-                    // else add random smaller value to recommendation
-                }
-            } else if (word == "Genre:") {
-                string currentGenre;
-                if (iss >> currentGenre){
-                    currentMovie->genreCompare(currentGenre);
-                }
-            } else if (word == "Director:"){
-                string currentDirector;
-                if (iss >> currentGenre){
-                    currentMovie->directorCompare(currentDirector);
-                }
-            } else if (word == "Rating:"){
-                string currentRating;
-                if (iss >> currentRating){
-                    currentMovie->ratingCompare(currentRating);
-                }
-            } 
-            cout << word << endl;
-        }
-    }
-    }
-
-    //function at end that finds the movie with 10 highest scores and returns them
-    //loop through vector and check score for each movie searched, create another vector of top 10 movies by keeping track of the top 3 movies
-    //the rest of these will be random lol
-
-
-}
-
-
-
-
-// else if (word == "ReleaseYear:"){
-//                 string currentRelease;
-//                 if (iss >> currentRelease){
-//                     releaseCompare(currentRelease, previousRelease);
-//                 }
-//             } 
-
-
-//implementation with getters
-//for each movie with 
-
 

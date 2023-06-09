@@ -2,24 +2,25 @@
 
 using namespace std;
 
-movieScore(string t){
+MovieScore::movieScore(string t){
             title = t;
             score = rand() % 5 + 16;
 }
-movieScore(){
+
+MovieScore::movieScore(){
             score = 0;
             mtitle = "";
 }
 
-int getScore(){
+int MovieScore::getScore(){
     return this->score;
 }
 
-string getTitle(){
+string MovieScore::getTitle(){
     return this->title;
 }
 
-void changeScore(int change){
+void MovieScore::changeScore(int change){
     this->score = this->score + change;
 
 } 
