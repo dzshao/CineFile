@@ -1,7 +1,7 @@
 #include "../header/webscraping/imdbParser.h"
 #include "../header/webscraping/ScrapeWebsite.h"
 
-vector<Movie> imdbParser::scrapeGenres(const vector<string>&genreList) {
+void imdbParser::scrapeGenres(const vector<string>&genreList) {
     const string imdbGenreLink = "https://www.imdb.com/search/title/?genres=";
     vector<Movie> listOfMovies;
     for (unsigned i = 0; i < genreList.size(); ++i) {
@@ -15,15 +15,14 @@ vector<Movie> imdbParser::scrapeGenres(const vector<string>&genreList) {
         /* The website of a valid genre always begins with two empty lines. Any genre list that is not a valid genre 
         begins with only one empty line. So, if the second line isn't empty, the user did not input a valid genre.
         */
-        if (filter != "") {
+        if (filter != "" || !htmlParser) {
             cout << "Please enter a valid genre. (" << genreList.at(i) << " is not a valid genre)" << endl;
             continue;
         }
 
-        const int numMovies = 10;
+        const int numMovies = 49;
         scrapeMovies(htmlParser, listOfMovies, numMovies);
     }
-    return listOfMovies;
 }
 
 void imdbParser::scrapeMovies(stringstream& parser, vector<Movie>& movieList, int numMovies) {
@@ -36,6 +35,7 @@ void imdbParser::scrapeMovies(stringstream& parser, vector<Movie>& movieList, in
         vector<Actor> actorList = findActorList(parser);
 
         movieList.push_back({movieTitle, releaseDate, movieGenres, movieRating, directorList, actorList});
+        MoviesDatabase::addMovie(movieList.at(movieList.size() - 1));
     }
 }
 

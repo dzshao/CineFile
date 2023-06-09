@@ -41,7 +41,7 @@ TEST(imdbParserTest, testScrapingHorror) {
     EXPECT_EQ(listOfHorrorMovies.at(1).name, imdbHorrorList.at(1).name);
     EXPECT_EQ(listOfHorrorMovies.at(2).name, imdbHorrorList.at(2).name);
     EXPECT_EQ(listOfHorrorMovies.at(3).name, imdbHorrorList.at(3).name);
-
+    
     // Check release dates
     EXPECT_EQ(listOfHorrorMovies.at(0).releaseDates, imdbHorrorList.at(0).releaseDates);
     EXPECT_EQ(listOfHorrorMovies.at(1).releaseDates, imdbHorrorList.at(1).releaseDates);
@@ -149,10 +149,10 @@ TEST(imdbParserTest, testScrapingAction) {
     EXPECT_EQ(listOfActionMovies.at(3).name, imdbActionList.at(3).name);
 
     // Check release dates
-    EXPECT_EQ(listOfActionMovies.at(0).releaseDates, imdbActionList.at(0).releaseDates);
-    EXPECT_EQ(listOfActionMovies.at(1).releaseDates, imdbActionList.at(1).releaseDates);
-    EXPECT_EQ(listOfActionMovies.at(2).releaseDates, imdbActionList.at(2).releaseDates);
-    EXPECT_EQ(listOfActionMovies.at(3).releaseDates, imdbActionList.at(3).releaseDates);
+    EXPECT_TRUE(listOfActionMovies.at(0).releaseDates == imdbActionList.at(0).releaseDates);
+    EXPECT_TRUE(listOfActionMovies.at(1).releaseDates == imdbActionList.at(1).releaseDates);
+    EXPECT_TRUE(listOfActionMovies.at(2).releaseDates == imdbActionList.at(2).releaseDates);
+    EXPECT_TRUE(listOfActionMovies.at(3).releaseDates == imdbActionList.at(3).releaseDates);
 
     // Check genre names
     for (int i = 0; i < 4; ++i) {
@@ -183,44 +183,58 @@ TEST(imdbParserTest, testScrapingAction) {
 }
 
 TEST(imdbParserTest, testTwoGenres) {
-    vector<Movie> listOfHorrorRomanceMovies = imdbParser::scrapeGenres({"romance", "horror"});
+    imdbParser::scrapeGenres({"romance", "horror"});
     // Checking if the romance movies parsed are correct
-    EXPECT_EQ(listOfHorrorRomanceMovies.at(0).name, imdbRomanceList.at(0).name);
-    EXPECT_EQ(listOfHorrorRomanceMovies.at(1).name, imdbRomanceList.at(1).name);
-    EXPECT_EQ(listOfHorrorRomanceMovies.at(2).name, imdbRomanceList.at(2).name);
-    EXPECT_EQ(listOfHorrorRomanceMovies.at(3).name, imdbRomanceList.at(3).name);
+    EXPECT_EQ(MoviesDatabase::getMovieList()["The Little Mermaid"].name, imdbRomanceList.at(0).name);
+    EXPECT_EQ(MoviesDatabase::getMovieList()["Barbie"].name, imdbRomanceList.at(1).name);
+    EXPECT_EQ(MoviesDatabase::getMovieList()["Asteroid City"].name, imdbRomanceList.at(2).name);
+    EXPECT_EQ(MoviesDatabase::getMovieList()["Queen Charlotte: A Bridgerton Story"].name, imdbRomanceList.at(3).name);
 
      // Checking if the horror movies parsed are correct
-    EXPECT_EQ(listOfHorrorRomanceMovies.at(10).name, imdbHorrorList.at(0).name);
-    EXPECT_EQ(listOfHorrorRomanceMovies.at(11).name, imdbHorrorList.at(1).name);
-    EXPECT_EQ(listOfHorrorRomanceMovies.at(12).name, imdbHorrorList.at(2).name);
-    EXPECT_EQ(listOfHorrorRomanceMovies.at(13).name, imdbHorrorList.at(3).name);
+    EXPECT_EQ(MoviesDatabase::getMovieList()["Yellowjackets"].name, imdbHorrorList.at(0).name);
+    EXPECT_EQ(MoviesDatabase::getMovieList()["From"].name, imdbHorrorList.at(1).name);
+    EXPECT_EQ(MoviesDatabase::getMovieList()["The Boogeyman"].name, imdbHorrorList.at(2).name);
+    EXPECT_EQ(MoviesDatabase::getMovieList()["The Walking Dead"].name, imdbHorrorList.at(3).name);
 }
 
 TEST(imdbParserTest, testInvalidGenre) {
     testing::internal::CaptureStdout();
-    vector<Movie> listOfBogusMovies = imdbParser::scrapeGenres({"bogusGenre"});
+    imdbParser::scrapeGenres({"bogusGenre"});
     string output = testing::internal::GetCapturedStdout();
     EXPECT_EQ(output, "Please enter a valid genre. (bogusGenre is not a valid genre)\n");
+}
+
+TEST(imdbParserTest, testGenreWithSpace) {
+    testing::internal::CaptureStdout();
+    imdbParser::scrapeGenres({"bogus Genre"});
+    string output = testing::internal::GetCapturedStdout();
+    EXPECT_EQ(output, "Error: URL using bad/illegal format or missing URL\nPlease enter a valid genre. (bogus Genre is not a valid genre)\n");
 }
 
 TEST(imdbParserTest, testTwoInvalidGenre) {
     testing::internal::CaptureStdout();
-    vector<Movie> listOfBogusMovies = imdbParser::scrapeGenres({"bogusGenre", "bogusGenre2"});
+    imdbParser::scrapeGenres({"bogusGenre", "bogusGenre2"});
     string output = testing::internal::GetCapturedStdout();
     EXPECT_EQ(output, "Please enter a valid genre. (bogusGenre is not a valid genre)\nPlease enter a valid genre. (bogusGenre2 is not a valid genre)\n");
 }
 
+TEST(imdbParserTest, testTwoGenresWithSpace) {
+    testing::internal::CaptureStdout();
+    imdbParser::scrapeGenres({"bogus Genre", "bogus Genre2"});
+    string output = testing::internal::GetCapturedStdout();
+    EXPECT_EQ(output, "Error: URL using bad/illegal format or missing URL\nPlease enter a valid genre. (bogus Genre is not a valid genre)\nError: URL using bad/illegal format or missing URL\nPlease enter a valid genre. (bogus Genre2 is not a valid genre)\n");
+}
+
 TEST(imdbParserTest, testOneInvalidGenreOneValid) {
     testing::internal::CaptureStdout();
-    vector<Movie> listOfHorrorBogusMovies = imdbParser::scrapeGenres({"bogusGenre", "horror"});
+    imdbParser::scrapeGenres({"bogusGenre", "horror"});
     string output = testing::internal::GetCapturedStdout();
     EXPECT_EQ(output, "Please enter a valid genre. (bogusGenre is not a valid genre)\n");
 
-    EXPECT_EQ(listOfHorrorBogusMovies.at(0).name, imdbHorrorList.at(0).name);
-    EXPECT_EQ(listOfHorrorBogusMovies.at(1).name, imdbHorrorList.at(1).name);
-    EXPECT_EQ(listOfHorrorBogusMovies.at(2).name, imdbHorrorList.at(2).name);
-    EXPECT_EQ(listOfHorrorBogusMovies.at(3).name, imdbHorrorList.at(3).name);
+    EXPECT_EQ(MoviesDatabase::getMovieList()["Yellowjackets"].name, imdbHorrorList.at(0).name);
+    EXPECT_EQ(MoviesDatabase::getMovieList()["From"].name, imdbHorrorList.at(1).name);
+    EXPECT_EQ(MoviesDatabase::getMovieList()["The Boogeyman"].name, imdbHorrorList.at(2).name);
+    EXPECT_EQ(MoviesDatabase::getMovieList()["The Walking Dead"].name, imdbHorrorList.at(3).name);
 }
 
 #endif

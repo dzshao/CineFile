@@ -5,6 +5,8 @@
 #include <queue>
 
 //Project headers
+#include "../header/webscraping/imdbParser.h"
+#include "../header/database/moviesDatabase.h"
 #include "../header/interface/userinterface.h"
 
 using namespace std;
@@ -52,6 +54,9 @@ int main() {
         cout << "For actors, ";
         interface.printKeywords(actorsList);
         cout << endl;
+
+        // Scraping movies from imdb
+        imdbParser::scrapeGenres(genresList);
 
         //Get movie recommendations
         vector<Movie> recommendations; //= MovieRecommender::recommend(ratingsInput, genresList, directorsList, actorsList);
