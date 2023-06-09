@@ -9,6 +9,7 @@
 #include "../header/database/moviesDatabase.h"
 #include "../header/webscraping/imdbParser.h"
 #include "../header/interface/userinterface.h"
+#include "../header/database/MovieRec.h"
 
 using namespace std;
 
@@ -67,7 +68,7 @@ int main() {
         imdbParser::scrapeGenres(genresList);
 
         //Get movie recommendations
-        vector<Movie> recommendations = MovieRecommender::recommend(ratingsInput, genresList, directorsList, actorsList);
+        vector<Movie> recommendations = MovieRec::recommend(ratingsInput, genresList, directorsList, actorsList);
 
         //Print movie recommendations        
         interface.printMovieList(recommendations);
