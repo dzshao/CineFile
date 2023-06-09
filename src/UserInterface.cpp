@@ -38,7 +38,7 @@ void UserInterface::getSearchKeywords(vector<string>& keywords) {
         if (keyword.empty()) {
             continue;
         }
-        else if (keyword == "finished") {
+        else if (keyword == "Finished") {
             break;
         }
         else {

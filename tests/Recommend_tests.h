@@ -26,6 +26,16 @@ TEST(Recommendtests, noerrors2){
     EXPECT_NO_THROW(MovieRec::recommend(tc, tgenre, tdirect, tactors));
 }
 
+TEST(Recommendtests, doesitrun){
+    Movie randomMovie{"Yellowjackets", "(2021– )", {{"Drama"}, {"Horror"}, {"Mystery"}}, 7.8, {{"N/A"}}, {{"Melanie Lynskey"}, {"Tawny Cypress"}, {"Sophie Nélisse"}, {"Jasmin Savoy Brown"}}};
+    MoviesDatabase::addMovie(randomMovie);
+    std::vector<string> tactors = {"Bob", "Fred"};
+    std::vector<string> tdirect = {"John", "Alex"};
+    std::vector<string> tgenre = {"Horror", "Drama"};
+    vector<Movie> testvec = MovieRec::recommend(tc, tgenre, tdirect, tactors);
+    EXPECT_EQ(testvec[0].name, "Yellowjackets");
+}
+
 // TEST(Recommendtests, emptyActors){
 //     vector<string> tactors;
 //     vector<string tdirect;
