@@ -24,8 +24,8 @@ void MoviesDatabase::addDirector(const Director& director){
     MoviesDatabase::allDirectors[director.getName()] = director;
 }
 
-void MoviesDatabase::addMovie(const Movie& movie){
-    MoviesDatabase::allMovies[movie.name] = movie;
+void MoviesDatabase::addMovie(const Movie& addedMovie){
+    MoviesDatabase::allMovies[addedMovie.name] = addedMovie;
 }
 
 Genre& MoviesDatabase::getGenre(const string& gName) {
@@ -48,7 +48,7 @@ std::unordered_map<string, Movie>& MoviesDatabase::getMovieList() {
     return MoviesDatabase::allMovies;
 }
 
-std::unordered_map<string, Genre>&  MoviesDatabase::getGenreList() {
+std::unordered_map<string, Genre>& MoviesDatabase::getGenreList() {
     return MoviesDatabase::allGenres;
 }
 
