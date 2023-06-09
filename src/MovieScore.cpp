@@ -1,26 +1,26 @@
-#include ""../header/recommender/MovieScore.h""
+#include "../header/recommender/MovieScore.h"
 
 using namespace std;
 
-MovieScore::movieScore(string t){
+movieScore::movieScore(string t){
             title = t;
             score = rand() % 5 + 16;
 }
 
-MovieScore::movieScore(){
+movieScore::movieScore(){
             score = 0;
             mtitle = "";
 }
 
-int MovieScore::getScore(){
+int movieScore::getScore(){
     return this->score;
 }
 
-string MovieScore::getTitle(){
+string movieScore::getTitle(){
     return this->title;
 }
 
-void MovieScore::changeScore(int change){
-    this->score = this->score + change;
+void movieScore::changeScore(int change){
+    score = score + change;
 
 } 
