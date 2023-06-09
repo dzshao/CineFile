@@ -9,6 +9,7 @@ add_library(movie_recommend
     src/ScrapeWebsite.cpp
     src/imdbParser.cpp
     src/UserInterface.cpp
+    src/database/moviesDatabase.cpp
     src/database/movie.cpp
     src/database/actor.cpp
     src/database/director.cpp
