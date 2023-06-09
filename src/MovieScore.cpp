@@ -1,15 +1,15 @@
-#include "../header/recommender/MovieScore.h"
+#include "../header/database/MovieScore.h"
 
 using namespace std;
 
-movieScore::movieScore(string t){
+movieScore::movieScore(std::string t){
             title = t;
             score = rand() % 5 + 16;
 }
 
 movieScore::movieScore(){
             score = 0;
-            mtitle = "";
+            title = "";
 }
 
 int movieScore::getScore(){

@@ -24,7 +24,8 @@ class movieScore{
         string getTitle();
         void changeScore(int change);
         int score;
-        string mtitle;
+        std::string title;
+        
 
 
 };
