@@ -113,7 +113,7 @@ Upon initialization, the program will create a MovieDatabase object. This object
   - addMovie(...) member function which adds the given Movie object to the list of associated movies.
 - Movie (struct)
   - Aggregation of genres, actors, and directors
-  - Struct with dumb data such as the title, release year, rating, as well as vectors of Actors, Director, and Genre objects associated with the Movie.
+  - Struct with data pertaining to one movie such as the title, release year, rating, as well as vectors of Actors, Director, and Genre objects associated with the Movie.
 - MovieRecommender
   - recommend(...) overloaded member function which returns a priority_queue of movie recommendations. 
 - Person
