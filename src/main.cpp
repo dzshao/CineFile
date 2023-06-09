@@ -4,6 +4,7 @@
 #include <vector>
 #include <queue>
 #include <cassert>
+#include <curl/curl.h>
 
 //Project headers
 #include "../header/database/moviesDatabase.h"
