@@ -35,4 +35,4 @@ target_link_libraries(cinefile movie_recommend curl)
 target_link_libraries(test gmock gtest movie_recommend curl)
 
 target_compile_options(cinefile PRIVATE -g -Wall -fprofile-arcs -ftest-coverage)
-target_compile_options(test PRIVATE -g -g -Wall -fprofile-arcs -ftest-coverage)
+target_compile_options(test PRIVATE -g -Wall -fprofile-arcs -ftest-coverage)
