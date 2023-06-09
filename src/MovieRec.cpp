@@ -103,14 +103,14 @@ vector<Movie>& MovieRec::recommend(char ratin, vector<string> genr, vector<strin
                 movieq.push_back(MovieScore(tempTitle)); //creates new moviescore object of that title and scores it
             }
 
-            for(MovieScore sloop : pq){ //for every moviescore object in pq
-                if(sloop.getTitle() == tempTitle){ //if the moviescore object have same title as movieobject
-                    doesContain = true;
-                    sloop.changeScore(22); //increases score and makes sure it wont create new object
-                }
-            } if (doesContain == false){ //if same title not found
-                pq.push(MovieScore(tempTitle)); //creates new moviescore object of that title and scores it
-            }
+            // for(MovieScore sloop : pq){ //for every moviescore object in pq
+            //     if(sloop.getTitle() == tempTitle){ //if the moviescore object have same title as movieobject
+            //         doesContain = true;
+            //         sloop.changeScore(22); //increases score and makes sure it wont create new object
+            //     }
+            // } if (doesContain == false){ //if same title not found
+            //     pq.push(MovieScore(tempTitle)); //creates new moviescore object of that title and scores it
+            // }
         }
         //compare by setting tolower(), might need to set all of movie objects info to lower
         //then store all that match into a vector/list
@@ -187,7 +187,7 @@ vector<Movie>& MovieRec::recommend(char ratin, vector<string> genr, vector<strin
     vector<Movie> fq;
     
     for(unsigned int i = 0; i < movieq.size(); i++){
-        
+
         MovieScore tm = movieq[i];
         pq.push(tm);
 
