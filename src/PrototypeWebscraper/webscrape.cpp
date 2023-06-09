@@ -43,7 +43,7 @@ int main()
     */
     string URL = "https://www.imdb.com/search/title/?genres=" + genreName;
     // This is just used for prototyping. If desired, the HTML of the scraped page can be output to a .txt file.
-    // string fileName = genreName + ".txt";
+    string fileName = genreName + ".txt";
     CURL *curl;
     CURLcode res;
     string result;
@@ -65,11 +65,11 @@ int main()
 
         // Print the result to a .txt file if desired
 
-        // std::ofstream out(fileName);
-        // if (out.is_open()) {
-        //     out << result << endl;
-        // }
-        // out.close();
+        std::ofstream out(fileName);
+        if (out.is_open()) {
+            out << result << endl;
+        }
+        out.close();
 
         // Clean up
         curl_easy_cleanup(curl);

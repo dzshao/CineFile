@@ -9,7 +9,7 @@ TEST(ScrapingWebsiteTest, testBlankWebsite) {
     testing::internal::CaptureStdout();
     string htmlResult = ScrapeWebsite::scrapeSite("");
     string output = testing::internal::GetCapturedStdout();
-    EXPECT_EQ(output, "Error: URL using bad/illegal format or missing URL\n");
+    ASSERT_EQ(output, "Error: URL using bad/illegal format or missing URL\n");
     EXPECT_EQ(htmlResult, "");
 }
 
@@ -17,7 +17,7 @@ TEST(ScrapingWebsiteTest, testIllegalURL) {
     testing::internal::CaptureStdout();
     string htmlResult = ScrapeWebsite::scrapeSite("@ &&&&");
     string output = testing::internal::GetCapturedStdout();
-    EXPECT_EQ(output, "Error: URL using bad/illegal format or missing URL\n");
+    ASSERT_EQ(output, "Error: URL using bad/illegal format or missing URL\n");
     EXPECT_EQ(htmlResult, "");
 }
 
@@ -25,7 +25,7 @@ TEST(ScrapingWebsiteTest, testIllegalURL2) {
     testing::internal::CaptureStdout();
     string htmlResult = ScrapeWebsite::scrapeSite("@ $");
     string output = testing::internal::GetCapturedStdout();
-    EXPECT_EQ(output, "Error: URL using bad/illegal format or missing URL\n");
+    ASSERT_EQ(output, "Error: URL using bad/illegal format or missing URL\n");
     EXPECT_EQ(htmlResult, "");
 }
 
@@ -33,7 +33,7 @@ TEST(ScrapingWebsiteTest, testInvalidURL) {
     testing::internal::CaptureStdout();
     string htmlResult = ScrapeWebsite::scrapeSite("hello.world.123.123");
     string output = testing::internal::GetCapturedStdout();
-    EXPECT_EQ(output, "Error: Couldn't resolve host name\n");
+    ASSERT_EQ(output, "Error: Couldn't resolve host name\n");
     EXPECT_EQ(htmlResult, "");
 }
 
@@ -41,7 +41,7 @@ TEST(ScrapingWebsiteTest, testInvalidURL2) {
     testing::internal::CaptureStdout();
     string htmlResult = ScrapeWebsite::scrapeSite("cs100test123.");
     string output = testing::internal::GetCapturedStdout();
-    EXPECT_EQ(output, "Error: Couldn't resolve host name\n");
+    ASSERT_EQ(output, "Error: Couldn't resolve host name\n");
     EXPECT_EQ(htmlResult, "");
 }
 

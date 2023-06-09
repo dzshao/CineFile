@@ -1,8 +1,8 @@
 #include "../header/webscraping/ScrapeWebsite.h"
-#include <curl/curl.h>
+
 
 /* This program uses cURL, which will not work on the CS100 server. For this to run, you first need to install cURL
-on your computer by running: "sudo apt-get install curl" in the terminal. 
+on your computer by running: "sudo apt-get install curl" in the terminal or "brew install curl" for Macs. 
 When you compile this program, make sure to add the -lcurl flag. Ex. "g++ ... -lcurl"
 */
 
@@ -31,7 +31,7 @@ string ScrapeWebsite::scrapeSite(const string &websiteURL) {
         // Scraping the website
         res = curl_easy_perform(websiteConnection);
         if(res != CURLE_OK) {
-            cout << "Error: " << curl_easy_strerror(res) << std::endl;
+            cout << "Error: " << curl_easy_strerror(res) << endl;
         }
 
         // Clean up
