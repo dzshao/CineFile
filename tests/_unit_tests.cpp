@@ -1,5 +1,6 @@
 #include <gtest/gtest.h>
 
+#include "./moviesDatabase_tests.h"
 #include "./ScrapeWebsites_test.h"
 #include "./imdbParser_tests.h"
 #include "./genre_tests.h"

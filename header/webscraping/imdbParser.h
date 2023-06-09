@@ -6,6 +6,7 @@
 #include <sstream>
 #include <limits>
 #include "../database/genre.h"
+#include "../database/moviesDatabase.h"
 
 using std::string;
 using std::stringstream;
