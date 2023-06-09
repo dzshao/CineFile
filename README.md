@@ -144,6 +144,9 @@ Users can choose to continue to be recommended movies with new parameters after 
 <img width="1063" alt="Screenshot 2023-06-09 at 4 34 10 AM" src="https://github.com/cs100/final-project-ahude001-dshao009-jshen075-jrive141/assets/102844937/0727af13-8205-4d43-a8d9-f7de477ea3bc">
 <img width="816" alt="Screenshot 2023-06-09 at 4 34 15 AM" src="https://github.com/cs100/final-project-ahude001-dshao009-jshen075-jrive141/assets/102844937/6577dffe-c10f-4eae-8cdf-3247c0d87dfc">
 
+Another sample output:
+<img width="791" alt="Screenshot 2023-06-09 at 6 20 02 AM" src="https://github.com/cs100/final-project-ahude001-dshao009-jshen075-jrive141/assets/102844937/87179fd2-b9e6-4751-92d9-f8da693c55c5">
+
 
  ## Installation/Usage
  Use git to clone the repository and change into the created directory.
