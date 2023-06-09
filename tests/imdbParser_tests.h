@@ -204,11 +204,25 @@ TEST(imdbParserTest, testInvalidGenre) {
     EXPECT_EQ(output, "Please enter a valid genre. (bogusGenre is not a valid genre)\n");
 }
 
+TEST(imdbParserTest, testGenreWithSpace) {
+    testing::internal::CaptureStdout();
+    imdbParser::scrapeGenres({"bogus Genre"});
+    string output = testing::internal::GetCapturedStdout();
+    EXPECT_EQ(output, "Error: URL using bad/illegal format or missing URL\nPlease enter a valid genre. (bogus Genre is not a valid genre)\n");
+}
+
 TEST(imdbParserTest, testTwoInvalidGenre) {
     testing::internal::CaptureStdout();
     imdbParser::scrapeGenres({"bogusGenre", "bogusGenre2"});
     string output = testing::internal::GetCapturedStdout();
     EXPECT_EQ(output, "Please enter a valid genre. (bogusGenre is not a valid genre)\nPlease enter a valid genre. (bogusGenre2 is not a valid genre)\n");
+}
+
+TEST(imdbParserTest, testTwoGenresWithSpace) {
+    testing::internal::CaptureStdout();
+    imdbParser::scrapeGenres({"bogus Genre", "bogus Genre2"});
+    string output = testing::internal::GetCapturedStdout();
+    EXPECT_EQ(output, "Error: URL using bad/illegal format or missing URL\nPlease enter a valid genre. (bogus Genre is not a valid genre)\nError: URL using bad/illegal format or missing URL\nPlease enter a valid genre. (bogus Genre2 is not a valid genre)\n");
 }
 
 TEST(imdbParserTest, testOneInvalidGenreOneValid) {

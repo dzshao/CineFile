@@ -15,7 +15,7 @@ void imdbParser::scrapeGenres(const vector<string>&genreList) {
         /* The website of a valid genre always begins with two empty lines. Any genre list that is not a valid genre 
         begins with only one empty line. So, if the second line isn't empty, the user did not input a valid genre.
         */
-        if (filter != "") {
+        if (filter != "" || !htmlParser) {
             cout << "Please enter a valid genre. (" << genreList.at(i) << " is not a valid genre)" << endl;
             continue;
         }
