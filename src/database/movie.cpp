@@ -28,10 +28,10 @@ std::ostream& operator<<(std::ostream& out, const Movie& outputMovie) {
 
 
     out << "Starring: ";
-    for(unsigned i = 0; i < 3; ++i) {
+    for(unsigned i = 0; i < outputMovie.castList.size() - 1; ++i) {
         out << outputMovie.castList.at(i).getName() << ", ";
     }
-    out << outputMovie.castList.at(3).getName();
+    out << outputMovie.castList.at(outputMovie.castList.size() - 1).getName(); << endl;
     
     return out;
 }
