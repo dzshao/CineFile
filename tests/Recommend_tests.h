@@ -37,7 +37,7 @@ TEST(Recommendtests, doesitrun){
     EXPECT_EQ(testvec[0].name, "Alien");
 }
 
-TEST(Recommendtests, doesitrun){
+TEST(Recommendtests, doesitrun2){
     Movie randomMovie{"Yellowjackets", "(2021– )", {{"Drama"}, {"Horror"}, {"Mystery"}}, 7.8, {{"N/A"}}, {{"Melanie Lynskey"}, {"Tawny Cypress"}, {"Sophie Nélisse"}, {"Jasmin Savoy Brown"}}};
     MoviesDatabase::addMovie(randomMovie);
     std::vector<string> tactors = {"Morgan Freeman", "Fred"};
