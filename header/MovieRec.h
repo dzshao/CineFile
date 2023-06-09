@@ -16,7 +16,7 @@ class MovieRec{
     void directorCompare(string director);
     void genreCompare(string genre);
 
-    void recommend(vector<string> ratin, vector<string> genr, vector<string> directr, vector<string> actor);
+    vector<Movie> recommend(vector<string> ratin, vector<string> genr, vector<string> directr, vector<string> actor);
     //way to interact w/
 
 

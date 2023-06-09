@@ -64,69 +64,11 @@ using namespace std;
 // }
 
 //build convertrating into the movie class/datareader
-void setRating(double rating){
-    if(rating < 5){
-        //movie rating = BAD;
-    } else if (rating >= 5 && rating <= 8){
-        //movie rating = AVG;
-    } else if (rating > 8){
-        //movie rating = GOOD;
-    }
-}
-
-//if previous actor not entered, then skip this function/run actorCompare(string act1)
-void actorCompare(const string& act1, const string& act2) {
-    cout << "Comparing actors: " << act1 << " and " << act2 << endl;
-    if (act1 == act2){
-        //movie reccomend++ (find some way to ignore upper/lowercasing)
-    } 
-    //otherwise increase score by smaller random amount
-}
-
-void genreCompare(const string& gen1, const string& gen2) {
-    if(gen1 == gen2){
-        changeScore(21);
-
-    } else {
-        int tempi = rand() % 5 + 15;
-        changeScore(tempi);
-    }
-
-
-}
-
-void releaseCompare(const string& rel1, const string& rel2) {
-    if(rel1 == rel2){
-        //movie reccomend++
-    }
-
-}
-
-void ratingCompare(const string& rat1, const string& rat2) {
-    if(rat1 == rat2){
-        //movie reccomend++
-    }
-    //look at first char of the rating, if 0/2-4 its a bad movie, if 5-7 its a good movie, 8 9 or 1 its a great movie
-    // if close in rating recommend+
-
-}
-
-void directorCompare(const string& dir1, const string& dir2){
-    if(dir1 == dir2){
-        //movie recommend++
-    }
-
-}
-
-void findHighest(vector<int> mlist){
-    // finds highest and returns it
-
-}
 
 //Movierecommend has 2 variables: movie object and score
 //
 //constructor
-void recommend(vector<string> ratin, vector<string> genr, vector<string> directr, vector<string> actr){
+vector<Movie> recommend(vector<string> ratin, vector<string> genr, vector<string> directr, vector<string> actr){
 
     
     movieDatabase movieDB;
@@ -135,22 +77,22 @@ void recommend(vector<string> ratin, vector<string> genr, vector<string> directr
     vector<Movie> movieStore;
 
     priority_queue<MovieScore, vector<MovieScore>, compScore> pq;
-    priority_queue<Movie, vector<Movie>, compScore> fq;
+    vector<Movie> fq;
     
     movieDB.getRating(ratin); //assuming this will populate movieDB with movies of that rating
 
 
 
     for(auto&& item : genr){ //for every string in vector genres
-        unordered_map<string, Genre>& genreMap = movieDB.getGenreList();
+        Genre newgenre = movieDB.getGenre(item); //gets the genre object which stores every movie with x genre
+        unordered_map<string, Movie>& genreMap = newgenre.getMovieList(); //creates a Genremap which contains this list of movies
         
-        //movieStore = movieDB.allGenres(item); //i assume this will return a vector of movies that match the genre(s), stores it in movieStore
-
-        for(auto mov : genreMap){ //for every movie in Genrestore
-            string tempTitle = mov.second.name; // assuming getTitle is a function
+        for(const auto& mapp : genreMap){ //for every movie in Genremap
+            const Movie& movi = mapp.second; //sets temp movie object to what is mapped
+            string tempTitle = movi.name; //sets temp title to the movie's name
             // if pq does not contain any movies with same title as current movie, create new
-            // if one does match, increase its score by like 22
-            bool doesContain = false;
+            // if one does match, increase its score by like 22 or whatever
+            bool doesContain = false; //bool to check if movie already in priority q
             for(MovieScore sloop : pq){ //for every moviescore object in pq
                 if(sloop.getTitle() == tempTitle){ //if the moviescore object have same title as movieobject
                     doesContain = true;
@@ -166,12 +108,12 @@ void recommend(vector<string> ratin, vector<string> genr, vector<string> directr
 
     }
     for(auto&& item : directr){ //for every director typed
-       unordered_map<string, Genre>& directMap = movieDB.getDirectorList(); //creates a map of all movies director is in
+        Director newdirect = movieDB.getDirector(item); //gets the genre object which stores every movie with x genre
+        unordered_map<string, Movie>& directMap = newdirect.listOfMovies(); //creates a Genremap which contains this list of movies
         
-        //movieStore = movieDB.allGenres(item); //i assume this will return a vector of movies that match the genre(s), stores it in movieStore
-
-        for(auto mov : directMap){ //for every movie in directorMap
-            string tempTitle = mov.second.name; // set temptitle as name
+        for(const auto& mapp : genreMap){ //for every movie in Genremap
+            const Movie& movi = mapp.second; //sets temp movie object to what is mapped
+            string tempTitle = movi.name; //sets temp title to the movie's name
             // if pq does not contain any movies with same title as current movie, create new
             // if one does match, increase its score by like 22
             bool doesContain = false;
