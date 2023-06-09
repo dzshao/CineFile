@@ -2,7 +2,7 @@
 #define USERINTERFACE_H
 
 #include <queue>
-#include "../database/movie.h"
+#include "../database/genre.h"
 
 class UserInterface {
     public:
@@ -15,7 +15,7 @@ class UserInterface {
         void printKeywordInstructions();
         void printKeywords(std::vector<std::string>& keywords);
         void printRatingsType(char);
-        void printMovieList(std::priority_queue<Movie>&);
+        void printMovieList(std::vector<Movie>&);
 };
 
 #endif

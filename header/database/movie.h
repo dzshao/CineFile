@@ -1,11 +1,12 @@
 #ifndef MOVIE_H
 #define MOVIE_H
 
-#include <set>
 #include <vector>
 #include <string>
 #include <iostream>
-
+class Genre;
+class Actor;
+class Director;
 #include "actor.h"
 #include "director.h"
 class Genre;

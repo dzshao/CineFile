@@ -4,27 +4,22 @@
 #include <vector>
 #include <string>
 
+using std::string;
+
 class Person {
     public:
         Person() : 
-                name(),
-                movies()
+                name()
         {};
 
         Person(std::string _name) : 
                 name(_name)
         {};
 
-        Person(std::string _name, const std::vector<std::string>&movieList) : 
-                name(_name), 
-                movies(movieList)
-        {};
-
-        std::vector<std::string>& getMovieList() const;
-        std::string getName() const { return name; };
+        std::string getName() const;
+        void setName(const std::string&);
 
     protected:
-        std::vector<std::string> movies;
         std::string name;
 };
 

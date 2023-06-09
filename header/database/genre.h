@@ -6,6 +6,8 @@
 struct Movie;
 #include "movie.h"
 
+using std::string;
+
 class Genre {
     public: 
         Genre() :
@@ -22,8 +24,11 @@ class Genre {
             listOfMovies(movies)
         {};
 
-        std::string getName() const { return name; };
-        std::unordered_map<std::string, Movie> getMovieList() const;
+        std::string getName() const;
+        std::unordered_map<std::string, Movie>& getMovieList();
+
+        void setName(const std::string&);
+        void addMovie(const Movie&);
     private:
         std::string name;
         std::unordered_map<std::string, Movie> listOfMovies;
