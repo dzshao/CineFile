@@ -48,20 +48,6 @@ TEST(Recommendtests, doesitrun2){
     EXPECT_EQ(testvec[0].name, "Alien");
 }
 
-// TEST(Recommendtests, emptyActors){
-//     vector<string> tactors;
-//     vector<string tdirect;
-//     vector<string> tgenre;
-//     char tc = 'H';
-//     EXPECT_CALL
-// }
 
-// TEST(Recommendtests, emptyDirectors){
-    
-// }
-
-// TEST(Recommendtests, emptyGenres){
-    
-// }
 
 #endif
