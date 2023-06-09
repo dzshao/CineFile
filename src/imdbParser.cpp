@@ -20,7 +20,7 @@ void imdbParser::scrapeGenres(const vector<string>&genreList) {
             continue;
         }
 
-        const int numMovies = 10;
+        const int numMovies = 49;
         scrapeMovies(htmlParser, listOfMovies, numMovies);
     }
 }
@@ -35,7 +35,7 @@ void imdbParser::scrapeMovies(stringstream& parser, vector<Movie>& movieList, in
         vector<Actor> actorList = findActorList(parser);
 
         movieList.push_back({movieTitle, releaseDate, movieGenres, movieRating, directorList, actorList});
-        MoviesDatabase::addMovie(movieList.at(i));
+        MoviesDatabase::addMovie(movieList.at(movieList.size() - 1));
     }
 }
 
