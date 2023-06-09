@@ -15,7 +15,7 @@ class UserInterface {
         void printKeywordInstructions();
         void printKeywords(std::vector<std::string>& keywords);
         void printRatingsType(char);
-        void printMovieList(std::priority_queue<Movie>&);
+        void printMovieList(std::vector<Movie>&);
 };
 
 #endif

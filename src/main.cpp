@@ -53,23 +53,12 @@ int main() {
         interface.printKeywords(actorsList);
         cout << endl;
 
-        //Generate recommendations
-        //MovieRecommender::recommend(ratingsInput, genresList, directorsList, actorsList);
+        //Get movie recommendations
+        vector<Movie> recommendations = MovieRecommender::recommend(ratingsInput, genresList, directorsList, actorsList);
 
-        cout << "Here's your list of movie recommendations: " << endl << endl;
-
-        //Mock recommendations
-        cout << "Hereditary (2018):" << endl;
-        cout << "Genre(s): Horror, Mystery, Thriller" << endl;
-        cout << "Starring: Toni Collette, ALex Wolff, Milly Shapiro" << endl << endl;
-        cout << "American Psycho (2000):" << endl;
-        cout << "Genre(s): Crime, Drama, Thriller" << endl;
-        cout << "Starring: Christian Bale, Willem Dafoe, Jared Leto" << endl << endl;
-        cout << "Rushmore (1998):" << endl;
-        cout << "Genre(s): Comedy, Drama" << endl;
-        cout << "Starring: Jason Schwartzman, Bill Murray, Olivia Williams" << endl;
+        //Print movie recommendations        
+        interface.printMovieList(recommendations);
         
-
         //Prompt to exit the program or search again.
         cout << endl;
         exitLoop = interface.getLoopExitInput();
