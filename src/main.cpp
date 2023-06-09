@@ -3,6 +3,7 @@
 #include <string>
 #include <vector>
 #include <queue>
+#include <cassert>
 
 //Project headers
 #include "../header/webscraping/imdbParser.h"
@@ -33,8 +34,15 @@ int main() {
 
         //Get genre keyword(s) from user input.
         cout << "Let's start with genres. Enter up to 5, or enter 'finished' when you are done if you have less than 5." << endl;
+        cout << "You must enter at least 1 genre." << endl;
         vector<string> genresList;
         interface.getSearchKeywords(genresList);
+
+        while(genresList.size() < 1){
+            cout << "Please enter at least 1 genre." << endl;
+            interface.getSearchKeywords(genresList);
+        }
+
 
         //Get director keyword(s) from user input.
         cout << "Now, how about directors? Enter up to 5, or enter 'finished' when you are done if you have less than 5." << endl;
