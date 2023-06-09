@@ -71,7 +71,7 @@ using namespace std;
 //Movierecommend has 2 variables: movie object and score
 //
 //constructor
-vector<Movie>& MovieRec::recommend(vector<string> ratin, vector<string> genr, vector<string> directr, vector<string> actr){
+vector<Movie>& MovieRec::recommend(char ratin, vector<string> genr, vector<string> directr, vector<string> actr){
 
     movieDatabase movieDB;
 
@@ -158,7 +158,44 @@ vector<Movie>& MovieRec::recommend(vector<string> ratin, vector<string> genr, ve
 
     //after the list has been assigned score to, use getters to get the top 10 movies with getTitle() or whatever and then return a priority queue wit them
     //output top then pop 10 times
+
+   
     vector<Movie> fq;
+
+
+    if(ratin == 'h'|| ratin == 'H'){
+        while(fq.size() < 10){
+            string tTitle = pq.top().getTitle();
+            Movie nMovie = movieDB.getMovie(tTitle);
+            if (nMovie.rating >= 8.0 || nMovie.rating == 0.0){
+                fq.push_back(nMovie);
+            }
+            pq.pop();
+        }
+    }
+
+    else if(ratin == 'a'|| ratin == 'A'){
+        while(fq.size() < 10){
+            string tTitle = pq.top().getTitle();
+            Movie nMovie = movieDB.getMovie(tTitle);
+            if (nMovie.rating < 8.0 && nMovie.rating > 5.0 || nMovie.rating == 0.0){
+                fq.push_back(nMovie);
+            }
+            pq.pop();
+        }
+    }
+
+    else if(ratin == 'p'|| ratin == 'P'){
+        while(fq.size() < 10){
+            string tTitle = pq.top().getTitle();
+            Movie nMovie = movieDB.getMovie(tTitle);
+            if (nMovie.rating <= 5.0 || nMovie.rating == 0.0){
+                fq.push_back(nMovie);
+            }
+            pq.pop();
+        }
+    }
+    
 
     for(int i = 0; i < 10; i++){
         string tTitle = pq.top().getTitle();
