@@ -4,7 +4,7 @@ using namespace std;
 
 movieScore::movieScore(std::string t){
             title = t;
-            score = rand() % 5 + 16;
+            score = 1;
 }
 
 movieScore::movieScore(){
