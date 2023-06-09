@@ -3,6 +3,7 @@
 #include <string>
 #include <vector>
 #include <queue>
+#include <curl/curl.h>
 
 //Project headers
 #include "../header/database/moviesDatabase.h"
