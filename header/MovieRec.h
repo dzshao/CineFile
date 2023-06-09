@@ -11,10 +11,6 @@ struct compScore{
 
 class MovieRec{
     public:
-    void actorCompare(string actor);
-    void ratingCompare(string rating);
-    void directorCompare(string director);
-    void genreCompare(string genre);
 
     vector<Movie> recommend(vector<string> ratin, vector<string> genr, vector<string> directr, vector<string> actor);
     //way to interact w/
