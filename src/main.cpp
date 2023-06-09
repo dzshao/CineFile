@@ -74,6 +74,7 @@ int main() {
         }
 
     }
+    // Web scraping cleanup
     curl_global_cleanup();
     return 0;
 }

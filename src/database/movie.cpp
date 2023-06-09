@@ -33,8 +33,10 @@ std::ostream& operator<<(std::ostream& out, const Movie& outputMovie) {
     }
     if (outputMovie.castList.size() >= 4) {
         out << outputMovie.castList.at(3).getName();
-    } else {
+    } else if (outputMovie.castList.size() != 0){
         out << outputMovie.castList.at(outputMovie.castList.size() - 1).getName();
+    } else {
+        out << "N/A";
     }
     
     return out;
