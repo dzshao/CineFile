@@ -173,12 +173,7 @@ vector<Movie>& MovieRec::recommend(char ratin, vector<string> genr, vector<strin
 
     //so all movies that qualify have been stored in movieq
 
-    struct comparescore {
-    bool operator()(MovieScore const & p1, MovieScore const & p2) {
-        // return "true" if "p1" is ordered before "p2", for example:
-        return p1.score < p2.score;
-    }
-    };
+    
 
     priority_queue<MovieScore, vector<MovieScore>, comparescore> pq;
     // priority_queue<int> km; 

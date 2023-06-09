@@ -4,11 +4,12 @@
 #include "../header/recommender/MovieScore.h"
 // #include "../header/MoviesDatabase.h"
 
-struct compScore{
-    bool operator()(MovieScore const & lmov, MovieScore const & rmov){
-        return lmov.getScore() > rmov.getScore();
+struct comparescore {
+    bool operator()(MovieScore const & p1, MovieScore const & p2) {
+        // return "true" if "p1" is ordered before "p2", for example:
+        return p1.score < p2.score;
     }
-}
+    };
 
 class MovieRec{
     public:
@@ -20,3 +21,4 @@ class MovieRec{
 
 
 }
+#endif
