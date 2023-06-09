@@ -1,7 +1,7 @@
 #include "../header/webscraping/imdbParser.h"
 #include "../header/webscraping/ScrapeWebsite.h"
 
-vector<Movie> imdbParser::scrapeGenres(const vector<string>&genreList) {
+void imdbParser::scrapeGenres(const vector<string>&genreList) {
     const string imdbGenreLink = "https://www.imdb.com/search/title/?genres=";
     vector<Movie> listOfMovies;
     for (unsigned i = 0; i < genreList.size(); ++i) {
@@ -23,7 +23,6 @@ vector<Movie> imdbParser::scrapeGenres(const vector<string>&genreList) {
         const int numMovies = 10;
         scrapeMovies(htmlParser, listOfMovies, numMovies);
     }
-    return listOfMovies;
 }
 
 void imdbParser::scrapeMovies(stringstream& parser, vector<Movie>& movieList, int numMovies) {
@@ -36,6 +35,7 @@ void imdbParser::scrapeMovies(stringstream& parser, vector<Movie>& movieList, in
         vector<Actor> actorList = findActorList(parser);
 
         movieList.push_back({movieTitle, releaseDate, movieGenres, movieRating, directorList, actorList});
+        MoviesDatabase::addMovie(movieList.at(i));
     }
 }
 

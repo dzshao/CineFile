@@ -5,8 +5,8 @@
 #include <string>
 #include <sstream>
 #include <limits>
-#include "../database/genre.h"
 #include "../database/moviesDatabase.h"
+#include "../database/genre.h"
 
 using std::string;
 using std::stringstream;
@@ -15,7 +15,7 @@ using std::endl;
 
 class imdbParser {
     public:
-        vector<Movie> static scrapeGenres(const vector<string>&);
+        void static scrapeGenres(const vector<string>&);
         void static scrapeMovies(stringstream &, vector<Movie>&, int i);
 
     private:
