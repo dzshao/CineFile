@@ -57,6 +57,7 @@ string imdbParser::findTitle(stringstream &parser) {
 }
 
 string imdbParser::findReleaseDate(stringstream &parser) {
+    // Same principle as movie name, this line only shows up before the release date for a movie is found
     findHTML(parser, "<h3 class=\"lister-item-header\">");
     if (!parser) {
         return "Error getting release date";
@@ -67,7 +68,8 @@ string imdbParser::findReleaseDate(stringstream &parser) {
     getline(parser, releaseDate);
 
     releaseDate = releaseDate.substr(53, releaseDate.length() - 60);
-
+    // Sometimes the release date section includes a (I)
+    // This for loop is used to get rid of this to only extract the date
     for (int i = releaseDate.length() - 1; i >=0; --i) {
         if (releaseDate.at(i) == '(') {
             releaseDate = releaseDate.substr(i, releaseDate.length() - i);
@@ -88,6 +90,8 @@ vector<Genre> imdbParser::findGenreList(stringstream &parser) {
     getline(parser, genres);
     genres = genres.substr(0, genres.length() - 19);
 
+    // The genres variable is currently a comma separated string of genres names.
+    // This for loop extracts the genre names
     vector<Genre> genreList;
     stringstream genreParse(genres);
     while (genreParse >> genres) {
@@ -124,11 +128,12 @@ vector<Director> imdbParser::findDirectorList(stringstream &parser) {
     findHTML(parser, "    <p class=\"\">");
     string directorCheck;
     getline(parser, directorCheck);
-    if (directorCheck == "            ") return {{"N/A"}};
+    if (directorCheck == "            ") return {{"N/A"}}; // No director found
     
     vector<Director> directorList;
     string directorFinder;
     getline(parser, directorFinder);
+    // While loop is used to iterate through until all directors are found
     while (directorFinder != "                 <span class=\"ghost\">|</span> ") {
         getline(parser, directorFinder);
         if(directorFinder.at(directorFinder.length() - 2) == ',') {
@@ -149,6 +154,7 @@ vector<Actor> imdbParser::findActorList(stringstream &parser) {
     string actorFinder;
     getline(parser, actorFinder);
 
+    // While loop is used to iterate through until all actors are found
     vector<Actor> actorList;
     while(actorFinder != "    </p>" ) {
         getline(parser, actorFinder);
@@ -165,12 +171,14 @@ vector<Actor> imdbParser::findActorList(stringstream &parser) {
 }
 
 void imdbParser::findHTML(stringstream &parser, const string &textToFind) {
+    // Skips through the HTML until the exact line is found
     string filter;
     while(filter != textToFind && getline(parser, filter)) 
     {}
 }
 
 void imdbParser::skipLines(stringstream &parser, int i) {
+    // Skips i lines in the stringstream
     for (unsigned j = 0; j < i; ++j) {
         parser.ignore(std::numeric_limits<std::streamsize>::max(), parser.widen('\n'));
     }

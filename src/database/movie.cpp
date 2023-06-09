@@ -28,10 +28,16 @@ std::ostream& operator<<(std::ostream& out, const Movie& outputMovie) {
 
 
     out << "Starring: ";
-    for(unsigned i = 0; i < outputMovie.castList.size() - 1; ++i) {
+    for(unsigned i = 0; i < 3 && i < outputMovie.castList.size() - 1; ++i) {
         out << outputMovie.castList.at(i).getName() << ", ";
     }
-    out << outputMovie.castList.at(outputMovie.castList.size() - 1).getName(); << endl;
+    if (outputMovie.castList.size() >= 4) {
+        out << outputMovie.castList.at(3).getName();
+    } else if (outputMovie.castList.size() != 0){
+        out << outputMovie.castList.at(outputMovie.castList.size() - 1).getName();
+    } else {
+        out << "N/A";
+    }
     
     return out;
 }

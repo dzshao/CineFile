@@ -6,8 +6,8 @@
 #include <cassert>
 
 //Project headers
-#include "../header/webscraping/imdbParser.h"
 #include "../header/database/moviesDatabase.h"
+#include "../header/webscraping/imdbParser.h"
 #include "../header/interface/userinterface.h"
 
 using namespace std;
@@ -63,7 +63,7 @@ int main() {
         interface.printKeywords(actorsList);
         cout << endl;
 
-        // Scraping movies from imdb
+        //Scraping movies from imdb
         imdbParser::scrapeGenres(genresList);
 
         //Get movie recommendations
@@ -81,6 +81,7 @@ int main() {
         }
 
     }
-
+    // Web scraping cleanup
+    curl_global_cleanup();
     return 0;
 }

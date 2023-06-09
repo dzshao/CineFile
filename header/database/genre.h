@@ -16,7 +16,8 @@ class Genre {
         {};
 
         Genre(std::string _name) : 
-            name(_name)
+            name(_name),
+            listOfMovies()
         {};
 
         Genre(std::string _name, const std::unordered_map<std::string, Movie>& movies) : 
