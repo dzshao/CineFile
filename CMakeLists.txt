@@ -9,7 +9,11 @@ add_library(movie_recommend
     src/ScrapeWebsite.cpp
     src/imdbParser.cpp
     src/UserInterface.cpp
-    src/movie.cpp
+    src/database/movie.cpp
+    src/database/actor.cpp
+    src/database/director.cpp
+    src/database/genre.cpp
+    src/database/person.cpp
 )
 
 ADD_EXECUTABLE(test
