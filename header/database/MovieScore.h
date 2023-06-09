@@ -19,7 +19,6 @@ class movieScore{
         
     public:
         movieScore(string t);
-        movieScore();
         int getScore();
         string getTitle();
         void changeScore(int change);
