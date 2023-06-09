@@ -85,8 +85,7 @@ Thank you for using Cinefile!
 
 
 ## Class Diagram 
-![UML Class Diagram](https://github.com/cs100/final-project-ahude001-dshao009-jshen075-jrive141/blob/master/Design%20Documents/UML%20Class%20Diagram%20Final.png?raw=true)
-
+![UML Diagram FINAL](https://github.com/cs100/final-project-ahude001-dshao009-jshen075-jrive141/assets/102844937/ee54574a-efd5-4532-841f-ea9db8950b40)
 
 
 ### Class Descriptions:
