@@ -3,7 +3,7 @@ project(movieRecommender)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++1y")
 
-ADD_SUBDIRECTORY(googletest)
+
 
 add_library(movie_recommend
     src/ScrapeWebsite.cpp
