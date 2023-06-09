@@ -2,7 +2,7 @@
 #define RECOMMEND_TESTS
 
 #include <gtest/gtest.h>
-#include "../header/recommender/MovieRec.h"
+#include "../header/database/MovieRec.h"
 
 TEST(Recommendtests, noerrors){
     Movie randomMovie{"Yellowjackets", "(2021– )", {{"Drama"}, {"Horror"}, {"Mystery"}}, 7.8, {{"N/A"}}, {{"Melanie Lynskey"}, {"Tawny Cypress"}, {"Sophie Nélisse"}, {"Jasmin Savoy Brown"}}};
