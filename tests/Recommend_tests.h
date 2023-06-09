@@ -4,13 +4,15 @@
 #include <gtest/gtest.h>
 #include "../header/recommender/MovieRec.h"
 
-// TEST(Recommendtests, noerrors){
-//     vector<string> tactors = {"bob", "fred"};
-//     vector<string tdirect = {"john"};
-//     vector<string> tgenre = {"horror", "comedy"};
-//     char tc = 'H';
-//     EXPECT_NO_THROW(recommend(tc, tgenre, tdirect, tactors));
-// }
+TEST(Recommendtests, noerrors){
+    Movie randomMovie{"Yellowjackets", "(2021– )", {{"Drama"}, {"Horror"}, {"Mystery"}}, 7.8, {{"N/A"}}, {{"Melanie Lynskey"}, {"Tawny Cypress"}, {"Sophie Nélisse"}, {"Jasmin Savoy Brown"}}};
+    MoviesDatabase::addMovie(randomMovie);
+    vector<string> tactors = {"Bob", "Fred"};
+    vector<string tdirect = {"John"};
+    vector<string> tgenre = {"Horror", "Comedy"};
+    char tc = 'A';
+    EXPECT_NO_THROW(recommend(tc, tgenre, tdirect, tactors));
+}
 
 // TEST(Recommendtests, emptyActors){
 //     vector<string> tactors;
@@ -27,3 +29,5 @@
 // TEST(Recommendtests, emptyGenres){
     
 // }
+
+#endif
