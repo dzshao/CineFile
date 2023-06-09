@@ -9,6 +9,7 @@
 #include "./person_tests.h"
 #include "./actor_tests.h"
 #include "./director_tests.h"
+#include "./moviescore_tests.h"
 
 int main(int ac, char* av[]) {
     ::testing::InitGoogleTest(&ac, av);

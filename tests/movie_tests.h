@@ -29,4 +29,11 @@ TEST(MovieTests, testOstreamOverload) {
     
     EXPECT_EQ(testOutput, ::testing::PrintToString(theLittleMermaidMovie));
 }
+
+TEST(MovieTests, testOstreamOverload2) {
+    Movie theLittleMermaidMovie = {"The Little Mermaid", "(2023)", {{"Adventure"}, {"Family"}, {"Fantasy"}}, 0.0, {{"Rob Marshall"}, {"Someone Else"}}, {{"Halle Bailey"}, {"Jonah Hauer-King"}, {"Melissa McCarthy"}, {"Javier Bardem"}}};
+    string testOutput = "The Little Mermaid (2023):\nRating: N/A\nGenre(s): Adventure, Family, Fantasy\nDirected by: Rob Marshall, Someone Else\nStarring: Halle Bailey, Jonah Hauer-King, Melissa McCarthy, Javier Bardem";
+    
+    EXPECT_EQ(testOutput, ::testing::PrintToString(theLittleMermaidMovie));
+}
 #endif

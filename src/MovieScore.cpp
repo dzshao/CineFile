@@ -7,11 +7,6 @@ movieScore::movieScore(std::string t){
             score = 1;
 }
 
-movieScore::movieScore(){
-            score = 0;
-            title = "";
-}
-
 int movieScore::getScore(){
     return this->score;
 }
