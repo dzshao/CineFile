@@ -1,4 +1,4 @@
-#include "../../header/database/movie.h"
+#include "../../header/database/person.h"
 
 std::string Person::getName() const {
     return name;
