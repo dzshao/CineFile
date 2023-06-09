@@ -11,16 +11,6 @@ using std::vector;
 using std::string;
 using std::unordered_map;
 
-Genre testHorror = Genre("Horror");
-Genre testDrama = Genre("Drama");
-Genre testThriller = Genre("Thriller");
-vector<Genre> testGenreList = {{"Horror"}, {"Drama"}, {"Thriller"}};
-
-Movie theLittleMermaidMovie = {"The Little Mermaid", "(2023)", {{"Adventure"}, {"Family"}, {"Fantasy"}}, 7.2, {{"Rob Marshall"}}, {{"Halle Bailey"}, {"Jonah Hauer-King"}, {"Melissa McCarthy"}, {"Javier Bardem"}}};
-Movie barbieMovie = {"Barbie", "(2023)", {{"Adventure"}, {"Comedy"}, {"Fantasy"}}, 0.0, {{"Greta Gerwig"}}, {{"Margot Robbie"}, {"Ryan Gosling"}, {"Dua Lipa"}, {"Ariana Greenblatt"}}};
-Movie asteroidCityMovie = {"Asteroid City", "(2023)", {{"Comedy"}, {"Drama"}, {"Romance"}}, 6.8, {{"Wes Anderson"}}, {{"Jason Schwartzman"}, {"Scarlett Johansson"}, {"Tom Hanks"}, {"Jeffrey Wright"}}};
-Movie queenCharlotteMoive = {"Queen Charlotte: A Bridgerton Story", "(2023)", {{"Drama"}, {"History"}, {"Romance"}}, 7.3, {{"N/A"}}, {{"India Amarteifio"}, {"Adjoa Andoh"}, {"Michelle Fairley"}, {"Ruth Gemmell"}}};
-
 TEST(GenreTests, testConstructor) {
     Genre testGenre;
     string testName = testGenre.getName();
@@ -35,6 +25,10 @@ TEST(GenreTests, testConstructor2) {
 }
 
 TEST(GenreTests, testConstructor3) {
+    Movie theLittleMermaidMovie = {"The Little Mermaid", "(2023)", {{"Adventure"}, {"Family"}, {"Fantasy"}}, 7.2, {{"Rob Marshall"}}, {{"Halle Bailey"}, {"Jonah Hauer-King"}, {"Melissa McCarthy"}, {"Javier Bardem"}}};
+    Movie barbieMovie = {"Barbie", "(2023)", {{"Adventure"}, {"Comedy"}, {"Fantasy"}}, 0.0, {{"Greta Gerwig"}}, {{"Margot Robbie"}, {"Ryan Gosling"}, {"Dua Lipa"}, {"Ariana Greenblatt"}}};
+    Movie asteroidCityMovie = {"Asteroid City", "(2023)", {{"Comedy"}, {"Drama"}, {"Romance"}}, 6.8, {{"Wes Anderson"}}, {{"Jason Schwartzman"}, {"Scarlett Johansson"}, {"Tom Hanks"}, {"Jeffrey Wright"}}};
+    Movie queenCharlotteMoive = {"Queen Charlotte: A Bridgerton Story", "(2023)", {{"Drama"}, {"History"}, {"Romance"}}, 7.3, {{"N/A"}}, {{"India Amarteifio"}, {"Adjoa Andoh"}, {"Michelle Fairley"}, {"Ruth Gemmell"}}};
     unordered_map<string, Movie> testMovieMap;
     testMovieMap["The Little Mermaid"] = theLittleMermaidMovie;
     testMovieMap["Barbie"] = barbieMovie;
@@ -56,6 +50,10 @@ TEST(GenreTests, testSetName) {
 
 TEST(GenreTests, testAddMovie) {
     Genre testGenre = Genre("Test");
+    Movie theLittleMermaidMovie = {"The Little Mermaid", "(2023)", {{"Adventure"}, {"Family"}, {"Fantasy"}}, 7.2, {{"Rob Marshall"}}, {{"Halle Bailey"}, {"Jonah Hauer-King"}, {"Melissa McCarthy"}, {"Javier Bardem"}}};
+    Movie barbieMovie = {"Barbie", "(2023)", {{"Adventure"}, {"Comedy"}, {"Fantasy"}}, 0.0, {{"Greta Gerwig"}}, {{"Margot Robbie"}, {"Ryan Gosling"}, {"Dua Lipa"}, {"Ariana Greenblatt"}}};
+    Movie asteroidCityMovie = {"Asteroid City", "(2023)", {{"Comedy"}, {"Drama"}, {"Romance"}}, 6.8, {{"Wes Anderson"}}, {{"Jason Schwartzman"}, {"Scarlett Johansson"}, {"Tom Hanks"}, {"Jeffrey Wright"}}};
+    Movie queenCharlotteMoive = {"Queen Charlotte: A Bridgerton Story", "(2023)", {{"Drama"}, {"History"}, {"Romance"}}, 7.3, {{"N/A"}}, {{"India Amarteifio"}, {"Adjoa Andoh"}, {"Michelle Fairley"}, {"Ruth Gemmell"}}};
     testGenre.addMovie(theLittleMermaidMovie);
     testGenre.addMovie(barbieMovie);
     testGenre.addMovie(asteroidCityMovie);
